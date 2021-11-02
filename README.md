@@ -5,10 +5,10 @@ The Sample Scheduling App aims to help fellow students with creating a schedule 
 ## Team Members
 
 * **Leads**
+ 	* **Product Manager**
+		* Reese Hoffart
 	* **Project Manager** 
 		* Mark Amirkan
-	* **Product Manager**
-		* Reese Hoffart
 	* **Development Manager**
 		* Tariq Mahamid
 	* **QA Manager**
