@@ -20,11 +20,11 @@
 	* QA Engineers: 
 		* Frank Fan
 		* Mark Amirkan
-		* Anish Saravanan
 		* Amy Phan
-		* Aidan Kollar
 	* Development Engineers: 
 		* Tariq Mahamid
 		* Reese Hoffart
 		* Sahil Sheth
 		* Brian Chei
+		* Aidan Kollar
+		* Anish Saravanan
