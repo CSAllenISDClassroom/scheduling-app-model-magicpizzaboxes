@@ -16,7 +16,7 @@ The Sample Scheduling App aims to help fellow students with creating a schedule 
 	* **Release Manager**
 		* Sahil Sheth
 	* **Database Manager**
-		* Rodrigo Swarez
+		* Rodrigo Suarez
 
 
 * **Engineers**
@@ -31,7 +31,8 @@ The Sample Scheduling App aims to help fellow students with creating a schedule 
 		* Sahil Sheth
 		* Brian Chei 
 		* Aidan Kollar
-		* Ross 
+		* Ross Fowler
+		* Rodrigo Suarez
 
 
 ### Role Responsibilities
