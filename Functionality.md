@@ -1,11 +1,9 @@
-
-
 # Sample Schedular App Functionality
 
 ## Show Schedule Conflicts
 ### Functionality
 this is the functionality
-### Design
+### Developement
 this is the development
 ### QA
 this is the quality assurance
@@ -13,7 +11,6 @@ this is the quality assurance
 ## Calculate Maximum GPA
 ### Functionality
 ### Design
-The 
 ### QA
 
 ## Show Credits Gained Based on Schedule
@@ -36,22 +33,12 @@ The
 ### Design
 ### QA
 
-## Show Schedule Conflicts
-### Functionality
-### Design
-### QA
-
-## Show Schedule Conflicts
-### Functionality
-### Design
-### QA
-
 ## Links for Help
 ### Functionality
 ### Design
 ### QA
 
-## More App Accessablity
+## More App Accessibility
 Im thinking like an app or easier access website link. If we make an app, this is definitly a reach.
 ### Functionality
 ### Design
