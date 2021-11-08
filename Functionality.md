@@ -1,7 +1,7 @@
-#Features
+# Features
 
-##Functionality
+## Functionality
 
-##Developement
+## Developement
 
-##QA
+## QA
