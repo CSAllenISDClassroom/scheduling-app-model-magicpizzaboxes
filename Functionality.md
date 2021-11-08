@@ -13,7 +13,7 @@
 ## Show Schedule Conflicts
 ### Functionality
 this is the functionality
-### Developement
+### Design
 this is the development
 ### QA
 this is the quality assurance
