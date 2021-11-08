@@ -22,11 +22,11 @@ The Sample Scheduling App aims to help fellow students with creating a schedule 
 * **Engineers**
 	* **QA Engineers**: 
 		* Frank Fan
-		* Mark Amirkan
 		* Amy Pham
 		* Anish Saravanan
 	* **Development Engineers**: 
 		* Tariq Mahamid
+		* Mark Amirkan
 		* Reese Hoffart
 		* Sahil Sheth
 		* Brian Chei 
