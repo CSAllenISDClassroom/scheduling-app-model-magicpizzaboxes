@@ -13,7 +13,7 @@ this is the quality assurance
 ## Calculate Maximum GPA
 ### Functionality
 ### Design
-
+The 
 ### QA
 
 ## Show Credits Gained Based on Schedule
