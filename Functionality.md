@@ -1,4 +1,4 @@
-# Sample Schedular App Functionality
+# Sample Scheduler App Functionality
 
 **Table of Contents**
 1. [Show Schedule Conflicts](show-schedule-conflicts)
@@ -8,7 +8,7 @@
 5. [Ability to Print/Share Schedules](Ability-to-Print/Share-Schedules)
 6. [A/B Day View](A/B-Day-View)
 7. [Links for Help](Links-for-Help)
-8. [More App Accessablity](More-App-Accessablity)
+8. [More App Accessiblity](More-App-Accessablity)
 
 ## Show Schedule Conflicts
 ### Functionality
