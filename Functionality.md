@@ -1,57 +1,60 @@
+
+
 # Sample Schedular App Functionality
 
 ## Show Schedule Conflicts
 ### Functionality
 this is the functionality
-### Developement
+### Design
 this is the development
 ### QA
 this is the quality assurance
 
 ## Calculate Maximum GPA
 ### Functionality
-### Developement
+### Design
+
 ### QA
 
 ## Show Credits Gained Based on Schedule
 ### Functionality
-### Developement
+### Design
 ### QA
 
 ## Comprehensive Class Search Feature with Filtering
 ### Functionality
-### Developement
+### Design
 ### QA
 
 ## Ability to Print/Share Schedules
 ### Functionality
-### Developement
+### Design
 ### QA
 
 ## A/B Day View
 ### Functionality
-### Developement
+### Design
 ### QA
 
 ## Show Schedule Conflicts
 ### Functionality
-### Developement
+### Design
 ### QA
 
 ## Show Schedule Conflicts
 ### Functionality
-### Developement
+### Design
 ### QA
 
 ## Links for Help
 ### Functionality
-### Developement
+### Design
 ### QA
 
 ## More App Accessablity
 Im thinking like an app or easier access website link. If we make an app, this is definitly a reach.
 ### Functionality
-### Developement
+### Design
 ### QA
 
 # If you would like to add another feature to this list: list it below.
