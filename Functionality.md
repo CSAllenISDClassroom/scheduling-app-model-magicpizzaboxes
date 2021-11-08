@@ -48,7 +48,7 @@ this is the quality assurance
 ### Developement
 ### QA
 
-## More App Accessablity
+## More App Accessibility
 Im thinking like an app or easier access website link. If we make an app, this is definitly a reach.
 ### Functionality
 ### Developement
