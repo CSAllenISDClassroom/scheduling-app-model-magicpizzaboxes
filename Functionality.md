@@ -56,6 +56,3 @@ Im thinking like an app or easier access website link. If we make an app, this i
 
 # If you would like to add another feature to this list: list it below.
 - feature
-=======
-## QA
-Allow for testing like alpha testing and beta testing. The aplha will be only chosen people and the beta will be randomly selected people.
