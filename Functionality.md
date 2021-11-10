@@ -102,3 +102,7 @@ Im thinking like an app or easier access website link. If we make an app, this i
 - Detailed Class Information
 - Enforce Credit/Endorsement Requirements
 - Live Class Statistics
+- Integrated Note System
+- Combined School Class List
+- Viewable Blocked Schedule
+
