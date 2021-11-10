@@ -51,6 +51,7 @@ In order to filter the classes through classes we will have to have a list off a
 ## AB Day View
 ### Functionality
 ### Design
+Like the Search Feature with filtering, we will have to filter all available classes based on the day. In order to do this, we can find whether a class lies on A or B day. After we have this information, it will be easy to filter the classes that are in view to a specified A/B day. 
 ### QA
 
 ## Links for Help
