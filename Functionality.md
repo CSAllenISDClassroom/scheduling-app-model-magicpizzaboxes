@@ -53,6 +53,7 @@ In order to filter the classes through classes we will have to have a list off a
 ## AB Day View
 ### Functionality
 ### Design
+Like the Search Feature with filtering, we will have to filter all available classes based on the day. In order to do this, we can find whether a class lies on A or B day. After we have this information, it will be easy to filter the classes that are in view to a specified A/B day. 
 ### QA
 
 ## Links for Help
@@ -83,6 +84,7 @@ can track who uses app and give engagement points
 maybe the AP exam the class takes as well
 ### Functionality
 ### Design
+Survey a large group of students, including those who have taken the class in question in order to make a class difficulty rank. This is another instance of an inforation based display. After we have the information about different aspects of the class (AP Exam Pass Rate, Average Grade, Information from the Survey, Etc.), we can display it easily by the class making it accessible to the student.
 ### QA
 
 ## Assign Classes an Arena Scheduling Priority Score
@@ -115,3 +117,8 @@ Im thinking like an app or easier access website link. If we make an app, this i
 - Live Chat System
 - Detailed Class Information
 - Enforce Credit/Endorsement Requirements
+- Live Class Statistics
+- Integrated Note System
+- Combined School Class List
+- Viewable Blocked Schedule
+
