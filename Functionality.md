@@ -6,12 +6,21 @@ this is the functionality
 ### Developement
 this is the development
 ### QA
-this is the quality assurance
+Our testing procedure is to identify scheduling conflict through error
+messages or warnings when it occurs by intentionally scheduling
+conflicting classes. The test succeeds when conflicts are
+identified/displayed to the user and fails if left unnoticed.
 
 ## Calculate Maximum GPA
 ### Functionality
 ### Developement
 ### QA
+Manually calculate the GPA through a calculator and make sure that the
+number displayed within the app matches the result of the GPA
+calculator. The test succeeds when the number matches the result of
+the GPA calculator and has an error message if users have an
+inappropriate input, and fails if something else appears.
+
 
 <<<<<<< HEAD
 ## Show Credits Gained Based on Schedule
