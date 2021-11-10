@@ -15,7 +15,10 @@
 12. [Assign Classes an Arena Scheduling Priority Score](#Assign-Classes-an-Arena-Scheduling-Priority-Score)
 13. [Show Details for Each Class](#Show-Details-for-Each-Class)
 14. [Enforce Credit and Endorsement Requirements](#Enforce-Credit-and-Endorsement-Requirements)
-15. [More App Accessibility](#More-App-Accessibility)
+15. [Show Live Class Stats](#Show-Live-Class-Stats)
+16. [Combined School Class List](#Combined-School-Class-List)
+17. [Viewable Blocked Schedule](#Viewable-Blocked-Schedule)
+18. [More App Accessibility](#More-App-Accessibility)
 
 ## Show Schedule Conflicts
 ### Functionality
@@ -104,6 +107,22 @@ location, lunch, credits, pre-requistates, etc. Maybe take data from Academic Pl
 ### Design
 ### QA
 
+## Show Live Class Stats
+like # of people who selected it, etc.
+### Functionality
+### Design
+### QA
+
+## Combined School Class List
+### Functionality
+### Design
+### QA
+
+## Viewable Blocked Schedule
+### Functionality
+### Design
+### QA
+
 ## More App Accessibility
 Im thinking like an app or easier access website link. If we make an app, this is definitly a reach.
 ### Functionality
@@ -111,14 +130,5 @@ Im thinking like an app or easier access website link. If we make an app, this i
 ### QA
 
 # If you would like to add another feature to this list: list it below.
-- Location (Room and School Location)
-- Interactive map showing location in building
-- Student Info Signin (For eagle points and sharing)
-- Live Chat System
-- Detailed Class Information
-- Enforce Credit/Endorsement Requirements
-- Live Class Statistics
-- Integrated Note System
-- Combined School Class List
-- Viewable Blocked Schedule
+- feature
 
