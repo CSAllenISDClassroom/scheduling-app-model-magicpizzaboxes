@@ -13,7 +13,7 @@
 10. [Ability to Sign In](#Ability-to-Sign-In)
 11. [See Class Difficulties](#See-Class-Difficulties)
 12. [Assign Classes an Arena Scheduling Priority Score](#Assign-Classes-an-Arena-Scheduling-Priority-Score)
-10. [More App Accessibility](#More-App-Accessibility)
+13. [More App Accessibility](#More-App-Accessibility)
 
 ## Show Schedule Conflicts
 ### Functionality
