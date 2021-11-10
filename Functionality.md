@@ -170,15 +170,8 @@ After retrieving proper information about each class (Location, Lunch, Credits, 
 like # of people who selected it, etc.
 ### Functionality
 ### Design
-### QA 
-Have a member of the QA team manually select a class and check if the
-status changes and the selection was registered. If registered, the
-test is successful, if not an error message displayed to the
-developers. Another test conducted by purposely enlisting into a class
-that’s full (shown by the amount of people who have already selected
-the class on the app). Test is successful if an error is returned,
-listing that there are no available seats. Test fails if user is
-allowed to select class and it registers.
+In order to implement Live Class Stats (The # of people who took it, the number of seats left, how many people are searching it up, etc.) we will have to maintain a server that keeps track of all current stats and update accordingly. In order to achieve this, we can use REST API to send and retrieve information to the server.
+### QA
 
 ## Combined School Class List
 ### Functionality
