@@ -13,7 +13,9 @@
 10. [Ability to Sign In](#Ability-to-Sign-In)
 11. [See Class Difficulties](#See-Class-Difficulties)
 12. [Assign Classes an Arena Scheduling Priority Score](#Assign-Classes-an-Arena-Scheduling-Priority-Score)
-10. [More App Accessibility](#More-App-Accessibility)
+13. [Show Details for Each Class](#Show-Details-for-Each-Class)
+14. [Enforce Credit and Endorsement Requirements](#Enforce-Credit-and-Endorsement-Requirements)
+15. [More App Accessibility](#More-App-Accessibility)
 
 ## Show Schedule Conflicts
 ### Functionality
@@ -54,6 +56,7 @@ In order to filter the classes through classes we will have to have a list off a
 ### QA
 
 ## Links for Help
+including filing help tickets from the app
 ### Functionality
 ### Design
 ### QA
@@ -71,7 +74,7 @@ we will need to have the ability for users to sign in and store their notes for 
 ### QA
 
 ## Ability to Sign In
-can track who uses app
+can track who uses app and give engagement points
 ### Functionality
 ### Design
 ### QA
@@ -84,6 +87,17 @@ maybe the AP exam the class takes as well
 
 ## Assign Classes an Arena Scheduling Priority Score
 based on class demand
+### Functionality
+### Design
+### QA
+
+## Show Details for Each Class
+location, lunch, credits, pre-requistates, etc. Maybe take data from Academic Planning Guide.
+### Functionality
+### Design
+### QA
+
+## Enforce Credit and Endorsement Requirements
 ### Functionality
 ### Design
 ### QA
