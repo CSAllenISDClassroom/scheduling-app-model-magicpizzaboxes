@@ -158,6 +158,7 @@ location, lunch, credits, pre-requistates, etc. Maybe take data from
 Academic Planning Guide.
 ### Functionality
 ### Design
+After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School webiste (We can put all of the data in a JSON file), we can display the respective information by each class. 
 ### QA
 
 ## Enforce Credit and Endorsement Requirements
