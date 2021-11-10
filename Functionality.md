@@ -81,7 +81,7 @@ can track who uses app
 maybe the AP exam the class takes as well
 ### Functionality
 ### Design
-Survey a large group of students, including those who have taken the class in question in order to make a class difficulty rank
+Survey a large group of students, including those who have taken the class in question in order to make a class difficulty rank. This is another instance of an inforation based display. After we have the information about different aspects of the class (AP Exam Pass Rate, Average Grade, Information from the Survey, Etc.), we can display it easily by the class making it accessible to the student.
 ### QA
 
 ## Assign Classes an Arena Scheduling Priority Score
