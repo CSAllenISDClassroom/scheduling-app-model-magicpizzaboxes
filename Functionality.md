@@ -130,56 +130,6 @@ Im thinking like an app or easier access website link. If we make an app, this i
 ### Design
 ### QA
 
-## Location
-### Functionality
-### Design
-### QA
-
-## Interactive Map
-### Functionality
-### Design
-### QA
-
-## Student Info Sign-In
-### Functionality
-### Design
-### QA
-
-## Help Ticket System
-### Functionality
-### Design
-### QA
-
-## Detailed Class Information
-### Functionality
-### Design
-### QA
-
-## Enforce Credit and Endorsement Requirements
-### Functionality
-### Design
-### QA
-
-## Live Class Statistics
-### Functionality
-### Design
-### QA
-
-## Integrated Note System
-### Functionality
-### Design
-### QA
-
-## Combined School Class List
-### Functionality
-### Design
-### QA
-
-## Viewable Blocked Schedule
-### Functionality
-### Design
-### QA
-
 # If you would like to add another feature to this list: list it below.
 - feature
 
