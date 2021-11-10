@@ -81,6 +81,7 @@ can track who uses app
 maybe the AP exam the class takes as well
 ### Functionality
 ### Design
+Survey a large group of students, including those who have taken the class in question in order to make a class difficulty rank
 ### QA
 
 ## Assign Classes an Arena Scheduling Priority Score
