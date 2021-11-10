@@ -63,3 +63,6 @@ Im thinking like an app or easier access website link. If we make an app, this i
 - Location (Room and School Location)
 - Interactive map showing location in building
 - Student Info Signin (For eagle points and sharing)
+- Live Chat System
+- Detailed Class Information
+- Enforce Credit/Endorsement Requirements
