@@ -169,7 +169,15 @@ Academic Planning Guide.
 like # of people who selected it, etc.
 ### Functionality
 ### Design
-### QA
+### QA 
+Have a member of the QA team manually select a class and check if the
+status changes and the selection was registered. If registered, the
+test is successful, if not an error message displayed to the
+developers. Another test conducted by purposely enlisting into a class
+that’s full (shown by the amount of people who have already selected
+the class on the app). Test is successful if an error is returned,
+listing that there are no available seats. Test fails if user is
+allowed to select class and it registers.
 
 ## Combined School Class List
 ### Functionality
