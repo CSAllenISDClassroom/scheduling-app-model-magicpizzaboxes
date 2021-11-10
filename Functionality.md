@@ -46,6 +46,7 @@ In order to filter the classes through classes we will have to have a list off a
 ## Ability to Print and Share Schedules
 ### Functionality
 ### Design
+We will need to be able to write schedules to a local save and then be able to send it to other applications. We will need to research how to connect from this app to others.
 ### QA
 
 ## AB Day View
