@@ -49,6 +49,9 @@ Upon reviewing one's schedule, the Sample Scheduling App will calculate how many
 ### Design
 In order to calculate the credits gained based on schedule, we will have to add up all of the credits that the student has in their schedule.
 ### QA
+Add classes to the schedule and see if credit is added. If credit does
+not increase, then the test does not pass. If credit is gained for
+every instance of adding a class, then the test is passed.
 
 ## Comprehensive Class Search Feature with Filtering
 ### Functionality
@@ -56,6 +59,10 @@ There are a lot of classes offered at Allen ISD. The ability to search and filte
 ### Design
 In order to filter the classes through classes we will have to have a list off all of the categories that each class is in. We can then filter through the classes based on their included categories and their names.
 ### QA
+Our testing procedure to ensure that all classes in the given subject
+are included when searched with the key word of the subject. Require
+that classes not found in the subject aren't misplaced (example:
+English literature and composition found under key word “Math”.
 
 ## Ability to Print and Share Schedules
 ### Functionality
