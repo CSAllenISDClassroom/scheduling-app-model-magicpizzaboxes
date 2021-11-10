@@ -50,6 +50,7 @@ In order to filter the classes through classes we will have to have a list off a
 
 ## Ability to Print and Share Schedules
 ### Functionality
+Upon completing the organizer to create a valid schedule, the user will be able to access a printing screen. In addition, users will be able to share a link, that gives the querier access to print/veiw the completed schedule.
 ### Design
 We will need to be able to write schedules to a local save and then be able to send it to other applications. We will need to research how to connect from this app to others.
 ### QA
@@ -63,6 +64,7 @@ Like the Search Feature with filtering, we will have to filter all available cla
 ## Links for Help
 including filing help tickets from the app
 ### Functionality
+The website will have a built-in, dedicated page as a help center. This help center will contain Frequently asked questions, links to resouces, and a way to communicte directly with counslers at Allen High School.
 ### Design
 ### QA
 
@@ -94,12 +96,14 @@ Survey a large group of students, including those who have taken the class in qu
 ## Assign Classes an Arena Scheduling Priority Score
 based on class demand
 ### Functionality
+Users will be able to take a survey after loggining into their account. This survey will tabulate the ammount of requests for a class, and it's respective periods in order to know the amount of demand, and therefor competition to schedule that class. This will allow users to know which classes to prioritze in the correct order.
 ### Design
 ### QA
 
 ## Show Details for Each Class
 location, lunch, credits, pre-requistates, etc. Maybe take data from Academic Planning Guide.
 ### Functionality
+
 ### Design
 ### QA
 
