@@ -95,4 +95,9 @@ Im thinking like an app or easier access website link. If we make an app, this i
 ### QA
 
 # If you would like to add another feature to this list: list it below.
-- feature
+- Location (Room and School Location)
+- Interactive map showing location in building
+- Student Info Signin (For eagle points and sharing)
+- Live Chat System
+- Detailed Class Information
+- Enforce Credit/Endorsement Requirements
