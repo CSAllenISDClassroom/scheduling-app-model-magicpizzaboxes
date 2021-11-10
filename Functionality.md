@@ -51,6 +51,7 @@ In order to filter the classes through classes we will have to have a list off a
 ## Ability to Print and Share Schedules
 ### Functionality
 ### Design
+We will need to be able to write schedules to a local save and then be able to send it to other applications. We will need to research how to connect from this app to others.
 ### QA
 
 ## AB Day View
@@ -125,6 +126,56 @@ like # of people who selected it, etc.
 
 ## More App Accessibility
 Im thinking like an app or easier access website link. If we make an app, this is definitly a reach.
+### Functionality
+### Design
+### QA
+
+## Location
+### Functionality
+### Design
+### QA
+
+## Interactive Map
+### Functionality
+### Design
+### QA
+
+## Student Info Sign-In
+### Functionality
+### Design
+### QA
+
+## Help Ticket System
+### Functionality
+### Design
+### QA
+
+## Detailed Class Information
+### Functionality
+### Design
+### QA
+
+## Enforce Credit and Endorsement Requirements
+### Functionality
+### Design
+### QA
+
+## Live Class Statistics
+### Functionality
+### Design
+### QA
+
+## Integrated Note System
+### Functionality
+### Design
+### QA
+
+## Combined School Class List
+### Functionality
+### Design
+### QA
+
+## Viewable Blocked Schedule
 ### Functionality
 ### Design
 ### QA
