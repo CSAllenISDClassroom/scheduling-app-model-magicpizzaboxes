@@ -8,7 +8,7 @@
 5. [Ability to Print/Share Schedules](#Ability-to-Print-Share-and-Schedules)
 6. [A/B Day View](#AB-Day-View)
 7. [Links for Help](#Links-for-Help)
-9. [School Map](#school-map)
+8. [School Map](#school-map)
 9. [Ability to Add Notes](#Ability-to-Add-Notes)
 10. [Ability to Sign In](#Ability-to-Sign-In)
 11. [See Class Difficulties](#See-Class-Difficulties)
