@@ -83,7 +83,6 @@ English literature and composition found under key word “Math”.
 
 ## Ability to Print and Share Schedules
 ### Functionality
-Upon completing the organizer to create a valid schedule, the user will be able to access a printing screen. In addition, users will be able to share a link, that gives the querier access to print/veiw the completed schedule.
 ### Design
 We will need to be able to write schedules to a local save and then be
 able to send it to other applications. We will need to research how to
@@ -110,7 +109,6 @@ correct A/B school day. If anything else appears, it fails.
 ## Links for Help
 including filing help tickets from the app
 ### Functionality
-The website will have a built-in, dedicated page as a help center. This help center will contain Frequently asked questions, links to resouces, and a way to communicte directly with counslers at Allen High School.
 ### Design
 ### QA
 First, the links for help open up when clicked. Then make sure the
@@ -152,7 +150,6 @@ easily by the class making it accessible to the student.
 ## Assign Classes an Arena Scheduling Priority Score
 based on class demand
 ### Functionality
-Users will be able to take a survey after loggining into their account. This survey will tabulate the ammount of requests for a class, and it's respective periods in order to know the amount of demand, and therefor competition to schedule that class. This will allow users to know which classes to prioritze in the correct order.
 ### Design
 ### QA
 
@@ -160,8 +157,8 @@ Users will be able to take a survey after loggining into their account. This sur
 location, lunch, credits, pre-requistates, etc. Maybe take data from
 Academic Planning Guide.
 ### Functionality
-
 ### Design
+After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School webiste (We can put all of the data in a JSON file), we can display the respective information by each class. 
 ### QA
 
 ## Enforce Credit and Endorsement Requirements
