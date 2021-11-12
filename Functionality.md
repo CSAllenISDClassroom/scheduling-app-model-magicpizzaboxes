@@ -152,7 +152,7 @@ maybe the AP exam the class takes as well
 ### Design
 Survey a large group of students, including those who have taken the
 class in question in order to make a class difficulty rank. This is
-another instance of an inforation based display. After we have the
+another instance of an information based display. After we have the
 information about different aspects of the class (AP Exam Pass Rate,
 Average Grade, Information from the Survey, Etc.), we can display it
 easily by the class making it accessible to the student.
@@ -172,11 +172,11 @@ test fails.
 
 
 ## Show Details for Each Class
-location, lunch, credits, pre-requistates, etc. Maybe take data from
+location, lunch, credits, pre-requisites, etc. Maybe take data from
 Academic Planning Guide.
 ### Functionality
 ### Design
-After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School webiste (We can put all of the data in a JSON file), we can display the respective information by each class. 
+After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School website (We can put all of the data in a JSON file), we can display the respective information by each class. 
 ### QA
 
 ## Enforce Credit and Endorsement Requirements
@@ -206,20 +206,22 @@ allowed to select class and it registers.
 
 ## Viewable Blocked Schedule
 ### Functionality
+As the user assigns classes to class periods, they will show up in a visual blocked schedule. The visual will show A and B days next to each other, and to assign a class to a specific period, the user will click the class and then click on the period they want that class. The blocked schedule will highlight possible periods to assign a class whenever a class is selected.
 ### Design
+Our backend will contain a function to return all the eligible class periods for a given class. This way, the frontend will be able to highlight eligible classes. Periods classes are available will be stored in our database. The backend will query the database and select the specific class.
 ### QA
 
 ## More App Accessibility
-Im thinking like an app or easier access website link. If we make an
-app, this is definitly a reach.
 ### Functionality
+Our website will be mobile friendly. We will also ensure that all gestures will work between all platforms. For example, when adding a class to the blocked schedule graphic, the user will click the class then the period they want it rather than needing to drag the class to the blocked schedule graphic.
 ### Design
+We will use bootstrap on the frontend to format the sample schedule for desktop as well as mobile. If we have more time, we could also use React Native to create a mobile app. The app would use the same backend, however.
 ### QA
 Make sure the link for download takes users to the correct download
 page. Ensures that the app can be found on Apple and Google Play
-store. Using a phone, test to see if the app downloads properly and
+store if we create a mobile app version. Using a phone, test to see if the app/website is formatted properly and
 all functions on the phone are properly working.
 
 # If you would like to add another feature to this list: list it below.
-- feature
+- randomize schedule
 
