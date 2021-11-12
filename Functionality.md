@@ -121,6 +121,11 @@ class to class
 ### Functionality
 ### Design
 ### QA
+Manually optimize a map of a schedule and then compare it to that of
+the program. If the maps do not match up, analyze for which map is
+more efficient. If the manual map is more efficient, then there is an
+error with the code. If the computer school map is more efficient then
+the test passes.
 
 ## Ability to Add Notes
 we will need to have the ability for users to sign in and store their
@@ -178,6 +183,9 @@ Academic Planning Guide.
 ### Design
 After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School webiste (We can put all of the data in a JSON file), we can display the respective information by each class. 
 ### QA
+Make sure it shows the correct room, hall, lunch if it is 3rd or 6th
+period, etc. The test succeeds if they come back with the correct
+information and fail if at least one of the information is incorrect.
 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
