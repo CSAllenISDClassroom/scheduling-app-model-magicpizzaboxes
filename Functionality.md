@@ -182,6 +182,7 @@ After retrieving proper information about each class (Location, Lunch, Credits, 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
 ### Design
+In order to enforce credit and endorsement requirements, we will have to store certain information. This information includes which endorsement the student is going for and how many credits they have and require. We can then use this information to calculate if the classes that they took have the required credits and endorsements.
 ### QA
 
 ## Show Live Class Stats
