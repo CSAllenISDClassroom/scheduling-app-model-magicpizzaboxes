@@ -2,7 +2,7 @@
 
 **Table of Contents**
 1. [Show Schedule Conflicts](#show-schedule-conflicts)
-2. [Calculate Maximum GPA](#Calculate-Maximum-GPA)
+2. [Calculate GPA](#Calculate-GPA)
 3. [Show Credits Gained Based on Schedule](#Show-Credits-Gained-Based-on-Schedule)
 4. [Comprehensive Class Search Feature with Filtering](#Comprehensive-Class-Search-Feature-with-Filtering)
 5. [Ability to Print/Share Schedules](#Ability-to-Print-Share-and-Schedules)
@@ -35,8 +35,11 @@ messages or warnings when it occurs by intentionally scheduling
 conflicting classes. The test succeeds when conflicts are
 identified/displayed to the user and fails if left unnoticed.
 
-## Calculate Maximum GPA
+## Calculate GPA
 ### Functionality
+Allow for student to estimate the grade they will get in the classes
+they choose and it would show them the weighted gpa they would receive
+based on the grades they inputed. 
 ### Design
 In order to calculate the maximum GPA for classes, we will have to add
 the maximum GPA in each of the student’s classes then divide it by the
