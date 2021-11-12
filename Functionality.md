@@ -171,10 +171,11 @@ based on class demand
 ### Functionality
 ### Design
 ### QA
-Make sure the arena scheduling priority score represents their demand
-for classes given by student data. If it does not match up then the
-test fails.
-
+We will test by simulating ourselves as someone who has priority and
+schedule a class multiple times to take numerous seats. We will then
+see if the priority of the class is correctly updated for a separate
+user. If it doesn’t update for the new user then the test fails. If it
+updates correctly then the test passes.
 
 ## Show Details for Each Class
 location, lunch, credits, pre-requistates, etc. Maybe take data from
@@ -186,9 +187,14 @@ Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the
 Allen High School webiste (We can put all of the data in a JSON file), 
 we can display the respective information by each class. 
 ### QA
-Make sure it shows the correct room, hall, lunch if it is 3rd or 6th
-period, etc. The test succeeds if they come back with the correct
-information and fail if at least one of the information is incorrect.
+Test by choosing a class that we have the class information on for the
+first period. Then on the app scheduler make sure that the location of
+the class, credits earned and prerequisites (if necessary), are all
+shown correctly when searching for the class. We will then test all
+continuing periods besides the 3rd and 6th period. We will then test a
+class period to make sure that the correct lunch period can be
+shown. For each period test we will test regular classes, Dual Credit
+classes, and Steam Center classes.
 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
@@ -218,6 +224,7 @@ that’s full (shown by the amount of people who have already selected
 the class on the app). Test is successful if an error is returned,
 listing that there are no available seats. Test fails if user is
 allowed to select class and it registers.
+
 ## Combined School Class List
 ### Functionality
 ### Design
@@ -234,11 +241,13 @@ app, this is definitly a reach.
 ### Functionality
 ### Design
 ### QA
-Make sure the link for download takes users to the correct download
-page. Ensures that the app can be found on Apple and Google Play
-store. Using a phone, test to see if the app downloads properly and
-all functions on the phone are properly working.
-
+Test the accessible link by first manually clicking on the link and
+making sure that the link leads the user to our scheduling app. Test
+passes if the link leads to the app and it fails if it doesn’t. We
+should also test if the link is easily compatible on mobile phones. We
+will test on an android phone as well as apple phones to confirm
+compatibility on all platforms alongside computers.
+  
 # If you would like to add another feature to this list: list it below.
 - feature
 
