@@ -1,8 +1,9 @@
+
 # Sample Scheduler App Functionality
 
 **Table of Contents**
 1. [Show Schedule Conflicts](#show-schedule-conflicts)
-2. [Calculate Maximum GPA](#Calculate-Maximum-GPA)
+2. [Calculate GPA](#Calculate-GPA)
 3. [Show Credits Gained Based on Schedule](#Show-Credits-Gained-Based-on-Schedule)
 4. [Comprehensive Class Search Feature with Filtering](#Comprehensive-Class-Search-Feature-with-Filtering)
 5. [Ability to Print/Share Schedules](#Ability-to-Print-Share-and-Schedules)
@@ -22,17 +23,24 @@
 
 ## Show Schedule Conflicts
 ### Functionality
-We will not allow for students to input a schedule conflit. However we will tell them why they cant schedule a particular class but we will show them how to fix the problem they are having
+We will not allow for students to input a schedule conflit. However we will tell
+them why they cant schedule a particular class but we will show them how to fix
+the problem they are having
 ### Design
-Allow for implimentation of clases that dont have conflicts but dont allow for clases that would pose a schedule conflict to be placed on the schedule and return a reason why and possible solution to the problem
+Allow for implimentation of clases that dont have conflicts but dont allow for
+clases that would pose a schedule conflict to be placed on the schedule and
+return a reason why and possible solution to the problem
 ### QA
 Our testing procedure is to identify scheduling conflict through error
 messages or warnings when it occurs by intentionally scheduling
 conflicting classes. The test succeeds when conflicts are
 identified/displayed to the user and fails if left unnoticed.
 
-## Calculate Maximum GPA
+## Calculate GPA
 ### Functionality
+Allow for student to estimate the grade they will get in the classes
+they choose and it would show them the weighted gpa they would receive
+based on the grades they inputed. 
 ### Design
 In order to calculate the maximum GPA for classes, we will have to add
 the maximum GPA in each of the student’s classes then divide it by the
@@ -83,6 +91,12 @@ English literature and composition found under key word “Math”.
 
 ## Ability to Print and Share Schedules
 ### Functionality
+One of our main goals with this app is to make the scheduling process 
+easier for students and the school administration. This function would 
+be used to send schedules to counselors and fellow students. With this
+feature, counselors could get a copy of someones schedule along with
+a help ticket. Students could also print a copy of their schedule and 
+bring it in to the counselor at school.
 ### Design
 We will need to be able to write schedules to a local save and then be
 able to send it to other applications. We will need to research how to
@@ -94,6 +108,9 @@ formatted then passed, else fail.
 
 ## AB Day View
 ### Functionality
+This will be a visual representation of what the schedule will look like
+with the A/B Days at Allen. This will help students understand and 
+customize their schedule. 
 ### Design
 Like the Search Feature with filtering, we will have to filter all
 available classes based on the day. In order to do this, we can find
@@ -107,19 +124,37 @@ periods 1,5,6,7,8 are on B day and appear the correct schedule on the
 correct A/B school day. If anything else appears, it fails.
 
 ## Links for Help
-including filing help tickets from the app
 ### Functionality
+Because this is a new and unfamiliar software for the students, we 
+will have to add helpful links for the student to use. These will
+include links to the Allen High School acedemic planning guide:
+https://canvas.allenisd.org/courses/858742. On top of this,
+we can operate a help ticket through our website, this will allow
+students to both ask questions and get their questions answered 
+without having to leave the site.
 ### Design
+In order to add helpful links, all we will have to do is get access
+to the links, after this we will need to display it in the View. In
+order to manage the help ticket, we will have to store both the responses
+and questions on the database.
 ### QA
 First, the links for help open up when clicked. Then make sure the
 proper website is opened up and ensure that the correct content is
 opened up on the websites.
 
 ## School Map
-maybe it shows where your classes are and the path youll take from
-class to class
 ### Functionality
+This will display a map as well as where all of the students selected
+classes are located. On top of this, it will show the path that the student
+will have to take throughout the day.
 ### Design
+In order to display the map with all of the students classes, we will need
+to store all of the the classes along with their vector positions on the school. 
+Using these vector positions, we can proportionaly display the classes on a
+map of the school. We can then use path finding to find the path to each class 
+while avoiding obstacles. In order pathfind we will have to store where the 
+students are allowed to walk (not the walls) and where the student is allowed 
+to walk and then calculate the path based on this information. 
 ### QA
 Manually optimize a map of a schedule and then compare it to that of
 the program. If the maps do not match up, analyze for which map is
@@ -152,12 +187,12 @@ exist and fail if the points are added to the wrong person or accept
 the person when their name doesn’t exist in the school database.
 
 ## See Class Difficulties
-maybe the AP exam the class takes as well
 ### Functionality
+Students will be able to click on an additional info buttom listed on the course and see handpicked feedback from other students. Statistics to display the difficulty will also be shown in a neat format, with items such as the average grade, pass rate, and other information that could be gathered from surveying students. This will help students better determine if they can match the rigor of the course and succeed without having to try it out and potentially drop the class later.
 ### Design
 Survey a large group of students, including those who have taken the
 class in question in order to make a class difficulty rank. This is
-another instance of an inforation based display. After we have the
+another instance of an information based display. After we have the
 information about different aspects of the class (AP Exam Pass Rate,
 Average Grade, Information from the Survey, Etc.), we can display it
 easily by the class making it accessible to the student.
@@ -167,9 +202,10 @@ and that of every course on the application to ensure the two match
 up. If it does not match up, then the test fails.
 
 ## Assign Classes an Arena Scheduling Priority Score
-based on class demand
 ### Functionality
+Based on the determined popularity and demand of a class and the scheduling time (regular or priority) each class will have an associated icon to display the demand. The icon will always be next to the class name so students are aware of the demand for their desired class. Classes will have either have an early scheduling popularity, general popularity, or regular scheduling popularity icon to easily detail what scheduling time it will be more competetive for. Statistics for the % of students who plan to put it on priority vs regular decision will also be shown in a more detailed information section.
 ### Design
+Information will be collected from students to determine their estimated scheduling time (regular or priority) before they create their schedule. Classes will have a popularity level which will be based on how many students placed it on their sample schedule, with a database to store the amount of times placed on a a schedule and track what scheduling time the students who placed it on their schedule plan to use.
 ### QA
 We will test by simulating ourselves as someone who has priority and
 schedule a class multiple times to take numerous seats. We will then
@@ -178,14 +214,11 @@ user. If it doesn’t update for the new user then the test fails. If it
 updates correctly then the test passes.
 
 ## Show Details for Each Class
-location, lunch, credits, pre-requistates, etc. Maybe take data from
+location, lunch, credits, pre-requisites, etc. Maybe take data from
 Academic Planning Guide.
 ### Functionality
 ### Design
-After retrieving proper information about each class (Location, Lunch, 
-Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the 
-Allen High School webiste (We can put all of the data in a JSON file), 
-we can display the respective information by each class. 
+After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School website (We can put all of the data in a JSON file), we can display the respective information by each class. 
 ### QA
 Test by choosing a class that we have the class information on for the
 first period. Then on the app scheduler make sure that the location of
@@ -232,22 +265,22 @@ allowed to select class and it registers.
 
 ## Viewable Blocked Schedule
 ### Functionality
+As the user assigns classes to class periods, they will show up in a visual blocked schedule. The visual will show A and B days next to each other, and to assign a class to a specific period, the user will click the class and then click on the period they want that class. The blocked schedule will highlight possible periods to assign a class whenever a class is selected.
 ### Design
+Our backend will contain a function to return all the eligible class periods for a given class. This way, the frontend will be able to highlight eligible classes. Periods classes are available will be stored in our database. The backend will query the database and select the specific class.
 ### QA
 
 ## More App Accessibility
-Im thinking like an app or easier access website link. If we make an
-app, this is definitly a reach.
 ### Functionality
+Our website will be mobile friendly. We will also ensure that all gestures will work between all platforms. For example, when adding a class to the blocked schedule graphic, the user will click the class then the period they want it rather than needing to drag the class to the blocked schedule graphic.
 ### Design
+We will use bootstrap on the frontend to format the sample schedule for desktop as well as mobile. If we have more time, we could also use React Native to create a mobile app. The app would use the same backend, however.
 ### QA
-Test the accessible link by first manually clicking on the link and
-making sure that the link leads the user to our scheduling app. Test
-passes if the link leads to the app and it fails if it doesn’t. We
-should also test if the link is easily compatible on mobile phones. We
-will test on an android phone as well as apple phones to confirm
-compatibility on all platforms alongside computers.
-  
+Make sure the link for download takes users to the correct download
+page. Ensures that the app can be found on Apple and Google Play
+store if we create a mobile app version. Using a phone, test to see if the app/website is formatted properly and
+all functions on the phone are properly working.
+
 # If you would like to add another feature to this list: list it below.
-- feature
+- randomize schedule
 
