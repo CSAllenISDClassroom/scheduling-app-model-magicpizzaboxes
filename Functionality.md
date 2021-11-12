@@ -109,7 +109,18 @@ correct A/B school day. If anything else appears, it fails.
 ## Links for Help
 including filing help tickets from the app
 ### Functionality
+Because this is a new and unfamiliar software for the students, we 
+will have to add helpful links for the student to use. These will
+include links to the Allen High School acedemic planning guide:
+https://canvas.allenisd.org/courses/858742. On top of this,
+we can operate a help ticket through our website, this will allow
+students to both ask questions and get their questions answered 
+without having to leave the site.
 ### Design
+In order to add helpful links, all we will have to do is get access
+to the links, after this we will need to display it in the View. In
+order to manage the help ticket, we will have to store both the responses
+and questions on the database.
 ### QA
 First, the links for help open up when clicked. Then make sure the
 proper website is opened up and ensure that the correct content is
