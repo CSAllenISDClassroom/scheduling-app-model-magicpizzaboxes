@@ -91,6 +91,12 @@ English literature and composition found under key word “Math”.
 
 ## Ability to Print and Share Schedules
 ### Functionality
+One of our main goals with this app is to make the scheduling process 
+easier for students and the school administration. This function would 
+be used to send schedules to counselors and fellow students. With this
+feature, counselors could get a copy of someones schedule along with
+a help ticket. Students could also print a copy of their schedule and 
+bring it in to the counselor at school.
 ### Design
 We will need to be able to write schedules to a local save and then be
 able to send it to other applications. We will need to research how to
@@ -102,6 +108,9 @@ formatted then passed, else fail.
 
 ## AB Day View
 ### Functionality
+This will be a visual representation of what the schedule will look like
+with the A/B Days at Allen. This will help students understand and 
+customize their schedule. 
 ### Design
 Like the Search Feature with filtering, we will have to filter all
 available classes based on the day. In order to do this, we can find
