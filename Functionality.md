@@ -22,9 +22,13 @@
 
 ## Show Schedule Conflicts
 ### Functionality
-We will not allow for students to input a schedule conflit. However we will tell them why they cant schedule a particular class but we will show them how to fix the problem they are having
+We will not allow for students to input a schedule conflit. However we will tell
+them why they cant schedule a particular class but we will show them how to fix
+the problem they are having
 ### Design
-Allow for implimentation of clases that dont have conflicts but dont allow for clases that would pose a schedule conflict to be placed on the schedule and return a reason why and possible solution to the problem
+Allow for implimentation of clases that dont have conflicts but dont allow for
+clases that would pose a schedule conflict to be placed on the schedule and
+return a reason why and possible solution to the problem
 ### QA
 Our testing procedure is to identify scheduling conflict through error
 messages or warnings when it occurs by intentionally scheduling
