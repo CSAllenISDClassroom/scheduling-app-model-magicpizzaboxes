@@ -293,7 +293,9 @@ As the user assigns classes to class periods, they will show up in a visual bloc
 ### Design
 Our backend will contain a function to return all the eligible class periods for a given class. This way, the frontend will be able to highlight eligible classes. Periods classes are available will be stored in our database. The backend will query the database and select the specific class.
 ### QA
-
+Make sure all eligible class period appear. When the user choose a
+class, make sure the correct possible period was highlighted and make
+sure the class doesn't creat any conflicts.
 ## More App Accessibility
 ### Functionality
 Our website will be mobile friendly. We will also ensure that all gestures will work between all platforms. For example, when adding a class to the blocked schedule graphic, the user will click the class then the period they want it rather than needing to drag the class to the blocked schedule graphic.
@@ -309,15 +311,16 @@ compatibility on all platforms alongside computers.
 
 ## Random schedule maker
 ### Functionality
-Allow for a student to pick the classes and make a complelyt random
+Allow for a student to pick the classes and make a completely random
 schedule that does not have any conflicts. They would click a button
 that would put their classes in the schedule
 ### Design
 randomly select classes and put in a random period. Then randomly put
-the rest in a location rando,ly selected and only allow for it to be
+the rest in a location randomly selected and only allow for it to be
 in the location if no schedule conflicts and if the classe is allowed
 during that time.
 ### QA
+Make sure the schedule create no conflict. If there is a conflict created, the test fails. But if the schedule can work, the test succeeds
 # If you would like to add another feature to this list: list it below.
 - randomize schedule
 
