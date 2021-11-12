@@ -34,3 +34,4 @@ Sometimes people push changes at the same time to which can cause conflicts. Whe
 ## How to Merge Branches
 ### Merging Branches
 Sometimes people push changes at the same time to which can cause conflicts. When commiting changes, do a **git status** and see if your changes are behind the latest commit on the branch. To do a safe merge, do **git pull**. If there are no conflicting changes, the content should merge automatically.
+If the branch does not merge automatically, open the file, make sure that there are no conflicting changes then then merge. Make sure that the changes are made appropiately and in fairness with the other contribution to the branch.
