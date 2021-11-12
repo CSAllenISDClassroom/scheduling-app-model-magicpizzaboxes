@@ -159,8 +159,8 @@ exist and fail if the points are added to the wrong person or accept
 the person when their name doesn’t exist in the school database.
 
 ## See Class Difficulties
-maybe the AP exam the class takes as well
 ### Functionality
+Students will be able to click on an additional info buttom listed on the course and see handpicked feedback from other students. Statistics to display the difficulty will also be shown in a neat format, with items such as the average grade, pass rate, and other information that could be gathered from surveying students. This will help students better determine if they can match the rigor of the course and succeed without having to try it out and potentially drop the class later.
 ### Design
 Survey a large group of students, including those who have taken the
 class in question in order to make a class difficulty rank. This is
@@ -174,9 +174,10 @@ and that of every course on the application to ensure the two match
 up. If it does not match up, then the test fails.
 
 ## Assign Classes an Arena Scheduling Priority Score
-based on class demand
 ### Functionality
+Based on the determined popularity and demand of a class and the scheduling time (regular or priority) each class will have an associated icon to display the demand. The icon will always be next to the class name so students are aware of the demand for their desired class. Classes will have either have an early scheduling popularity, general popularity, or regular scheduling popularity icon to easily detail what scheduling time it will be more competetive for. Statistics for the % of students who plan to put it on priority vs regular decision will also be shown in a more detailed information section.
 ### Design
+Information will be collected from students to determine their estimated scheduling time (regular or priority) before they create their schedule. Classes will have a popularity level which will be based on how many students placed it on their sample schedule, with a database to store the amount of times placed on a a schedule and track what scheduling time the students who placed it on their schedule plan to use.
 ### QA
 Make sure the arena scheduling priority score represents their demand
 for classes given by student data. If it does not match up then the
