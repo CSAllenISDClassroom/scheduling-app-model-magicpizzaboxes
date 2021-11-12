@@ -2,7 +2,7 @@
 
 **Table of Contents**
 1. [Show Schedule Conflicts](#show-schedule-conflicts)
-2. [Calculate Maximum GPA](#Calculate-Maximum-GPA)
+2. [Calculate GPA](#Calculate-GPA)
 3. [Show Credits Gained Based on Schedule](#Show-Credits-Gained-Based-on-Schedule)
 4. [Comprehensive Class Search Feature with Filtering](#Comprehensive-Class-Search-Feature-with-Filtering)
 5. [Ability to Print/Share Schedules](#Ability-to-Print-Share-and-Schedules)
@@ -22,17 +22,24 @@
 
 ## Show Schedule Conflicts
 ### Functionality
-this is the functionality
+We will not allow for students to input a schedule conflit. However we will tell
+them why they cant schedule a particular class but we will show them how to fix
+the problem they are having
 ### Design
-this is the development
+Allow for implimentation of clases that dont have conflicts but dont allow for
+clases that would pose a schedule conflict to be placed on the schedule and
+return a reason why and possible solution to the problem
 ### QA
 Our testing procedure is to identify scheduling conflict through error
 messages or warnings when it occurs by intentionally scheduling
 conflicting classes. The test succeeds when conflicts are
 identified/displayed to the user and fails if left unnoticed.
 
-## Calculate Maximum GPA
+## Calculate GPA
 ### Functionality
+Allow for student to estimate the grade they will get in the classes
+they choose and it would show them the weighted gpa they would receive
+based on the grades they inputed. 
 ### Design
 In order to calculate the maximum GPA for classes, we will have to add
 the maximum GPA in each of the student’s classes then divide it by the
@@ -83,6 +90,12 @@ English literature and composition found under key word “Math”.
 
 ## Ability to Print and Share Schedules
 ### Functionality
+One of our main goals with this app is to make the scheduling process 
+easier for students and the school administration. This function would 
+be used to send schedules to counselors and fellow students. With this
+feature, counselors could get a copy of someones schedule along with
+a help ticket. Students could also print a copy of their schedule and 
+bring it in to the counselor at school.
 ### Design
 We will need to be able to write schedules to a local save and then be
 able to send it to other applications. We will need to research how to
@@ -94,6 +107,9 @@ formatted then passed, else fail.
 
 ## AB Day View
 ### Functionality
+This will be a visual representation of what the schedule will look like
+with the A/B Days at Allen. This will help students understand and 
+customize their schedule. 
 ### Design
 Like the Search Feature with filtering, we will have to filter all
 available classes based on the day. In order to do this, we can find
@@ -109,7 +125,18 @@ correct A/B school day. If anything else appears, it fails.
 ## Links for Help
 including filing help tickets from the app
 ### Functionality
+Because this is a new and unfamiliar software for the students, we 
+will have to add helpful links for the student to use. These will
+include links to the Allen High School acedemic planning guide:
+https://canvas.allenisd.org/courses/858742. On top of this,
+we can operate a help ticket through our website, this will allow
+students to both ask questions and get their questions answered 
+without having to leave the site.
 ### Design
+In order to add helpful links, all we will have to do is get access
+to the links, after this we will need to display it in the View. In
+order to manage the help ticket, we will have to store both the responses
+and questions on the database.
 ### QA
 First, the links for help open up when clicked. Then make sure the
 proper website is opened up and ensure that the correct content is
@@ -121,6 +148,11 @@ class to class
 ### Functionality
 ### Design
 ### QA
+Manually optimize a map of a schedule and then compare it to that of
+the program. If the maps do not match up, analyze for which map is
+more efficient. If the manual map is more efficient, then there is an
+error with the code. If the computer school map is more efficient then
+the test passes.
 
 ## Ability to Add Notes
 we will need to have the ability for users to sign in and store their
@@ -147,8 +179,8 @@ exist and fail if the points are added to the wrong person or accept
 the person when their name doesn’t exist in the school database.
 
 ## See Class Difficulties
-maybe the AP exam the class takes as well
 ### Functionality
+Students will be able to click on an additional info buttom listed on the course and see handpicked feedback from other students. Statistics to display the difficulty will also be shown in a neat format, with items such as the average grade, pass rate, and other information that could be gathered from surveying students. This will help students better determine if they can match the rigor of the course and succeed without having to try it out and potentially drop the class later.
 ### Design
 Survey a large group of students, including those who have taken the
 class in question in order to make a class difficulty rank. This is
@@ -162,9 +194,10 @@ and that of every course on the application to ensure the two match
 up. If it does not match up, then the test fails.
 
 ## Assign Classes an Arena Scheduling Priority Score
-based on class demand
 ### Functionality
+Based on the determined popularity and demand of a class and the scheduling time (regular or priority) each class will have an associated icon to display the demand. The icon will always be next to the class name so students are aware of the demand for their desired class. Classes will have either have an early scheduling popularity, general popularity, or regular scheduling popularity icon to easily detail what scheduling time it will be more competetive for. Statistics for the % of students who plan to put it on priority vs regular decision will also be shown in a more detailed information section.
 ### Design
+Information will be collected from students to determine their estimated scheduling time (regular or priority) before they create their schedule. Classes will have a popularity level which will be based on how many students placed it on their sample schedule, with a database to store the amount of times placed on a a schedule and track what scheduling time the students who placed it on their schedule plan to use.
 ### QA
 Make sure the arena scheduling priority score represents their demand
 for classes given by student data. If it does not match up then the
@@ -176,20 +209,38 @@ location, lunch, credits, pre-requisites, etc. Maybe take data from
 Academic Planning Guide.
 ### Functionality
 ### Design
+<<<<<<< HEAD
 After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School website (We can put all of the data in a JSON file), we can display the respective information by each class. 
+=======
+After retrieving proper information about each class (Location, Lunch, 
+Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the 
+Allen High School webiste (We can put all of the data in a JSON file), 
+we can display the respective information by each class. 
+>>>>>>> f6e74eb1be10b720ce7993887798fd3daaed0dec
 ### QA
+Make sure it shows the correct room, hall, lunch if it is 3rd or 6th
+period, etc. The test succeeds if they come back with the correct
+information and fail if at least one of the information is incorrect.
 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
 ### Design
-In order to enforce credit and endorsement requirements, we will have to store certain information. This information includes which endorsement the student is going for and how many credits they have and require. We can then use this information to calculate if the classes that they took have the required credits and endorsements.
+In order to enforce credit and endorsement requirements, we will have to 
+store certain information. This information includes which endorsement the 
+student is going for and how many credits they have and require. We can then 
+use this information to calculate if the classes that they took have the 
+required credits and endorsements.
 ### QA
 
 ## Show Live Class Stats
 like # of people who selected it, etc.
 ### Functionality
 ### Design
-In order to implement Live Class Stats (The # of people who took it, the number of seats left, how many people are searching it up, etc.) we will have to maintain a server that keeps track of all current stats and update accordingly. In order to achieve this, we can use REST API to send and retrieve information to the server.
+In order to implement Live Class Stats (The # of people who took it, 
+the number of seats left, how many people are searching it up, etc.) 
+we will have to maintain a server that keeps track of all current stats 
+and update accordingly. In order to achieve this, we can use REST API to 
+send and retrieve information to the server.
 ### QA
 Have a member of the QA team manually select a class and check if the
 status changes and the selection was registered. If registered, the
