@@ -209,14 +209,7 @@ location, lunch, credits, pre-requisites, etc. Maybe take data from
 Academic Planning Guide.
 ### Functionality
 ### Design
-<<<<<<< HEAD
 After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School website (We can put all of the data in a JSON file), we can display the respective information by each class. 
-=======
-After retrieving proper information about each class (Location, Lunch, 
-Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the 
-Allen High School webiste (We can put all of the data in a JSON file), 
-we can display the respective information by each class. 
->>>>>>> f6e74eb1be10b720ce7993887798fd3daaed0dec
 ### QA
 Make sure it shows the correct room, hall, lunch if it is 3rd or 6th
 period, etc. The test succeeds if they come back with the correct
