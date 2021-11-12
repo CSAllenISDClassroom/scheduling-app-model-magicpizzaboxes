@@ -1,4 +1,5 @@
-# Sample Scheduler App Functionality
+
+83;40800;0c# Sample Scheduler App Functionality
 
 **Table of Contents**
 1. [Show Schedule Conflicts](#show-schedule-conflicts)
@@ -114,7 +115,6 @@ periods 1,5,6,7,8 are on B day and appear the correct schedule on the
 correct A/B school day. If anything else appears, it fails.
 
 ## Links for Help
-including filing help tickets from the app
 ### Functionality
 Because this is a new and unfamiliar software for the students, we 
 will have to add helpful links for the student to use. These will
@@ -134,10 +134,18 @@ proper website is opened up and ensure that the correct content is
 opened up on the websites.
 
 ## School Map
-maybe it shows where your classes are and the path youll take from
-class to class
 ### Functionality
+This will display a map as well as where all of the students selected
+classes are located. On top of this, it will show the path that the student
+will have to take throughout the day.
 ### Design
+In order to display the map with all of the students classes, we will need
+to store all of the the classes along with their vector positions on the school. 
+Using these vector positions, we can proportionaly display the classes on a
+map of the school. We can then use path finding to find the path to each class 
+while avoiding obstacles. In order pathfind we will have to store where the 
+students are allowed to walk (not the walls) and where the student is allowed 
+to walk and then calculate the path based on this information. 
 ### QA
 Manually optimize a map of a schedule and then compare it to that of
 the program. If the maps do not match up, analyze for which map is
