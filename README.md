@@ -4,35 +4,50 @@ The Sample Scheduling App aims to help fellow students with creating a schedule 
 
 ## Team Members
 
-* **Leads**
- 	* **Product Manager**
-		* Reese Hoffart
-	* **Project Manager** 
-		* Mark Amirkan
-	* **Development Manager**
-		* Tariq Mahamid
-	* **QA Manager**
-		* Frank Fan
-	* **Release Manager**
-		* Sahil Sheth
-	* **Database Manager**
-		* Rodrigo Suarez
+
+### Leads
 
 
-* **Engineers**
-	* **QA Engineers**: 
-		* Frank Fan
-		* Amy Pham
-		* Anish Saravanan
-	* **Development Engineers**: 
-		* Tariq Mahamid
-		* Mark Amirkan
-		* Reese Hoffart
-		* Sahil Sheth
-		* Brian Chei 
-		* Aidan Kollar
-		* Ross Fowler
-		* Rodrigo Suarez
+* **Product Manager**
+	* Reese Hoffart
+
+
+* **Project Manager** 
+	* Mark Amirkan
+
+
+* **Development Manager**
+	* Tariq Mahamid
+
+
+* **QA Manager**
+	* Frank Fan
+
+
+* **Release Manager**
+	* Sahil Sheth
+
+
+* **Database Manager**
+	* Rodrigo Suarez
+
+### Engineers
+
+* **QA Engineers**: 
+	* Frank Fan
+	* Amy Pham
+	* Anish Saravanan
+
+
+* **Development Engineers**: 
+	* Tariq Mahamid
+	* Mark Amirkan
+	* Reese Hoffart
+	* Sahil Sheth
+	* Brian Chei 
+	* Aidan Kollar
+	* Ross Fowler
+	* Rodrigo Suarez
 
 
 ### Role Responsibilities
