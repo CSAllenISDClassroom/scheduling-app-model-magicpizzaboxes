@@ -20,15 +20,17 @@
 16. [Combined School Class List](#Combined-School-Class-List)
 17. [Viewable Blocked Schedule](#Viewable-Blocked-Schedule)
 18. [More App Accessibility](#More-App-Accessibility)
+19. [Random Schedule Maker](#Random-Schedule-Maker)
+
 ## Show Schedule Conflicts
 ### Functionality
-We will not allow for students to input a schedule conflit. However we will tell
+We will not allow for students to input a schedule conflict. However we will tell
 them why they cant schedule a particular class but we will show them how to fix
 the problem they are having
 ### Design
-Allow for implimentation of clases that dont have conflicts but dont allow for
-clases that would pose a schedule conflict to be placed on the schedule and
-return a reason why and possible solution to the problem
+Allow for implementation of classes that don't have conflicts but don't allow for
+classes that would pose a schedule conflict to be placed on the schedule and
+return a reason why and possible solution to the problem.
 ### QA
 Our testing procedure is to identify scheduling conflict through error
 messages or warnings when it occurs by intentionally scheduling
@@ -43,7 +45,7 @@ or warning occurs.
 ### Functionality
 Allow for student to estimate the grade they will get in the classes
 they choose and it would show them the weighted gpa they would receive
-based on the grades they inputed.
+based on the grades they inputted.
 ### Design
 In order to calculate the maximum GPA for classes, we will have to add
 the maximum GPA in each of the student’s classes then divide it by the
@@ -138,7 +140,7 @@ correct A/B school day. If anything else appears, it fails.
 ### Functionality
 Because this is a new and unfamiliar software for the students, we 
 will have to add helpful links for the student to use. These will
-include links to the Allen High School acedemic planning guide:
+include links to the Allen High School academic planning guide:
 https://canvas.allenisd.org/courses/858742. On top of this,
 we can operate a help ticket through our website, this will allow
 students to both ask questions and get their questions answered 
@@ -163,7 +165,7 @@ will have to take throughout the day.
 ### Design
 In order to display the map with all of the students classes, we will need
 to store all of the the classes along with their vector positions on the school. 
-Using these vector positions, we can proportionaly display the classes on a
+Using these vector positions, we can proportionally display the classes on a
 map of the school. We can then use path finding to find the path to each class 
 while avoiding obstacles. In order pathfind we will have to store where the 
 students are allowed to walk (not the walls) and where the student is allowed 
@@ -206,7 +208,7 @@ the person when their name doesn’t exist in the school database.
 
 ## See Class Difficulties
 ### Functionality
-Students will be able to click on an additional info buttom listed on
+Students will be able to click on an additional info button listed on
 the course and see handpicked feedback from other students. Statistics
 to display the difficulty will also be shown in a neat format, with
 items such as the average grade, pass rate, and other information that
@@ -227,7 +229,7 @@ up. If it does not match up, then the test fails.
 
 ## Assign Classes an Arena Scheduling Priority Score
 ### Functionality
-Based on the determined popularity and demand of a class and the scheduling time (regular or priority) each class will have an associated icon to display the demand. The icon will always be next to the class name so students are aware of the demand for their desired class. Classes will have either have an early scheduling popularity, general popularity, or regular scheduling popularity icon to easily detail what scheduling time it will be more competetive for. Statistics for the % of students who plan to put it on priority vs regular decision will also be shown in a more detailed information section.
+Based on the determined popularity and demand of a class and the scheduling time (regular or priority) each class will have an associated icon to display the demand. The icon will always be next to the class name so students are aware of the demand for their desired class. Classes will have either have an early scheduling popularity, general popularity, or regular scheduling popularity icon to easily detail what scheduling time it will be more competitive for. Statistics for the % of students who plan to put it on priority vs regular decision will also be shown in a more detailed information section.
 ### Design
 Information will be collected from students to determine their estimated scheduling time (regular or priority) before they create their schedule. Classes will have a popularity level which will be based on how many students placed it on their sample schedule, with a database to store the amount of times placed on a a schedule and track what scheduling time the students who placed it on their schedule plan to use.
 ### QA
@@ -238,9 +240,8 @@ user. If it doesn’t update for the new user then the test fails. If it
 updates correctly then the test passes.
 
 ## Show Details for Each Class
-location, lunch, credits, pre-requisites, etc. Maybe take data from
-Academic Planning Guide.
 ### Functionality
+Every class listing will have a button on it to view details. This button will summon a pop-up that displays the location, lunch tim, credits, and pre-requisites for that class. The pop-up will also contain a link to the class' listing in the Academic Planning Guide.
 ### Design
 After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School website (We can put all of the data in a JSON file), we can display the respective information by each class. 
 ### QA
@@ -255,6 +256,7 @@ classes, and Steam Center classes.
 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
+The sample scheduling app will warn the user if the classes they have chosen do not put them on track to receive enough credits to graduate or earn their endorsement. Upon passing the page where the user selects courses, the app will check if credit requirements are met. If they are, the app will continue to let the user create a schedule, otherwise, a pop-up warning will display. 
 ### Design
 In order to enforce credit and endorsement requirements, we will have to 
 store certain information. This information includes which endorsement the 
@@ -295,7 +297,8 @@ Our backend will contain a function to return all the eligible class periods for
 ### QA
 Make sure all eligible class period appear. When the user choose a
 class, make sure the correct possible period was highlighted and make
-sure the class doesn't creat any conflicts.
+sure the class doesn't create any conflicts.
+
 ## More App Accessibility
 ### Functionality
 Our website will be mobile friendly. We will also ensure that all gestures will work between all platforms. For example, when adding a class to the blocked schedule graphic, the user will click the class then the period they want it rather than needing to drag the class to the blocked schedule graphic.
@@ -309,18 +312,18 @@ should also test if the link is easily compatible on mobile phones. We
 will test on an android phone as well as apple phones to confirm
 compatibility on all platforms alongside computers.
 
-## Random schedule maker
+## Random Schedule Maker
 ### Functionality
 Allow for a student to pick the classes and make a completely random
 schedule that does not have any conflicts. They would click a button
 that would put their classes in the schedule
 ### Design
-randomly select classes and put in a random period. Then randomly put
+Randomly select classes and put in a random period. Then randomly put
 the rest in a location randomly selected and only allow for it to be
-in the location if no schedule conflicts and if the classe is allowed
+in the location if no schedule conflicts and if the class is allowed
 during that time.
 ### QA
 Make sure the schedule create no conflict. If there is a conflict created, the test fails. But if the schedule can work, the test succeeds
 # If you would like to add another feature to this list: list it below.
-- randomize schedule
+- feature
 
