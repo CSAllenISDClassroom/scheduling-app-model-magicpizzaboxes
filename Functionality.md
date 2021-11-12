@@ -22,9 +22,13 @@
 
 ## Show Schedule Conflicts
 ### Functionality
-this is the functionality
+We will not allow for students to input a schedule conflit. However we will tell
+them why they cant schedule a particular class but we will show them how to fix
+the problem they are having
 ### Design
-this is the development
+Allow for implimentation of clases that dont have conflicts but dont allow for
+clases that would pose a schedule conflict to be placed on the schedule and
+return a reason why and possible solution to the problem
 ### QA
 Our testing procedure is to identify scheduling conflict through error
 messages or warnings when it occurs by intentionally scheduling
@@ -121,6 +125,11 @@ class to class
 ### Functionality
 ### Design
 ### QA
+Manually optimize a map of a schedule and then compare it to that of
+the program. If the maps do not match up, analyze for which map is
+more efficient. If the manual map is more efficient, then there is an
+error with the code. If the computer school map is more efficient then
+the test passes.
 
 ## Ability to Add Notes
 we will need to have the ability for users to sign in and store their
@@ -177,22 +186,43 @@ location, lunch, credits, pre-requistates, etc. Maybe take data from
 Academic Planning Guide.
 ### Functionality
 ### Design
-After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School webiste (We can put all of the data in a JSON file), we can display the respective information by each class. 
+After retrieving proper information about each class (Location, Lunch, 
+Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the 
+Allen High School webiste (We can put all of the data in a JSON file), 
+we can display the respective information by each class. 
 ### QA
+Make sure it shows the correct room, hall, lunch if it is 3rd or 6th
+period, etc. The test succeeds if they come back with the correct
+information and fail if at least one of the information is incorrect.
 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
 ### Design
-In order to enforce credit and endorsement requirements, we will have to store certain information. This information includes which endorsement the student is going for and how many credits they have and require. We can then use this information to calculate if the classes that they took have the required credits and endorsements.
+In order to enforce credit and endorsement requirements, we will have to 
+store certain information. This information includes which endorsement the 
+student is going for and how many credits they have and require. We can then 
+use this information to calculate if the classes that they took have the 
+required credits and endorsements.
 ### QA
 
 ## Show Live Class Stats
 like # of people who selected it, etc.
 ### Functionality
 ### Design
-In order to implement Live Class Stats (The # of people who took it, the number of seats left, how many people are searching it up, etc.) we will have to maintain a server that keeps track of all current stats and update accordingly. In order to achieve this, we can use REST API to send and retrieve information to the server.
+In order to implement Live Class Stats (The # of people who took it, 
+the number of seats left, how many people are searching it up, etc.) 
+we will have to maintain a server that keeps track of all current stats 
+and update accordingly. In order to achieve this, we can use REST API to 
+send and retrieve information to the server.
 ### QA
-
+Have a member of the QA team manually select a class and check if the
+status changes and the selection was registered. If registered, the
+test is successful, if not an error message displayed to the
+developers. Another test conducted by purposely enlisting into a class
+that’s full (shown by the amount of people who have already selected
+the class on the app). Test is successful if an error is returned,
+listing that there are no available seats. Test fails if user is
+allowed to select class and it registers.
 ## Combined School Class List
 ### Functionality
 ### Design
