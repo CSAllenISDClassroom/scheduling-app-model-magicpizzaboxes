@@ -163,6 +163,8 @@ error with the code. If the computer school map is more efficient then
 the test passes.
 
 ## Ability to Add Notes
+**Mark was assigned to implement the design and functionality for this feature, so if it's not done that's probably why.**
+
 we will need to have the ability for users to sign in and store their
 notes for this
 ### Functionality
@@ -175,6 +177,8 @@ the test is passed. If notes don't open up or the notes are not the
 same, then there is a bug.
 
 ## Ability to Sign In
+**Mark was assigned to implement the design and functionality for this feature, so if it's not done that's probably why.**
+
 can track who uses app and give engagement points
 ### Functionality
 ### Design
