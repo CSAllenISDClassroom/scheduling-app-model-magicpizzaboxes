@@ -188,7 +188,13 @@ the person when their name doesn’t exist in the school database.
 
 ## See Class Difficulties
 ### Functionality
-Students will be able to click on an additional info buttom listed on the course and see handpicked feedback from other students. Statistics to display the difficulty will also be shown in a neat format, with items such as the average grade, pass rate, and other information that could be gathered from surveying students. This will help students better determine if they can match the rigor of the course and succeed without having to try it out and potentially drop the class later.
+Students will be able to click on an additional info buttom listed on
+the course and see handpicked feedback from other students. Statistics
+to display the difficulty will also be shown in a neat format, with
+items such as the average grade, pass rate, and other information that
+could be gathered from surveying students. This will help students
+better determine if they can match the rigor of the course and succeed
+without having to try it out and potentially drop the class later.
 ### Design
 Survey a large group of students, including those who have taken the
 class in question in order to make a class difficulty rank. This is
@@ -276,10 +282,12 @@ Our website will be mobile friendly. We will also ensure that all gestures will 
 ### Design
 We will use bootstrap on the frontend to format the sample schedule for desktop as well as mobile. If we have more time, we could also use React Native to create a mobile app. The app would use the same backend, however.
 ### QA
-Make sure the link for download takes users to the correct download
-page. Ensures that the app can be found on Apple and Google Play
-store if we create a mobile app version. Using a phone, test to see if the app/website is formatted properly and
-all functions on the phone are properly working.
+Test the accessible link by first manually clicking on the link and
+making sure that the link leads the user to our scheduling app. Test
+passes if the link leads to the app and it fails if it doesn’t. We
+should also test if the link is easily compatible on mobile phones. We
+will test on an android phone as well as apple phones to confirm
+compatibility on all platforms alongside computers.
 
 # If you would like to add another feature to this list: list it below.
 - randomize schedule
