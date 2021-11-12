@@ -20,7 +20,6 @@
 16. [Combined School Class List](#Combined-School-Class-List)
 17. [Viewable Blocked Schedule](#Viewable-Blocked-Schedule)
 18. [More App Accessibility](#More-App-Accessibility)
-
 ## Show Schedule Conflicts
 ### Functionality
 We will not allow for students to input a schedule conflit. However we will tell
@@ -163,6 +162,8 @@ error with the code. If the computer school map is more efficient then
 the test passes.
 
 ## Ability to Add Notes
+**Mark was assigned to implement the design and functionality for this feature, so if it's not done that's probably why.**
+
 we will need to have the ability for users to sign in and store their
 notes for this
 ### Functionality
@@ -175,6 +176,8 @@ the test is passed. If notes don't open up or the notes are not the
 same, then there is a bug.
 
 ## Ability to Sign In
+**Mark was assigned to implement the design and functionality for this feature, so if it's not done that's probably why.**
+
 can track who uses app and give engagement points
 ### Functionality
 ### Design
@@ -289,6 +292,17 @@ should also test if the link is easily compatible on mobile phones. We
 will test on an android phone as well as apple phones to confirm
 compatibility on all platforms alongside computers.
 
+## Random schedule maker
+### Functionality
+Allow for a student to pick the classes and make a complelyt random
+schedule that does not have any conflicts. They would click a button
+that would put their classes in the schedule
+### Design
+randomly select classes and put in a random period. Then randomly put
+the rest in a location rando,ly selected and only allow for it to be
+in the location if no schedule conflicts and if the classe is allowed
+during that time.
+### QA
 # If you would like to add another feature to this list: list it below.
 - randomize schedule
 
