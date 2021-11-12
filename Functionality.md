@@ -128,12 +128,23 @@ notes for this
 ### Functionality
 ### Design
 ### QA
+Write random notes on the note feature and save it to the profile and
+close it. Attempt to open the notes on the same computer and a
+different computer. If the notes open up with the same content then
+the test is passed. If notes don't open up or the notes are not the
+same, then there is a bug.
 
 ## Ability to Sign In
 can track who uses app and give engagement points
 ### Functionality
 ### Design
 ### QA
+Our test makes sure the user matches an actual student enrolled in
+Allen ISD by confirming their student ID and has their account links
+correctly. Our test succeeds if the Eagle Engagement points are added
+to the correct person, return an error message if the user doesn’t
+exist and fail if the points are added to the wrong person or accept
+the person when their name doesn’t exist in the school database.
 
 ## See Class Difficulties
 maybe the AP exam the class takes as well
@@ -146,12 +157,19 @@ information about different aspects of the class (AP Exam Pass Rate,
 Average Grade, Information from the Survey, Etc.), we can display it
 easily by the class making it accessible to the student.
 ### QA
+Manually check the given data of difficulty from surveys of students
+and that of every course on the application to ensure the two match
+up. If it does not match up, then the test fails.
 
 ## Assign Classes an Arena Scheduling Priority Score
 based on class demand
 ### Functionality
 ### Design
 ### QA
+Make sure the arena scheduling priority score represents their demand
+for classes given by student data. If it does not match up then the
+test fails.
+
 
 ## Show Details for Each Class
 location, lunch, credits, pre-requistates, etc. Maybe take data from
@@ -164,6 +182,7 @@ After retrieving proper information about each class (Location, Lunch, Credits, 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
 ### Design
+In order to enforce credit and endorsement requirements, we will have to store certain information. This information includes which endorsement the student is going for and how many credits they have and require. We can then use this information to calculate if the classes that they took have the required credits and endorsements.
 ### QA
 
 ## Show Live Class Stats
@@ -172,7 +191,14 @@ like # of people who selected it, etc.
 ### Design
 In order to implement Live Class Stats (The # of people who took it, the number of seats left, how many people are searching it up, etc.) we will have to maintain a server that keeps track of all current stats and update accordingly. In order to achieve this, we can use REST API to send and retrieve information to the server.
 ### QA
-
+Have a member of the QA team manually select a class and check if the
+status changes and the selection was registered. If registered, the
+test is successful, if not an error message displayed to the
+developers. Another test conducted by purposely enlisting into a class
+that’s full (shown by the amount of people who have already selected
+the class on the app). Test is successful if an error is returned,
+listing that there are no available seats. Test fails if user is
+allowed to select class and it registers.
 ## Combined School Class List
 ### Functionality
 ### Design
