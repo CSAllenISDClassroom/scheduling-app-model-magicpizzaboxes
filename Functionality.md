@@ -22,7 +22,7 @@
 
 ## Show Schedule Conflicts
 ### Functionality
-this is the functionality
+We will not allow for students to input a schedule conflit. However we will tell them why they cant schedule a particular class but we will show them how to fix the problem they are having
 ### Design
 this is the development
 ### QA
