@@ -176,20 +176,31 @@ location, lunch, credits, pre-requistates, etc. Maybe take data from
 Academic Planning Guide.
 ### Functionality
 ### Design
-After retrieving proper information about each class (Location, Lunch, Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the Allen High School webiste (We can put all of the data in a JSON file), we can display the respective information by each class. 
+After retrieving proper information about each class (Location, Lunch, 
+Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the 
+Allen High School webiste (We can put all of the data in a JSON file), 
+we can display the respective information by each class. 
 ### QA
 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
 ### Design
-In order to enforce credit and endorsement requirements, we will have to store certain information. This information includes which endorsement the student is going for and how many credits they have and require. We can then use this information to calculate if the classes that they took have the required credits and endorsements.
+In order to enforce credit and endorsement requirements, we will have to 
+store certain information. This information includes which endorsement the 
+student is going for and how many credits they have and require. We can then 
+use this information to calculate if the classes that they took have the 
+required credits and endorsements.
 ### QA
 
 ## Show Live Class Stats
 like # of people who selected it, etc.
 ### Functionality
 ### Design
-In order to implement Live Class Stats (The # of people who took it, the number of seats left, how many people are searching it up, etc.) we will have to maintain a server that keeps track of all current stats and update accordingly. In order to achieve this, we can use REST API to send and retrieve information to the server.
+In order to implement Live Class Stats (The # of people who took it, 
+the number of seats left, how many people are searching it up, etc.) 
+we will have to maintain a server that keeps track of all current stats 
+and update accordingly. In order to achieve this, we can use REST API to 
+send and retrieve information to the server.
 ### QA
 Have a member of the QA team manually select a class and check if the
 status changes and the selection was registered. If registered, the
