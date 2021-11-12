@@ -1,5 +1,5 @@
 
-83;40800;0c# Sample Scheduler App Functionality
+# Sample Scheduler App Functionality
 
 **Table of Contents**
 1. [Show Schedule Conflicts](#show-schedule-conflicts)
