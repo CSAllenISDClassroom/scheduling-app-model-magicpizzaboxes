@@ -34,13 +34,17 @@ return a reason why and possible solution to the problem
 Our testing procedure is to identify scheduling conflict through error
 messages or warnings when it occurs by intentionally scheduling
 conflicting classes. The test succeeds when conflicts are
-identified/displayed to the user and fails if left unnoticed.
+identified/displayed to the user and fails if left unnoticed. We will
+also schedule correct, not conflict classes. The test succeeds if
+there are no error messages or warnings and fails if an error message
+or warning occurs.
+
 
 ## Calculate GPA
 ### Functionality
 Allow for student to estimate the grade they will get in the classes
 they choose and it would show them the weighted gpa they would receive
-based on the grades they inputed. 
+based on the grades they inputed.
 ### Design
 In order to calculate the maximum GPA for classes, we will have to add
 the maximum GPA in each of the student’s classes then divide it by the
@@ -50,7 +54,8 @@ Manually calculate the GPA through a calculator and make sure that the
 number displayed within the app matches the result of the GPA
 calculator. The test succeeds when the number matches the result of
 the GPA calculator and has an error message if users have an
-inappropriate input, and fails if something else appears.
+inappropriate input (characters instead of number,...), and fails if
+something else appears.
 
 
 ## Show Credits Gained Based on Schedule
@@ -67,7 +72,9 @@ schedule.
 ### QA
 Add classes to the schedule and see if credit is added. If credit does
 not increase, then the test does not pass. If credit is gained for
-every instance of adding a class, then the test is passed.
+every instance of adding a class, then the test is passed. The test
+also fail if the amount of credits added are incorrect (For example:
+Add 1 credit for 0.5 credit class)
 
 ## Comprehensive Class Search Feature with Filtering
 ### Functionality
@@ -87,7 +94,9 @@ their names.
 Our testing procedure to ensure that all classes in the given subject
 are included when searched with the key word of the subject. Require
 that classes not found in the subject aren't misplaced (example:
-English literature and composition found under key word “Math”.
+English literature and composition found under key word “Math”) and
+include all classes contained in the key word(example: Calculus is not
+found under Math key word) .
 
 ## Ability to Print and Share Schedules
 ### Functionality
@@ -103,8 +112,11 @@ able to send it to other applications. We will need to research how to
 connect from this app to others.
 ### QA
 Attempt to export the schedule. Export needs to be in proper format
-(ie pdf or whatever is needed). If the exported file is properly
-formatted then passed, else fail.
+(ie pdf, txt,...). If the exported file is properly formatted then
+passed, else (for example: cannot print the full schedule, schedule is
+cut in half,...) the test fails. For the share feature, make sure the
+link leads to the correct, full schedule. If the wrong schedule is
+sent or was sent with the wrong format, the test fails.
 
 ## AB Day View
 ### Functionality
@@ -138,9 +150,11 @@ to the links, after this we will need to display it in the View. In
 order to manage the help ticket, we will have to store both the responses
 and questions on the database.
 ### QA
-First, the links for help open up when clicked. Then make sure the
-proper website is opened up and ensure that the correct content is
-opened up on the websites.
+Make sure the correct site is being opened when we click the
+link. Also make sure that students can reach the correct person to get
+help when they access the help ticket. If the wrong site is open or
+the help request doesn’t reach people in the help center the test
+fails.
 
 ## School Map
 ### Functionality
@@ -156,11 +170,12 @@ while avoiding obstacles. In order pathfind we will have to store where the
 students are allowed to walk (not the walls) and where the student is allowed 
 to walk and then calculate the path based on this information. 
 ### QA
-Manually optimize a map of a schedule and then compare it to that of
-the program. If the maps do not match up, analyze for which map is
-more efficient. If the manual map is more efficient, then there is an
-error with the code. If the computer school map is more efficient then
-the test passes.
+Make sure the correct rooms of both periods appear in the correct
+place, hall and floor. Make sure the path students take are not going
+through the wall, floor or restricted area. If the periods are in
+different campuses (LFC, AHS or STEAM), show the path to the bus stop
+first then from the bus stop to their class not the walking path from
+campus to campus.
 
 ## Ability to Add Notes
 we will need to have the ability for users to sign in and store their
