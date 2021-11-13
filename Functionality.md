@@ -123,7 +123,7 @@ sent or was sent with the wrong format, the test fails.
 ### Functionality
 This will be a visual representation of what the schedule will look
 like with the A/B Days at Allen. This will help students understand
-and  customize their schedule. 
+and customize their schedule. 
 ### Design
 Like the Search Feature with filtering, we will have to filter all
 available classes based on the day. In order to do this, we can find
@@ -289,6 +289,7 @@ chosen do not put them on track to receive enough credits to graduate
 or earn their endorsement. Upon passing the page where the user
 selects courses, the app will check if credit requirements are met. If
 they are, the app will continue to let the user create a schedule,
+<<<<<<< HEAD
 otherwise, a pop-up warning will display. 
 ### Design
 In order to enforce credit and endorsement requirements, we will have
@@ -297,6 +298,15 @@ endorsement the  student is going for and how many credits they have
 and require. We can then  use this information to calculate if the
 classes that they took have the  required credits and endorsements.
 ### QA
+We will pretend to be a student who wants to choose a random
+endorsement, such as Arts and Humanties, as well as a fake amount of
+credits earned for all the high school requirements to pass Allen High
+School. Then we will run a test where we will purposely choose classes
+that do not match with our endorsement to see if recomendations that
+match our endorsements are encouraged. We will chooses classes that do
+not pass the requirement to pass High School. If the app reminds
+students about the credits neccesary for graduating then the test
+passes.
 
 ## Show Live Class Stats
 ### Functionality
