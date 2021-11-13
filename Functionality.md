@@ -27,10 +27,12 @@ We will not allow for students to input a schedule conflict. However
 we will tell them why they cant schedule a particular class but we
 will show them how to fix the problem they are having
 ### Design
-Allow for implementation of classes that don't have conflicts but
-don't allow for classes that would pose a schedule conflict to be
-placed on the schedule and return a reason why and possible solution
-to the problem.
+To display various scheduling conflicts that may occur during the model 
+scheduling process, a clear, comprehensive design plan is necessary. In 
+addition to the basic scheduling procedures that allow users to schedule 
+1 class in each period (0th-8th), users will be restricted from scheduling 
+conflicting classes and will receive an error message if this procedure is 
+attempted. 
 ### QA
 Our testing procedure is to identify scheduling conflict through error
 messages or warnings when it occurs by intentionally scheduling
@@ -49,7 +51,7 @@ based on the grades they inputted.
 ### Design
 In order to calculate the maximum GPA for classes, we will have to add
 the maximum GPA in each of the student’s classes then divide it by the
-number of classes that the students took.
+number of classes that the students took. 
 ### QA
 Manually calculate the GPA through a calculator and make sure that the
 number displayed within the app matches the result of the GPA
