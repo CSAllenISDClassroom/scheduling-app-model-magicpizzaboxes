@@ -231,7 +231,9 @@ the person when their name doesn’t exist in the school database.
 
 ## See Class Difficulties
 ### Functionality
+This feature will allow the user to see student feedback on how difficult the class was for them as well as the average grade for the class in the previous year. This will allow the students to get a more accurate read of what the class is about and how difficult the class will expect to be for them. There is going to be an option from choosing the class that allows the user to see the student feedback and average grade.
 ### Design
+To implement this feature, we would first need to gather data from student surverys and get the average grade of the class from administrators and staff. Then we can just display the information when the user clicks the option to view the information.
 ### QA
 Manually check the given data of difficulty from surveys of students
 and that of every course on the application to ensure the two match
@@ -391,7 +393,11 @@ succeeds
 
 ## Combined School Class List
 ### Functionality
+This feature will allow the user to see all Allen High School, STEAM Center and Collin Technical Campus classes all together. To make the most authentic schedule possible, these options will be able to fit in the same schedule mold and tell the user of any restrictions
 ### Design
+To implement these, we will need an accurate timings for all classes. Then we can just compare and make sure that the classes are available in the periods and are compatible with classes from other campuses.
 ### QA
+To test if this works, we need to add a class from each campus and test whether they are compatible in the same schedule. If period conflicts arise, then they should give a error and an error message saying that there is a conflict in the period timings.
+
 # If you would like to add another feature to this list: list it below.
 -Feature
