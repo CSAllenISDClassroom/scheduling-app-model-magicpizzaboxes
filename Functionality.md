@@ -51,7 +51,8 @@ based on the grades they inputted.
 ### Design
 In order to calculate the maximum GPA for classes, we will have to add
 the maximum GPA in each of the student’s classes then divide it by the
-number of classes that the students took. 
+number of classes that the students took. Additionally, the weighted GPAs
+for each class will be listed alongside the course name. 
 ### QA
 Manually calculate the GPA through a calculator and make sure that the
 number displayed within the app matches the result of the GPA
@@ -71,7 +72,8 @@ are on track to graduate with Allen ISD's required credits.
 ### Design
 In order to calculate the credits gained based on schedule, we will
 have to add up all of the credits that the student has in their
-schedule.
+schedule. One semester classes will count as 0.5 in terms of credits
+and full year courses will count as 1 credit.
 ### QA
 Add classes to the schedule and see if credit is added. If credit does
 not increase, then the test does not pass. If credit is gained for
