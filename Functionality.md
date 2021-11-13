@@ -94,7 +94,8 @@ Prep, Pre-AP, AP, IB).
 In order to filter the classes through classes we will have to have a
 list off all of the categories that each class is in. We can then
 filter through the classes based on their included categories and
-their names.
+their names. Additionally, we can implement filters based on GPA and 
+class size based on needs and availability. 
 ### QA
 Our testing procedure to ensure that all classes in the given subject
 are included when searched with the key word of the subject. Require
@@ -114,7 +115,9 @@ bring it in to the counselor at school.
 ### Design
 We will need to be able to write schedules to a local save and then be
 able to send it to other applications. We will need to research how to
-connect from this app to others.
+connect from this app to others without altering the formatting or data
+within the file. Furthermore, we must provide a concise, accurate 
+representation of the students model schedule for printing/sharing.
 ### QA
 Attempt to export the schedule. Export needs to be in proper format
 (ie pdf, txt,...). If the exported file is properly formatted then
@@ -280,7 +283,8 @@ contain a link to the class' listing in the Academic Planning Guide.
 After retrieving proper information about each class (Location, Lunch,
 Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the
 Allen High School website (We can put all of the data in a JSON file),
-we can display the respective information by each class. 
+we can display the respective information by each class. However, we may
+have to consider UI implications and how this feature will affect functionality.
 ### QA
 Test by choosing a class that we have the class information on for the
 first period. Then on the app scheduler make sure that the location of
