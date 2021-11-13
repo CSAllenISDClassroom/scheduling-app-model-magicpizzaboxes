@@ -19,7 +19,6 @@
 16. [Viewable Blocked Schedule](#Viewable-Blocked-Schedule)
 17. [More App Accessibility](#More-App-Accessibility)
 18. [Random Schedule Maker](#Random-Schedule-Maker)
-19. [If you would like to add another feature to this list: list it below.](If-you-would-like-to-add-another-feature-to-this-list:-list-it-below.)
 
 ## Show Schedule Conflicts
 ### Functionality
