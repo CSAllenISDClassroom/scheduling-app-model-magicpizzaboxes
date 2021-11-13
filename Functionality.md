@@ -16,10 +16,10 @@
 13. [Show Details for Each Class](#Show-Details-for-Each-Class)
 14. [Enforce Credit and Endorsement Requirements](#Enforce-Credit-and-Endorsement-Requirements)
 15. [Show Live Class Stats](#Show-Live-Class-Stats)
-16. [Combined School Class List](#Combined-School-Class-List)
-17. [Viewable Blocked Schedule](#Viewable-Blocked-Schedule)
-18. [More App Accessibility](#More-App-Accessibility)
-19. [Random Schedule Maker](#Random-Schedule-Maker)
+16. [Viewable Blocked Schedule](#Viewable-Blocked-Schedule)
+17. [More App Accessibility](#More-App-Accessibility)
+18. [Random Schedule Maker](#Random-Schedule-Maker)
+19. [If you would like to add another feature to this list: list it below.](If-you-would-like-to-add-another-feature-to-this-list:-list-it-below.)
 
 ## Show Schedule Conflicts
 ### Functionality
