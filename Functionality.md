@@ -19,6 +19,7 @@
 16. [Viewable Blocked Schedule](#Viewable-Blocked-Schedule)
 17. [More App Accessibility](#More-App-Accessibility)
 18. [Random Schedule Maker](#Random-Schedule-Maker)
+19. [Combined School Class List](#Combined-School-Class-List)
 
 ## Show Schedule Conflicts
 ### Functionality
@@ -179,11 +180,6 @@ first then from the bus stop to their class not the walking path from
 campus to campus.
 
 ## Ability to Add Notes
-**Mark was assigned to implement the design and functionality for this
-feature, so if it's not done that's probably why.**
-
-we will need to have the ability for users to sign in and store their
-notes for this
 ### Functionality
 When the user is building their schedule, they will be able to add
 notes to side. This can allow the user to keep track of things they
@@ -211,12 +207,20 @@ the test is passed. If notes don't open up or the notes are not the
 same, then there is a bug.
 
 ## Ability to Sign In
-**Mark was assigned to implement the design and functionality for this
-feature, so if it's not done that's probably why.**
-
-can track who uses app and give engagement points
 ### Functionality
+There will be a sign-in button that will prompt the user to sign in
+with their school account. Once verified, the user will be signed
+in. They will then get access to features such as notes and the
+ability to continue where they have left off. Eagle Engagement points 
+will also be awarded to the user.
 ### Design
+Once the user clicks the button to log in, there will be a log in page
+where the user can enter their credentials. Through our database, the
+system will verify the credentials thus prompting the user to return
+back to the page signed in. Since the data base will verify the ID and
+password of the student, the Eagle Engagement points will then be
+awarded to the user associated with the ID through an API which works
+with rewarding students with eagle engagement points.
 ### QA
 Our test makes sure the user matches an actual student enrolled in
 Allen ISD by confirming their student ID and has their account links
@@ -385,6 +389,9 @@ Make sure the schedule create no conflict. If there is a conflict
 created, the test fails. But if the schedule can work, the test
 succeeds
 
+## Combined School Class List
+### Functionality
+### Design
+### QA
 # If you would like to add another feature to this list: list it below.
-- Combined Class List (We are still working out how this will work)
 -Feature
