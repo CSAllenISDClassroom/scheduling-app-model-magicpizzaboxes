@@ -6,41 +6,41 @@
 
 ### Pros:
 
-	* Here
-	* 
+* Here
+* 
   
 ### Cons:
   
-	* Here
-	* 
+* Here
+* 
   
 ## Strategy #2
   
 ### Pros:
   
-    * Here
-    * 
+* Here
+* 
 	
 ### Cons:
 	
-	* Here
-	* 
+* Here
+* 
 	
 ## Strategy #3
 	
 ### Pros:
 	
-	* Here
-	* Here
+* Here
+* Here
 	  
 ### Cons:
 	  
-	* Here
-	* 
+* Here
+* 
 	  
 ## Our Chosen Strategy
 	  
 In detail, describe our reasoning for choosing which one.
 
-	1. here
-	2. here
+1. here
+2. here
