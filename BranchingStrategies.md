@@ -2,7 +2,7 @@
 
 ## GitHub Rules
 
-## Strategy #1
+## Git Flow
 
 ### Pros:
 
@@ -14,7 +14,7 @@
 * Here
 * 
   
-## Strategy #2
+## GitHub Flow
   
 ### Pros:
   
@@ -26,7 +26,7 @@
 * Here
 * 
 	
-## Strategy #3
+## Trunk-based Development
 	
 ### Pros:
 	
