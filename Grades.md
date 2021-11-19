@@ -21,11 +21,11 @@
 * BandaidMan (15.22%) - Kollar
 * Tariq Mahamid (7.97%) = 12.32
   * Tariq-Mahamid (4.35%)
+* Sahil Sheth (9.42%) = 15.94
+  * Sahil-Sheth (6.52%)
 ## Proficient
-* Sahil Sheth (9.42%)
 * SRBsuarez (7.97%)
 * KingAnish (6.52%)
-* Sahil-Sheth (6.52%)
 * huynh-anh-thu-pham (6.52%) = 7.24
   * AmyPham1893 (0.72%)
 * Frank4lif3 (5.07%)
