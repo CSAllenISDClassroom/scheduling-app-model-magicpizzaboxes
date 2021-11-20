@@ -96,5 +96,20 @@ or the code may be ruin and mixed with bad codes
 	  
 In detail, describe our reasoning for choosing which one.
 
-1. here
-2. here
+We chose the Git flow branch strategy because we believe it is the
+most appropriate branching strategy for this project. Ultimately we
+had to decide between Git Flow Branch strategy and Github flow branch
+strategy because the Trunk-Based Development strategy is too risky and
+will conflict with our timeline since everyone has to push their code
+to a shared branch. We believe too many bugs will arise from using the
+Trunk-Based Development strategy
+
+We chose the Git flow branch strategy rather than the Github flow
+branch strategy because we believe that the Github flow branch is too
+simple for our project. The Github flow branch is meant for small
+groups and small projects, but the sample scheduler app is not a small
+project. We also believe that integrating all the branches into main
+and then deleting them will cause organization problems as well as
+bugs in the future. By having separate, isolated branches, we can
+organize our project efficiently and have many people working on
+different things at the same time.
