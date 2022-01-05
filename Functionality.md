@@ -36,11 +36,13 @@ attempted.
 ### QA
 Our testing procedure is to identify scheduling conflict through error
 messages or warnings when it occurs by intentionally scheduling
-conflicting classes. The test succeeds when conflicts are
-identified/displayed to the user and fails if left unnoticed. We will
-also schedule correct, not conflict classes. The test succeeds if
-there are no error messages or warnings and fails if an error message
-or warning occurs.
+conflicting classes to invoke conflict errors and schedule correct
+class combinations.
+Success: Conflicts are identified/displayed to
+the user when found and correct schedules does not invoke error.
+Fail: Conflicts are left unnoticed with no warning of schedule
+conflicts when it occurs or schedule conflict notification is recieved
+when the schedule does work.
 
 
 ## Calculate GPA
@@ -51,15 +53,18 @@ based on the grades they inputted.
 ### Design
 In order to calculate the maximum GPA for classes, we will have to add
 the maximum GPA in each of the student’s classes then divide it by the
-number of classes that the students took. Additionally, the weighted GPAs
-for each class will be listed alongside the course name. 
+number of classes that the students took. Additionally, the weighted
+GPAs for each class will be listed alongside the course name.
 ### QA
 Manually calculate the GPA through a calculator and make sure that the
 number displayed within the app matches the result of the GPA
-calculator. The test succeeds when the number matches the result of
-the GPA calculator and has an error message if users have an
-inappropriate input (characters instead of number,...), and fails if
-something else appears.
+calculator.
+Success: GPA calculator matches the manually calculated
+GPA. Error message is displayed with inappropriate inputs
+(i.e. characters) .
+Fail: GPA calculator does not match the manually
+calculated GPA or calculator does not display error message if there
+are inappropriate inputs.
 
 
 ## Show Credits Gained Based on Schedule
@@ -75,11 +80,10 @@ have to add up all of the credits that the student has in their
 schedule. One semester classes will count as 0.5 in terms of credits
 and full year courses will count as 1 credit.
 ### QA
-Add classes to the schedule and see if credit is added. If credit does
-not increase, then the test does not pass. If credit is gained for
-every instance of adding a class, then the test is passed. The test
-also fail if the amount of credits added are incorrect (For example:
-Add 1 credit for 0.5 credit class)
+Add classes to the schedule and see if credit is added.
+Success: Credit is gained for every instance of adding a class.
+Fail: Credit does not increase or the amount of credits added are incorrect (i.e. 1
+credit added for a 0.5 credit class).
 
 ## Comprehensive Class Search Feature with Filtering
 ### Functionality
@@ -97,12 +101,10 @@ filter through the classes based on their included categories and
 their names. Additionally, we can implement filters based on GPA and 
 class size based on needs and availability. 
 ### QA
-Our testing procedure to ensure that all classes in the given subject
-are included when searched with the key word of the subject. Require
-that classes not found in the subject aren't misplaced (example:
-English literature and composition found under key word “Math”) and
-include all classes contained in the key word(example: Calculus is not
-found under Math key word).
+Search keywords and check all classes in that category are shown.
+
+Success: Classes not in a category are not shown (i.e. English literature and composition found under key word “Math”) and
+include all classes contained in the key word.
 
 ## Ability to Print and Share Schedules
 ### Functionality
