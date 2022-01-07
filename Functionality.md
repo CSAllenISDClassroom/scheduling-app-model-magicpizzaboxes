@@ -38,15 +38,15 @@ Identify scheduling conflict through error messages or warnings when
 it occurs by intentionally scheduling conflicting classes to invoke
 conflict errors and schedule correct class combinations.  
 
-Success: 
-* Conflicts are identified/displayed to the user when found 
+Success:
+* Conflicts are identified/displayed to the user when found
 * Correct schedules does not invoke error.
 
-Fail: 
-* Conflicts are left unnoticed with no warning of schedule
-conflicts when it occurs
-* Schedule conflict notification is recieved
-when the schedule does work.
+Fail:
+* Conflicts are left unnoticed with no warning of schedule conflicts
+when it occurs
+* Schedule conflict notification is recieved when the schedule does
+work.
 
 
 ## Calculate GPA
@@ -64,12 +64,12 @@ Manually calculate the GPA through a calculator and make sure that the
 number displayed within the app matches the result of the GPA
 calculator.
 
-Success: 
-* GPA calculator matches the manually calculated GPA. 
+Success:
+* GPA calculator matches the manually calculated GPA.
 * Error message is displayed with inappropriate inputs
 (i.e. characters).
 
-Fail: 
+Fail:
 * GPA calculator does not match the manually calculated GPA
 * Calculator does not display error message if there are inappropriate
 inputs.
@@ -93,9 +93,10 @@ Add classes to the schedule and see if credit is added.
 Success:
 * Credit is gained for every instance of adding a class.
 
-Fail: 
-* Credit does not increase to the proper amount of credits. 
-* The amount of credits added are incorrect (i.e. 1 credit added for a 0.5 credit class).
+Fail:
+* Credit does not increase to the proper amount of credits.
+* The amount of credits added are incorrect (i.e. 1 credit added for a
+  0.5 credit class).
 
 ## Comprehensive Class Search Feature with Filtering
 ### Functionality
@@ -115,10 +116,10 @@ class size based on needs and availability.
 ### QA
 Search keywords and check all classes in that category are shown.
 
-Success: 
+Success:
 * All classes in a category are shown.
 
-Fail: 
+Fail:
 * Some classes are missing from a category.
 * Classes are showing up with/to the wrong filter
 
@@ -139,11 +140,11 @@ representation of the students model schedule for printing/sharing.
 ### QA
 Attempt to export the schedule with different formats.
 
-Success: 
+Success:
 * Exports successfully with properly formatted formats.
 * All information is exported.
 
-Fail: 
+Fail:
 * Incorrect information in export.
 * Improper formats.
 
@@ -161,12 +162,11 @@ day.
 ### QA
 Ensure that the class periods are put into correct A/B days
 
-Success: 
-* Periods 1, 2, 3, 4, 8 are on A day and 1, 5, 6, 7 ,8 are on B
-days. 
+Success:
+* Periods 1, 2, 3, 4, 8 are on A day and 1, 5, 6, 7 ,8 are on B days.
 * The classes are correctly assigned to the A/B school days too.
 
-Fail: 
+Fail:
 * Periods do not follow the Allen A/B class schedule.
 * Classes are in incorrect orders.
 
@@ -188,12 +188,12 @@ and questions on the database.
 Click on every link and make sure it goes to the correct site. Submit
 help tickets and ensure that the tickets get to the correct person.
 
-Success: 
+Success:
 * Links go to the proper site
 * Tickets go to the person assisting students.
 
-Fail: 
-* Links do not work or take user to the wrong site. 
+Fail:
+* Links do not work or take user to the wrong site.
 * Help requests do not reach the help center.
 
 ## School Map
