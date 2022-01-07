@@ -202,13 +202,17 @@ different campuses (LFC, AHS or STEAM), show the path to the bus stop
 first then from the bus stop to their class not the walking path from
 campus to campus.
 
-Success: School map show the correct path from one class to another
-when insert the two classroom without going to any wall, show the path
-to the bus stop if the two classroom is in differen campuses.
+Success:
+* School map show the correct path from one class to another
+* The path doesn't go through any walls
+* Show the path to the bus stop if the two classroom is in different
+campuses.
 
-Fail: School map show the wrong way, going to or start at a wrong
-room, walk into wall or show path to walk physically from one campus
-to another.
+Fail:
+* School map show the wrong way
+* Going to or start at a wrong room
+* Walk into wall
+* Show path to walk physically from one campus to another.
 
 ## Ability to Add Notes
 ### Functionality
@@ -235,10 +239,12 @@ Write random notes on the note feature and save it to the profile and
 close it. Attempt to open the notes on the same computer and a
 different computer.
 
-Success: The notes open up with the same content then the test is
+Success: 
+* The notes open up with the same content then the test is
 passed.
 
-Fail: The notes don't open up or the notes are not the same, then
+Fail:
+* The notes don't open up or the notes are not the same, then
 there is a bug.
 
 ## Ability to Sign In
@@ -261,11 +267,14 @@ Our test makes sure the user matches an actual student enrolled in
 Allen ISD by confirming their student ID and has their account links
 correctly.
 
-Success: The Eagle Engagement points are added to the correct person,
-return an error message if the user doesn’t exist
+Success:
+* The Eagle Engagement points are added to the correct person
+* return an error message if the user doesn’t exist
 
-Fail:the points are added to the wrong person or accept the person
-when their name doesn’t exist in the school database.
+Fail:
+* The points are added to the wrong person 
+* Accept the person when their name doesn’t exist in the school
+  database.
 
 ## See Class Difficulties
 ### Functionality
@@ -286,9 +295,11 @@ Manually check the given data of difficulty from surveys of students
 and that of every course on the application to ensure the two match
 up.
 
-Success: The two result match up.
+Success: 
+* The two result match up.
 
-Fail: The two result doesn't match up.
+Fail:
+* The two result doesn't match up.
 
 ## Assign Classes an Arena Scheduling Priority Score
 ### Functionality
@@ -316,9 +327,11 @@ schedule a class multiple times to take numerous seats. We will then
 see if the priority of the class is correctly updated for a separate
 user.
 
-Success: It updates correctly.
+Success:
+* It updates correctly.
 
-Fail: It doesn’t update for the new user.
+Fail:
+* It doesn’t update for the new user.
 
 ## Show Details for Each Class
 ### Functionality
@@ -343,10 +356,11 @@ class period to make sure that the correct lunch period can be
 shown. For each period test we will test regular classes, Dual Credit
 classes, and Steam Center classes.
 
-Success: All information of the class we choose match each other
-exactly.
+Success:
+* All information of the class we choose match each other exactly.
 
-Fail: If even a single information doesn't match each other.
+Fail: 
+* If even a single information doesn't match each other.
 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
