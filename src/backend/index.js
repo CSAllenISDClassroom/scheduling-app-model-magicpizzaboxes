@@ -23,11 +23,24 @@ app.get('/session/:sessionId', (req, res) => {
   res.send(sessionData)
 })
 
-app.get('/', (req, res) => {
+// This is v dangerous and is only included for testing purposes!
+app.get('/all', (req, res) => {
   dbConnection.query("select * from Courses", function (err, result) {
     if (err) throw err;
     res.send(result)
   })
+})
+
+app.get('/home', (req, res) => {
+  let viewData = {
+    motd: 'Hello! Have a good day!',
+    studentId: req.query.studentId
+  }
+  res.render('home', viewData)
+})
+
+app.get('/', (req, res) => {
+  res.render('login')
 })
 
 ///// STARTUP INITIALIZATION /////
@@ -43,6 +56,9 @@ dbConnection.connect((err) => {
   if (err) return console.error('error: ' + err.message)
   console.log("Connected!")
 })
+
+app.set('views', '../views')
+app.set('view engine', 'ejs')
 
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
