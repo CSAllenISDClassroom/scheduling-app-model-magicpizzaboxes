@@ -113,3 +113,20 @@ and then deleting them will cause organization problems as well as
 bugs in the future. By having separate, isolated branches, we can
 organize our project efficiently and have many people working on
 different things at the same time.
+
+We will also modify the git flow branch strategy. We will have a main
+branch, where the most up-to-date working code will be located. There
+will be a Development branch which will house all of the
+features. When the developers want to work on a new feature to be
+implemented, they can split off from the development branch to work on
+the new feature. Once it is finished, it will become merged back with
+the Development Branch. Another branch will also be created, called
+Testing, which will allow the QA team to test all of the most
+up-to-date features from the Development Branch together. The reason
+for this is so that the Development and QA teams can work without
+confliciting each other. This method of allowing QA to test a feature
+in Testing branch, which is a branch pulled from Development from the
+most up-to-date code so that QA can test multiple features
+individually but together as well as testing the features working
+together. Once QA passes the test procedures for the features, It will
+be put onto the main branch which is the most up-to-date working code.
