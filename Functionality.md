@@ -27,22 +27,20 @@ We will not allow for students to input a schedule conflict. However
 we will tell them why they cant schedule a particular class but we
 will show them how to fix the problem they are having
 ### Design
-To display various scheduling conflicts that may occur during the model 
-scheduling process, a clear, comprehensive design plan is necessary. In 
-addition to the basic scheduling procedures that allow users to schedule 
-1 class in each period (0th-8th), users will be restricted from scheduling 
-conflicting classes and will receive an error message if this procedure is 
-attempted. 
+To display various scheduling conflicts that may occur during the
+model scheduling process, a clear, comprehensive design plan is
+necessary. In addition to the basic scheduling procedures that allow
+users to schedule 1 class in each period (0th-8th), users will be
+restricted from scheduling conflicting classes and will receive an
+error message if this procedure is attempted.
 ### QA
-Our testing procedure is to identify scheduling conflict through error
-messages or warnings when it occurs by intentionally scheduling
-conflicting classes to invoke conflict errors and schedule correct
-class combinations.
-Success: Conflicts are identified/displayed to
-the user when found and correct schedules does not invoke error.
-Fail: Conflicts are left unnoticed with no warning of schedule
-conflicts when it occurs or schedule conflict notification is recieved
-when the schedule does work.
+Identify scheduling conflict through error messages or warnings when
+it occurs by intentionally scheduling conflicting classes to invoke
+conflict errors and schedule correct class combinations.  Success:
+Conflicts are identified/displayed to the user when found and correct
+schedules does not invoke error.  Fail: Conflicts are left unnoticed
+with no warning of schedule conflicts when it occurs or schedule
+conflict notification is recieved when the schedule does work.
 
 
 ## Calculate GPA
@@ -58,11 +56,9 @@ GPAs for each class will be listed alongside the course name.
 ### QA
 Manually calculate the GPA through a calculator and make sure that the
 number displayed within the app matches the result of the GPA
-calculator.
-Success: GPA calculator matches the manually calculated
+calculator.  Success: GPA calculator matches the manually calculated
 GPA. Error message is displayed with inappropriate inputs
-(i.e. characters) .
-Fail: GPA calculator does not match the manually
+(i.e. characters) .  Fail: GPA calculator does not match the manually
 calculated GPA or calculator does not display error message if there
 are inappropriate inputs.
 
@@ -80,9 +76,9 @@ have to add up all of the credits that the student has in their
 schedule. One semester classes will count as 0.5 in terms of credits
 and full year courses will count as 1 credit.
 ### QA
-Add classes to the schedule and see if credit is added.
-Success: Credit is gained for every instance of adding a class.
-Fail: Credit does not increase or the amount of credits added are incorrect (i.e. 1
+Add classes to the schedule and see if credit is added.  Success:
+Credit is gained for every instance of adding a class.  Fail: Credit
+does not increase or the amount of credits added are incorrect (i.e. 1
 credit added for a 0.5 credit class).
 
 ## Comprehensive Class Search Feature with Filtering
@@ -98,13 +94,13 @@ Prep, Pre-AP, AP, IB).
 In order to filter the classes through classes we will have to have a
 list off all of the categories that each class is in. We can then
 filter through the classes based on their included categories and
-their names. Additionally, we can implement filters based on GPA and 
-class size based on needs and availability. 
+their names. Additionally, we can implement filters based on GPA and
+class size based on needs and availability.
 ### QA
 Search keywords and check all classes in that category are shown.
-
-Success: Classes not in a category are not shown (i.e. English literature and composition found under key word “Math”) and
-include all classes contained in the key word.
+Success: All classes in a category are shown Fail: Some classes are
+missing from a category or classes are showing up with the wrong
+filter
 
 ## Ability to Print and Share Schedules
 ### Functionality
@@ -117,22 +113,20 @@ bring it in to the counselor at school.
 ### Design
 We will need to be able to write schedules to a local save and then be
 able to send it to other applications. We will need to research how to
-connect from this app to others without altering the formatting or data
-within the file. Furthermore, we must provide a concise, accurate 
+connect from this app to others without altering the formatting or
+data within the file. Furthermore, we must provide a concise, accurate
 representation of the students model schedule for printing/sharing.
 ### QA
-Attempt to export the schedule. Export needs to be in proper format
-(ie pdf, txt,...). If the exported file is properly formatted then
-passed, else (for example: cannot print the full schedule, schedule is
-cut in half,...) the test fails. For the share feature, make sure the
-link leads to the correct, full schedule. If the wrong schedule is
-sent or was sent with the wrong format, the test fails.
+Attempt to export the schedule with different formats.  Success:
+Exports successfully with properly formatted formats and all
+information is exported.  Fail: Incorrect information in export or
+improper formats.
 
 ## AB Day View
 ### Functionality
 This will be a visual representation of what the schedule will look
 like with the A/B Days at Allen. This will help students understand
-and customize their schedule. 
+and customize their schedule.
 ### Design
 Like the Search Feature with filtering, we will have to filter all
 available classes based on the day. In order to do this, we can find
@@ -140,10 +134,11 @@ whether a class lies on A or B day. After we have this information, it
 will be easy to filter the classes that are in view to a specified A/B
 day.
 ### QA
-Our testing procedure is making sure the period is put in the correct
-A/B day. The test succeeds if periods 1,2,3,4,8 are on A day and
-periods 1,5,6,7,8 are on B day and appear the correct schedule on the
-correct A/B school day. If anything else appears, it fails.
+Ensure that the class periods are put into correct A/B days Success:
+Periods 1, 2, 3, 4, 8 are on A day and 1, 5, 6, 7 ,8 are on B
+days. The classes are correctly assigned to the A/B school days too.
+Fail: Periods do not follow the Allen A/B class schedule or classes
+are in incorrect orders.
 
 ## Links for Help
 ### Functionality
@@ -152,7 +147,7 @@ will have to add helpful links for the student to use. These will
 include links to the Allen High School academic planning guide:
 https://canvas.allenisd.org/courses/858742. On top of this, we can
 operate a help ticket through our website, this will allow students to
-both ask questions and get their questions answered  without having to
+both ask questions and get their questions answered without having to
 leave the site.
 ### Design
 In order to add helpful links, all we will have to do is get access to
@@ -160,11 +155,11 @@ the links, after this we will need to display it in the View. In order
 to manage the help ticket, we will have to store both the responses
 and questions on the database.
 ### QA
-Make sure the correct site is being opened when we click the
-link. Also make sure that students can reach the correct person to get
-help when they access the help ticket. If the wrong site is open or
-the help request doesn’t reach people in the help center the test
-fails.
+Click on every link and make sure it goes to the correct site. Submit
+help tickets and ensure that the tickets get to the correct person.
+Success: Links go to the proper site and tickets go to the person
+assisting students.  Fail: Links do not work or take user to the wrong
+site. Help requests do not reach the help center.
 
 ## School Map
 ### Functionality
@@ -176,10 +171,10 @@ In order to display the map with all of the students classes, we will
 need to store all of the the classes along with their vector positions
 on the school.  Using these vector positions, we can proportionally
 display the classes on a map of the school. We can then use path
-finding to find the path to each class  while avoiding obstacles. In
-order pathfind we will have to store where the  students are allowed
-to walk (not the walls) and where the student is allowed  to walk and
-then calculate the path based on this information. 
+finding to find the path to each class while avoiding obstacles. In
+order pathfind we will have to store where the students are allowed to
+walk (not the walls) and where the student is allowed to walk and then
+calculate the path based on this information.
 ### QA
 Make sure the correct rooms of both periods appear in the correct
 place, hall and floor. Make sure the path students take are not going
@@ -220,7 +215,7 @@ same, then there is a bug.
 There will be a sign-in button that will prompt the user to sign in
 with their school account. Once verified, the user will be signed
 in. They will then get access to features such as notes and the
-ability to continue where they have left off. Eagle Engagement points 
+ability to continue where they have left off. Eagle Engagement points
 will also be awarded to the user.
 ### Design
 Once the user clicks the button to log in, there will be a log in page
@@ -240,9 +235,18 @@ the person when their name doesn’t exist in the school database.
 
 ## See Class Difficulties
 ### Functionality
-This feature will allow the user to see student feedback on how difficult the class was for them as well as the average grade for the class in the previous year. This will allow the students to get a more accurate read of what the class is about and how difficult the class will expect to be for them. There is going to be an option from choosing the class that allows the user to see the student feedback and average grade.
+This feature will allow the user to see student feedback on how
+difficult the class was for them as well as the average grade for the
+class in the previous year. This will allow the students to get a more
+accurate read of what the class is about and how difficult the class
+will expect to be for them. There is going to be an option from
+choosing the class that allows the user to see the student feedback
+and average grade.
 ### Design
-To implement this feature, we would first need to gather data from student surverys and get the average grade of the class from administrators and staff. Then we can just display the information when the user clicks the option to view the information.
+To implement this feature, we would first need to gather data from
+student surverys and get the average grade of the class from
+administrators and staff. Then we can just display the information
+when the user clicks the option to view the information.
 ### QA
 Manually check the given data of difficulty from surveys of students
 and that of every course on the application to ensure the two match
@@ -285,8 +289,9 @@ contain a link to the class' listing in the Academic Planning Guide.
 After retrieving proper information about each class (Location, Lunch,
 Credits, Pre-Requisites, Etc) from the Academic Planning Guide on the
 Allen High School website (We can put all of the data in a JSON file),
-we can display the respective information by each class. However, we may
-have to consider UI implications and how this feature will affect functionality.
+we can display the respective information by each class. However, we
+may have to consider UI implications and how this feature will affect
+functionality.
 ### QA
 Test by choosing a class that we have the class information on for the
 first period. Then on the app scheduler make sure that the location of
@@ -304,14 +309,13 @@ chosen do not put them on track to receive enough credits to graduate
 or earn their endorsement. Upon passing the page where the user
 selects courses, the app will check if credit requirements are met. If
 they are, the app will continue to let the user create a schedule,
-<<<<<<< HEAD
-otherwise, a pop-up warning will display. 
+<<<<<<< HEAD otherwise, a pop-up warning will display.
 ### Design
 In order to enforce credit and endorsement requirements, we will have
-to  store certain information. This information includes which
-endorsement the  student is going for and how many credits they have
-and require. We can then  use this information to calculate if the
-classes that they took have the  required credits and endorsements.
+to store certain information. This information includes which
+endorsement the student is going for and how many credits they have
+and require. We can then use this information to calculate if the
+classes that they took have the required credits and endorsements.
 ### QA
 We will pretend to be a student who wants to choose a random
 endorsement, such as Arts and Humanties, as well as a fake amount of
@@ -335,8 +339,8 @@ class offers.
 In order to implement Live Class Stats (The # of people who took it,
 the number of seats left, how many people are searching it up, etc.)
 we will have to maintain a server that keeps track of all current
-stats  and update accordingly. In order to achieve this, we can use
-REST API to  send and retrieve information to the server.
+stats and update accordingly. In order to achieve this, we can use
+REST API to send and retrieve information to the server.
 ### QA
 Have a member of the QA team manually select a class and check if the
 status changes and the selection was registered. If registered, the
@@ -403,11 +407,20 @@ succeeds
 
 ## Combined School Class List
 ### Functionality
-This feature will allow the user to see all Allen High School, STEAM Center and Collin Technical Campus classes all together. To make the most authentic schedule possible, these options will be able to fit in the same schedule mold and tell the user of any restrictions
+This feature will allow the user to see all Allen High School, STEAM
+Center and Collin Technical Campus classes all together. To make the
+most authentic schedule possible, these options will be able to fit in
+the same schedule mold and tell the user of any restrictions
 ### Design
-To implement these, we will need an accurate timings for all classes. Then we can just compare and make sure that the classes are available in the periods and are compatible with classes from other campuses.
+To implement these, we will need an accurate timings for all
+classes. Then we can just compare and make sure that the classes are
+available in the periods and are compatible with classes from other
+campuses.
 ### QA
-To test if this works, we need to add a class from each campus and test whether they are compatible in the same schedule. If period conflicts arise, then they should give a error and an error message saying that there is a conflict in the period timings.
+To test if this works, we need to add a class from each campus and
+test whether they are compatible in the same schedule. If period
+conflicts arise, then they should give a error and an error message
+saying that there is a conflict in the period timings.
 
 # If you would like to add another feature to this list: list it below.
 -Feature
