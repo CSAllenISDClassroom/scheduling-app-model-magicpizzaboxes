@@ -393,15 +393,20 @@ endorsement the student is going for and how many credits they have
 and require. We can then use this information to calculate if the
 classes that they took have the required credits and endorsements.
 ### QA
-We will pretend to be a student who wants to choose a random
-endorsement, such as Arts and Humanties, as well as a fake amount of
-credits earned for all the high school requirements to pass Allen High
-School. Then we will run a test where we will purposely choose classes
-that do not match with our endorsement to see if recomendations that
-match our endorsements are encouraged. We will chooses classes that do
-not pass the requirement to pass High School. If the app reminds
-students about the credits neccesary for graduating then the test
-passes.
+We will run a test where we will purposely choose classes that do not
+match with our endorsement to see if recomendations that match our
+endorsements are encouraged. We will chooses classes that do not pass
+the requirement to pass High School.
+
+Success:
+* The app reminds students about the credits neccesary for graduating
+* Recommends classes that fall under a selected endorsement
+
+Fail:
+* App ignores and does not recommend any classes that sorround the
+  endorsement
+* App is oblivious to the fact that the student may fail highschool
+  and it doesn't recommend classes required to pass highschool
 
 ## Show Live Class Stats
 ### Functionality
@@ -418,14 +423,19 @@ we will have to maintain a server that keeps track of all current
 stats and update accordingly. In order to achieve this, we can use
 REST API to send and retrieve information to the server.
 ### QA
-Have a member of the QA team manually select a class and check if the
-status changes and the selection was registered. If registered, the
-test is successful, if not an error message displayed to the
-developers. Another test conducted by purposely enlisting into a class
-that’s full (shown by the amount of people who have already selected
-the class on the app). Test is successful if an error is returned,
-listing that there are no available seats. Test fails if user is
-allowed to select class and it registers.
+A member of the QA team manually select a class and check if the
+status changes and the selection was registered. We will than remove
+ourselves after to make sure it updates as well.  Another test will be
+conducted by purposely enlisting into a class that’s full (shown by
+the amount of people who have already selected the class on the app).
+
+Success:
+* The total amount of seats taken changes after class is chosen
+* Error message shown for having no seats available
+
+Fail:
+* Updates not shown after joining/unadding classes
+* No Error shown for a full class with no available seats
 
 ## Viewable Blocked Schedule
 ### Functionality
@@ -446,6 +456,15 @@ Make sure all eligible class period appear. When the user choose a
 class, make sure the correct possible period was highlighted and make
 sure the class doesn't create any conflicts.
 
+Success:
+* Warning elicting a schedule conflict (if neccesary)
+* Classes and corresponding periods correctly displayed
+
+Fail:
+* No errors shown for schedule conflicts with Steam, Athletics, etc.
+* Incorrect classes/periods shown
+
+
 ## More App Accessibility
 ### Functionality
 Our website will be mobile friendly. We will also ensure that all
@@ -460,11 +479,16 @@ React Native to create a mobile app. The app would use the same
 backend, however.
 ### QA
 Test the accessible link by first manually clicking on the link and
-making sure that the link leads the user to our scheduling app. Test
-passes if the link leads to the app and it fails if it doesn’t. We
+making sure that the link leads the user to our scheduling app. We
 should also test if the link is easily compatible on mobile phones. We
 will test on an android phone as well as apple phones to confirm
 compatibility on all platforms alongside computers.
+
+Success:
+* If the link leads to the correct app scheduler on all devices
+
+Fail:
+* Link does not work or leads to incorrect website
 
 ## Random Schedule Maker
 ### Functionality
@@ -477,9 +501,14 @@ the rest in a location randomly selected and only allow for it to be
 in the location if no schedule conflicts and if the class is allowed
 during that time.
 ### QA
-Make sure the schedule create no conflict. If there is a conflict
-created, the test fails. But if the schedule can work, the test
-succeeds
+Choose random classes for all endorsements and multiple trials
+including possible conflicts to see if correct schedule displayed
+
+Success:
+* Schedule displayed has no errors and includes all classes chosen
+
+Fail:
+* Not all classes included and has possible conflicts
 
 ## Combined School Class List
 ### Functionality
@@ -497,6 +526,13 @@ To test if this works, we need to add a class from each campus and
 test whether they are compatible in the same schedule. If period
 conflicts arise, then they should give a error and an error message
 saying that there is a conflict in the period timings.
+
+Success:
+* Period conflicts are brought to attention with an error message
+  notifying conflict
+
+Fail:
+* Error is ignored and conflict persists
 
 # If you would like to add another feature to this list: list it below.
 -Feature
