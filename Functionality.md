@@ -38,12 +38,15 @@ Identify scheduling conflict through error messages or warnings when
 it occurs by intentionally scheduling conflicting classes to invoke
 conflict errors and schedule correct class combinations.  
 
-Success: Conflicts are identified/displayed to the user when found and
-correct schedules does not invoke error.  
+Success:
+* Conflicts are identified/displayed to the user when found
+* Correct schedules does not invoke error.
 
-Fail: Conflicts are left unnoticed with no warning of schedule
-conflicts when it occurs or schedule conflict notification is recieved
-when the schedule does work.
+Fail:
+* Conflicts are left unnoticed with no warning of schedule conflicts
+when it occurs
+* Schedule conflict notification is recieved when the schedule does
+work.
 
 
 ## Calculate GPA
@@ -59,14 +62,16 @@ GPAs for each class will be listed alongside the course name.
 ### QA
 Manually calculate the GPA through a calculator and make sure that the
 number displayed within the app matches the result of the GPA
-calculator.  
+calculator.
 
-Success: GPA calculator matches the manually calculated GPA. Error
-message is displayed with inappropriate inputs
-(i.e. characters) .  
+Success:
+* GPA calculator matches the manually calculated GPA.
+* Error message is displayed with inappropriate inputs
+(i.e. characters).
 
-Fail: GPA calculator does not match the manually calculated GPA or
-calculator does not display error message if there are inappropriate
+Fail:
+* GPA calculator does not match the manually calculated GPA
+* Calculator does not display error message if there are inappropriate
 inputs.
 
 
@@ -83,13 +88,15 @@ have to add up all of the credits that the student has in their
 schedule. One semester classes will count as 0.5 in terms of credits
 and full year courses will count as 1 credit.
 ### QA
-Add classes to the schedule and see if credit is added.  
+Add classes to the schedule and see if credit is added.
 
 Success:
-Credit is gained for every instance of adding a class.  
+* Credit is gained for every instance of adding a class.
 
-Fail: Credit does not increase or the amount of credits added are
-incorrect (i.e. 1 credit added for a 0.5 credit class).
+Fail:
+* Credit does not increase to the proper amount of credits.
+* The amount of credits added are incorrect (i.e. 1 credit added for a
+  0.5 credit class).
 
 ## Comprehensive Class Search Feature with Filtering
 ### Functionality
@@ -109,10 +116,12 @@ class size based on needs and availability.
 ### QA
 Search keywords and check all classes in that category are shown.
 
-Success: All classes in a category are shown
+Success:
+* All classes in a category are shown.
 
-Fail: Some classes are missing from a category or classes are showing
-up with the wrong filter
+Fail:
+* Some classes are missing from a category.
+* Classes are showing up with/to the wrong filter
 
 ## Ability to Print and Share Schedules
 ### Functionality
@@ -129,12 +138,15 @@ connect from this app to others without altering the formatting or
 data within the file. Furthermore, we must provide a concise, accurate
 representation of the students model schedule for printing/sharing.
 ### QA
-Attempt to export the schedule with different formats.  
+Attempt to export the schedule with different formats.
 
-Success: Exports successfully with properly formatted formats and all
-information is exported.
+Success:
+* Exports successfully with properly formatted formats.
+* All information is exported.
 
-Fail: Incorrect information in export or improper formats.
+Fail:
+* Incorrect information in export.
+* Improper formats.
 
 ## AB Day View
 ### Functionality
@@ -150,11 +162,13 @@ day.
 ### QA
 Ensure that the class periods are put into correct A/B days
 
-Success: Periods 1, 2, 3, 4, 8 are on A day and 1, 5, 6, 7 ,8 are on B
-days. The classes are correctly assigned to the A/B school days too.
+Success:
+* Periods 1, 2, 3, 4, 8 are on A day and 1, 5, 6, 7 ,8 are on B days.
+* The classes are correctly assigned to the A/B school days too.
 
-Fail: Periods do not follow the Allen A/B class schedule or classes
-are in incorrect orders.
+Fail:
+* Periods do not follow the Allen A/B class schedule.
+* Classes are in incorrect orders.
 
 ## Links for Help
 ### Functionality
@@ -174,11 +188,13 @@ and questions on the database.
 Click on every link and make sure it goes to the correct site. Submit
 help tickets and ensure that the tickets get to the correct person.
 
-Success: Links go to the proper site and tickets go to the person
-assisting students.
+Success:
+* Links go to the proper site
+* Tickets go to the person assisting students.
 
-Fail: Links do not work or take user to the wrong site. Help requests
-do not reach the help center.
+Fail:
+* Links do not work or take user to the wrong site.
+* Help requests do not reach the help center.
 
 ## School Map
 ### Functionality
@@ -202,13 +218,17 @@ different campuses (LFC, AHS or STEAM), show the path to the bus stop
 first then from the bus stop to their class not the walking path from
 campus to campus.
 
-Success: School map show the correct path from one class to another
-when insert the two classroom without going to any wall, show the path
-to the bus stop if the two classroom is in differen campuses.
+Success:
+* School map show the correct path from one class to another
+* The path doesn't go through any walls
+* Show the path to the bus stop if the two classroom is in different
+campuses.
 
-Fail: School map show the wrong way, going to or start at a wrong
-room, walk into wall or show path to walk physically from one campus
-to another.
+Fail:
+* School map show the wrong way
+* Going to or start at a wrong room
+* Walk into wall
+* Show path to walk physically from one campus to another.
 
 ## Ability to Add Notes
 ### Functionality
@@ -235,10 +255,12 @@ Write random notes on the note feature and save it to the profile and
 close it. Attempt to open the notes on the same computer and a
 different computer.
 
-Success: The notes open up with the same content then the test is
+Success: 
+* The notes open up with the same content then the test is
 passed.
 
-Fail: The notes don't open up or the notes are not the same, then
+Fail:
+* The notes don't open up or the notes are not the same, then
 there is a bug.
 
 ## Ability to Sign In
@@ -261,11 +283,14 @@ Our test makes sure the user matches an actual student enrolled in
 Allen ISD by confirming their student ID and has their account links
 correctly.
 
-Success: The Eagle Engagement points are added to the correct person,
-return an error message if the user doesn’t exist
+Success:
+* The Eagle Engagement points are added to the correct person
+* return an error message if the user doesn’t exist
 
-Fail:the points are added to the wrong person or accept the person
-when their name doesn’t exist in the school database.
+Fail:
+* The points are added to the wrong person 
+* Accept the person when their name doesn’t exist in the school
+  database.
 
 ## See Class Difficulties
 ### Functionality
@@ -286,9 +311,11 @@ Manually check the given data of difficulty from surveys of students
 and that of every course on the application to ensure the two match
 up.
 
-Success: The two result match up.
+Success: 
+* The two result match up.
 
-Fail: The two result doesn't match up.
+Fail:
+* The two result doesn't match up.
 
 ## Assign Classes an Arena Scheduling Priority Score
 ### Functionality
@@ -316,9 +343,11 @@ schedule a class multiple times to take numerous seats. We will then
 see if the priority of the class is correctly updated for a separate
 user.
 
-Success: It updates correctly.
+Success:
+* It updates correctly.
 
-Fail: It doesn’t update for the new user.
+Fail:
+* It doesn’t update for the new user.
 
 ## Show Details for Each Class
 ### Functionality
@@ -343,10 +372,11 @@ class period to make sure that the correct lunch period can be
 shown. For each period test we will test regular classes, Dual Credit
 classes, and Steam Center classes.
 
-Success: All information of the class we choose match each other
-exactly.
+Success:
+* All information of the class we choose match each other exactly.
 
-Fail: If even a single information doesn't match each other.
+Fail: 
+* If even a single information doesn't match each other.
 
 ## Enforce Credit and Endorsement Requirements
 ### Functionality
@@ -363,15 +393,20 @@ endorsement the student is going for and how many credits they have
 and require. We can then use this information to calculate if the
 classes that they took have the required credits and endorsements.
 ### QA
-We will pretend to be a student who wants to choose a random
-endorsement, such as Arts and Humanties, as well as a fake amount of
-credits earned for all the high school requirements to pass Allen High
-School. Then we will run a test where we will purposely choose classes
-that do not match with our endorsement to see if recomendations that
-match our endorsements are encouraged. We will chooses classes that do
-not pass the requirement to pass High School. If the app reminds
-students about the credits neccesary for graduating then the test
-passes.
+We will run a test where we will purposely choose classes that do not
+match with our endorsement to see if recomendations that match our
+endorsements are encouraged. We will chooses classes that do not pass
+the requirement to pass High School.
+
+Success:
+* The app reminds students about the credits neccesary for graduating
+* Recommends classes that fall under a selected endorsement
+
+Fail:
+* App ignores and does not recommend any classes that sorround the
+  endorsement
+* App is oblivious to the fact that the student may fail highschool
+  and it doesn't recommend classes required to pass highschool
 
 ## Show Live Class Stats
 ### Functionality
@@ -388,14 +423,19 @@ we will have to maintain a server that keeps track of all current
 stats and update accordingly. In order to achieve this, we can use
 REST API to send and retrieve information to the server.
 ### QA
-Have a member of the QA team manually select a class and check if the
-status changes and the selection was registered. If registered, the
-test is successful, if not an error message displayed to the
-developers. Another test conducted by purposely enlisting into a class
-that’s full (shown by the amount of people who have already selected
-the class on the app). Test is successful if an error is returned,
-listing that there are no available seats. Test fails if user is
-allowed to select class and it registers.
+A member of the QA team manually select a class and check if the
+status changes and the selection was registered. We will than remove
+ourselves after to make sure it updates as well.  Another test will be
+conducted by purposely enlisting into a class that’s full (shown by
+the amount of people who have already selected the class on the app).
+
+Success:
+* The total amount of seats taken changes after class is chosen
+* Error message shown for having no seats available
+
+Fail:
+* Updates not shown after joining/unadding classes
+* No Error shown for a full class with no available seats
 
 ## Viewable Blocked Schedule
 ### Functionality
@@ -416,6 +456,15 @@ Make sure all eligible class period appear. When the user choose a
 class, make sure the correct possible period was highlighted and make
 sure the class doesn't create any conflicts.
 
+Success:
+* Warning elicting a schedule conflict (if neccesary)
+* Classes and corresponding periods correctly displayed
+
+Fail:
+* No errors shown for schedule conflicts with Steam, Athletics, etc.
+* Incorrect classes/periods shown
+
+
 ## More App Accessibility
 ### Functionality
 Our website will be mobile friendly. We will also ensure that all
@@ -430,11 +479,16 @@ React Native to create a mobile app. The app would use the same
 backend, however.
 ### QA
 Test the accessible link by first manually clicking on the link and
-making sure that the link leads the user to our scheduling app. Test
-passes if the link leads to the app and it fails if it doesn’t. We
+making sure that the link leads the user to our scheduling app. We
 should also test if the link is easily compatible on mobile phones. We
 will test on an android phone as well as apple phones to confirm
 compatibility on all platforms alongside computers.
+
+Success:
+* If the link leads to the correct app scheduler on all devices
+
+Fail:
+* Link does not work or leads to incorrect website
 
 ## Random Schedule Maker
 ### Functionality
@@ -447,9 +501,14 @@ the rest in a location randomly selected and only allow for it to be
 in the location if no schedule conflicts and if the class is allowed
 during that time.
 ### QA
-Make sure the schedule create no conflict. If there is a conflict
-created, the test fails. But if the schedule can work, the test
-succeeds
+Choose random classes for all endorsements and multiple trials
+including possible conflicts to see if correct schedule displayed
+
+Success:
+* Schedule displayed has no errors and includes all classes chosen
+
+Fail:
+* Not all classes included and has possible conflicts
 
 ## Combined School Class List
 ### Functionality
@@ -467,6 +526,13 @@ To test if this works, we need to add a class from each campus and
 test whether they are compatible in the same schedule. If period
 conflicts arise, then they should give a error and an error message
 saying that there is a conflict in the period timings.
+
+Success:
+* Period conflicts are brought to attention with an error message
+  notifying conflict
+
+Fail:
+* Error is ignored and conflict persists
 
 # If you would like to add another feature to this list: list it below.
 -Feature
