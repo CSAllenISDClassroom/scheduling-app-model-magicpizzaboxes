@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <title>Modsched 2022</title>
+</head>
+<body>
+  <h1>Classes:</h1>
+  <form>
+  <% classInfo.forEach((element) => {%>
+  <label for=<%= element.longDescription%>><%= element.longDescription
+         %></label>
+    <input type="checkbox" name=<%= element.longDescription %> id=<%=
+    element.longDescription %>>
+    <br>
+  <% }) %>
+  </form>
+</body>
+</html>

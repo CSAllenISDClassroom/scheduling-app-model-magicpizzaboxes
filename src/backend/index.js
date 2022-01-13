@@ -1,46 +1,32 @@
 const express = require('express')
 const mysql = require('mysql2')
 const fs = require('fs')
+const cookieParser = require('cookie-parser')
 const app = express()
 const port = 10442
 
 var sessions = []
 
-app.post('/session', (req, res) => {
-  let sessionId = Math.floor(Math.random() * 999999999)
-  sessions.push({'sessionId':sessionId})
-  res.send({'sessionId':sessionId})
-})
-
-// This is v dangerous and is only included for testing purposes!
-app.get('/session', (req, res) => {
-  res.send(sessions)
-})
-
-app.get('/session/:sessionId', (req, res) => {
-  let sessionId = req.params.sessionId
-  let sessionData = sessions.find(element => element.sessionId == sessionId)
-  res.send(sessionData)
-})
-
-// This is v dangerous and is only included for testing purposes!
-app.get('/all', (req, res) => {
-  dbConnection.query("select * from Courses", function (err, result) {
-    if (err) throw err;
-    res.send(result)
-  })
-})
-
-app.get('/home', (req, res) => {
-  let viewData = {
-    motd: 'Hello! Have a good day!',
-    studentId: req.query.studentId
+app.use(cookieParser())
+app.use((req, res, next) => {
+  let previousCookie = req.cookies.sessionId
+  if(!previousCookie) {
+    let sessionId = (Math.random() % 0xffffffffffffffff).toString(16)
+    res.cookie('sessionId', sessionId, {maxAge:3600000, httpOnly:true})
+    sessions.push({sessionId:sessionId})
+    console.log('[Info] New session: ' + sessionId)
+  } else {
+    console.log('[Info] Page accessed by user ' + previousCookie)
   }
-  res.render('home', viewData)
+  next()
 })
 
 app.get('/', (req, res) => {
-  res.render('login')
+  dbConnection.query('SELECT * FROM Ready_CourseLongNames', (err, result, fields) => {
+    if (err) return console.error('error: ' + err.message)
+    let viewData = {classInfo: result}
+    res.render('classSelect', viewData)
+  })
 })
 
 ///// STARTUP INITIALIZATION /////
