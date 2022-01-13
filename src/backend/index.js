@@ -21,11 +21,30 @@ app.use((req, res, next) => {
   next()
 })
 
-app.get('/', (req, res) => {
+app.get('/classes', (req, res) => {
   dbConnection.query('SELECT * FROM Ready_CourseLongNames', (err, result, fields) => {
-    if (err) return console.error('error: ' + err.message)
+    if (err) return console.error('[Error] ' + err.message)
     let viewData = {classInfo: result}
     res.render('classSelect', viewData)
+  })
+})
+
+app.get('/schedule', (req, res) => {
+  let params = req.query
+  console.log(params)
+  res.render('buildSchedule')
+})
+
+app.get('/', (req, res) => {
+  let itemsPerPage = Number(req.query.per)
+  let pageNo = Number(req.query.page)
+  dbConnection.query('SELECT * FROM Ready_CourseLongNames', (err, result, fields) => {
+    if (err) return console.error('[Error] ' + err.message)
+    let startIndex = itemsPerPage*pageNo
+    let items = result.slice(startIndex, startIndex+itemsPerPage)
+    let itemsCount = result.length
+    let metadata = {total: itemsCount, page: pageNo, per: itemsPerPage}
+    res.send({metadata: metadata, items: items})
   })
 })
 
@@ -39,7 +58,7 @@ const dbConnection = mysql.createConnection({
   database: dbLoginInfo.database
 })
 dbConnection.connect((err) => {
-  if (err) return console.error('error: ' + err.message)
+  if (err) return console.error('[Error] ' + err.message)
   console.log("Connected!")
 })
 

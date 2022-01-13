@@ -5,12 +5,13 @@
 </head>
 <body>
   <h1>Classes:</h1>
-  <form>
+  <form action="/vapor/reese-hoffart/schedule">
+    <input type="submit">
   <% classInfo.forEach((element) => {%>
-  <label for=<%= element.longDescription%>><%= element.longDescription
+  <label for=<%= element.course%>><%= element.longDescription
          %></label>
-    <input type="checkbox" name=<%= element.longDescription %> id=<%=
-    element.longDescription %>>
+    <input type="checkbox" name=<%= element.course %> id=<%=
+    element.course %>>
     <br>
   <% }) %>
   </form>
