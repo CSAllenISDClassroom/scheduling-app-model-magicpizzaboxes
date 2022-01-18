@@ -5,5 +5,14 @@
 </head>
 <body>
   <h1>Build Schedule</h1>
+  <form>
+  <% classInfo.forEach((element) => {%>
+  <label for=<%= element.course%>><%= element.longDescription
+         %></label>
+    <input type="checkbox" name=<%= element.course %> id=<%=
+    element.course %>>
+    <br>
+  <% }) %>
+  </form>
 </body>
 </html>

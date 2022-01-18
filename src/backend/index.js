@@ -31,8 +31,19 @@ app.get('/classes', (req, res) => {
 
 app.get('/schedule', (req, res) => {
   let params = req.query
-  console.log(params)
-  res.render('buildSchedule')
+  let classesChosen = Object.keys(params)
+  console.log(classesChosen)
+  let query = 'SELECT * FROM Ready_CourseLongNames WHERE '
+  classesChosen.forEach((element) => {
+    query += 'course="' + element + '" OR '
+  })
+  query += '1=2'
+  console.log(query)
+  dbConnection.query(query, (err, result, fields) => {
+    if (err) return console.error('[Error] ' + err.message)
+    let viewData = {classInfo: result}
+    res.render('buildSchedule', viewData)
+  })
 })
 
 app.get('/', (req, res) => {
