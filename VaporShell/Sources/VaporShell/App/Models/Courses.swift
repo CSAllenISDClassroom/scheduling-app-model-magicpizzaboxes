@@ -76,6 +76,9 @@ final class Class: Model, Content {
     @Field(key: "applicationCode")
     var applicationCode: String?
 
+    @Field(key: "availabilityBitmap")
+    var availabilityBitmap: UInt
+
     // Creates a new, empty Employee.
     init() { }
 }
