@@ -23,6 +23,7 @@ app.get('/session/:sessionId', (req, res) => {
   res.send(sessionData)
 })
 
+/// retrive classes
 app.get('/', (req, res) => {
   dbConnection.query("select * from Courses", function (err, result) {
     if (err) throw err;
