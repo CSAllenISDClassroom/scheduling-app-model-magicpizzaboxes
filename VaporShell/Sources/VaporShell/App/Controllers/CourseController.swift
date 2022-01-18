@@ -18,7 +18,7 @@ public class ClassController{
 
     
     public func getClassesById(_ app: Application) throws {
-        app.get("classes", "id") { req -> Class in
+        app.get("courses", ":id") { req -> Class in
         guard let id = req.parameters.get("id", as: String.self) else {
             throw Abort(.badRequest)
         }
