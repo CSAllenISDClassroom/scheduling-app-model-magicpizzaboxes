@@ -64,4 +64,13 @@ public class CourseController{
         return schedClass
         }
     }
+
+    public func getCourses(_ app: Application) throws {
+        app.get("courses") {req -> Page<Course> in
+            let courseData = try await CourseData.query(on: req.db).paginate(for: req)
+            let courses = coursesData.map{Course(courseData: $0)}
+
+            return courses
+        }
+    }
 } 
