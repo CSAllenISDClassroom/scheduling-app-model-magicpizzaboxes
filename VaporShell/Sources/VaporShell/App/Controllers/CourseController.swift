@@ -17,29 +17,11 @@ public class ClassController{
     /// Returns ``Employee``
 
     private func bitToPeriods(bit: Int) -> [Int] {
-        if (bit < 11) {return [bit]}
+        if (bit <= 10) {return [bit]}
 
+        if (bit <= 20) {return [bit - 11, bit - 10]}
+        
         switch (bit) {
-        case 11:
-            return [0, 1]
-        case 12:
-            return [1, 2]
-        case 13:
-            return [2, 3]
-        case 14:
-            return [3, 4]
-        case 15:
-            return [4, 5]
-        case 16:
-            return [5, 6]
-        case 17:
-            return [6, 7]
-        case 18:
-            return [7, 8]
-        case 19:
-            return [8, 9]
-        case 20:
-            return [9, 10]
         case 21:
             return [2, 5]
         case 22:
@@ -55,6 +37,9 @@ public class ClassController{
         var currentBitMap = bitMap
         var periods = [[Int]]()
 
+        //Find largest bit possible, then work down
+        //Takes Log2 of currentBitMap then converts it to int to find bit 
+        
         while (currentBitMap > 0) {
             let bit = Int(log2(Double(currentBitMap)))
             currentBitMap -= Int(pow(Double(2), Double(bit)))
