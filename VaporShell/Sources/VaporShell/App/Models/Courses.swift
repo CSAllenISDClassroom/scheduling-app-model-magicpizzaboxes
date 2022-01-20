@@ -19,7 +19,7 @@ import FluentMySQLDriver
 
 // UNCOMMENT-DATABASE to configure database example
 // // Content conformance will ensure that the object can be encoded and decoded from HTTP messages.
-final class Class: Model, Content {
+final class Course: Model, Content {
     // Name of the table or collection.
     static let schema = "CourseSectionsView"
 
