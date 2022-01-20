@@ -19,7 +19,7 @@ import Vapor
 import Fluent
 import FluentMySQLDriver
 
-let classController = ClassController()
+let courseController = CourseController()
 
 func routes(_ app: Application) throws {
 
@@ -31,12 +31,12 @@ func routes(_ app: Application) throws {
 
     // UNCOMMENT-DATABASE to configure database example
     // // Find an employee with the specified ID
-    try classController.getClassesById(app)
+    try courseController.getCourseById(app)
 
     // List all employees using paging
-    app.get("courses") { req -> Page<Class>  in
-        let classes = try await Class.query(on: req.db)
+    app.get("courses") { req -> Page<Course>  in
+        let courses = try await Course.query(on: req.db)
           .paginate(for: req)
-        return classes
+        return courses
     }
 }
