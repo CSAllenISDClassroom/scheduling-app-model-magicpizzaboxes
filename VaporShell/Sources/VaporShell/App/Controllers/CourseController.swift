@@ -2,7 +2,7 @@ import Vapor
 import Fluent
 import FluentMySQLDriver
 
-public class ClassController{
+public class CourseController{
 
     /// Retrieves the employee record specified by the ID
     ///
@@ -49,13 +49,13 @@ public class ClassController{
         return periods
     }
     
-    public func getClassesById(_ app: Application) throws {
-        app.get("courses", ":id") { req -> Class in
+    public func getCourseById(_ app: Application) throws {
+        app.get("courses", ":id") { req -> Course in
         guard let id = req.parameters.get("id", as: String.self) else {
             throw Abort(.badRequest)
         }
         
-        guard let schedClass = try await Class.query(on: req.db)
+        guard let schedClass = try await Course.query(on: req.db)
                 .filter(\.$id == id)
                 .first() else {
             throw Abort(.notFound)
