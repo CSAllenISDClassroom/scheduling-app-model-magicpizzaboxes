@@ -1,3 +1,4 @@
+
 /*
 VaporShell provides a minimal framework for starting Vapor projects.
 Copyright (C) 2021, 2022 CoderMerlin.com
@@ -19,11 +20,8 @@ import FluentMySQLDriver
 
 // UNCOMMENT-DATABASE to configure database example
 // // Content conformance will ensure that the object can be encoded and decoded from HTTP messages.
-<<<<<<< HEAD
-final class Class: Model{
-=======
-final class Course: Model, Content {
->>>>>>> 8f6d502f319436347bbd72dddf9d5ce482bb0262
+//<<<<<<< HEAD
+final class Course: Model, Content{
     // Name of the table or collection.
     static let schema = "CourseSectionsView"
 
