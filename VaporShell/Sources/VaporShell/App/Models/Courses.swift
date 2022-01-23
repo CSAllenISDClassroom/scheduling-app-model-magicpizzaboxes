@@ -100,5 +100,4 @@ final class Course: Codable {
         applicationCode = courseData.applicationCode
         periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
     }
-
-}    
+} 
