@@ -32,11 +32,11 @@ func routes(_ app: Application) throws {
     // UNCOMMENT-DATABASE to configure database example
     // // Find an employee with the specified ID
     try courseController.getCourseById(app)
-
+    try courseController.getCourses(app)
     // List all employees using paging
-    app.get("courses") { req -> Page<Course>  in
-        let courses = try await Course.query(on: req.db)
+/*    app.get("courses") { req -> Page<CourseData>  in
+        let courses = try await CourseData.query(on: req.db)
           .paginate(for: req)
         return courses
-    }
+    }*/
 }
