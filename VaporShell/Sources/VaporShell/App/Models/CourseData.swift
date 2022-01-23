@@ -79,7 +79,7 @@ final class CourseData: Model, Content {
     @Field(key: "availabilityBitmap")
     var availabilityBitmap: UInt?
 
-    // Creates a new, empty Employee.
+    // Creates a new, empty Course.
     init() { }
 }
 
