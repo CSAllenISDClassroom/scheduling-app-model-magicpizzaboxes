@@ -2,7 +2,8 @@ import Vapor
 import Fluent
 
 final class Course: Codable {
-
+    
+    //establish variables to their type
     public var id: String?
     public var description: String?
     public var shortDescription: String?
@@ -18,6 +19,7 @@ final class Course: Codable {
     public var applicationCode: String?
     public var periodsAvailable: [[Int]]
 
+    //assign the variables to be connected to course data and initialized.
     public init(courseData: CourseData) throws {
         self.id = courseData.id
         self.description = courseData.description
@@ -35,6 +37,7 @@ final class Course: Codable {
         self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
     }
 
+    //check if there are two characters in the semester and if there is an S in front. if so, remove the S and turn the number into an Int
     private static func semesterAsInteger(semester: String) throws -> Int{
         guard semester.count == 2,
               semester.first == "S" else {
@@ -49,6 +52,7 @@ final class Course: Codable {
         return semesterInteger
     }
 
+    // Assign bits to periods/combinations of periods.
     private static func bitToPeriods(bit: Int) -> [Int] {
         if (bit <= 10) {return [bit]}
 
