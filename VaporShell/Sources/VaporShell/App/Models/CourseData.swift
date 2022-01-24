@@ -38,7 +38,7 @@ final class CourseData: Model, Content {
     var longDescription: String?
     
     @Field(key: "semester")
-    var semester : String?    
+    var semester : String
     
     @Field(key: "locationName")
     var locationName: String?

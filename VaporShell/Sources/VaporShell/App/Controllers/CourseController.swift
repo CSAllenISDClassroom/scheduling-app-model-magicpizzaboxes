@@ -16,7 +16,14 @@ public class CourseController{
     ///
     /// Returns ``Employee``
 
-    
+    public func getCourses(_ app: Application) throws {
+        app.get("courses") { req -> Page<Course> in
+            let courseData = try await CourseData.query(on: req.db).paginate(for: req)
+            let courses = try courseData.map{ try Course(courseData: $0)}
+
+            return courses
+        }
+    }
     
     public func getCourseById(_ app: Application) throws {
         app.get("courses", ":id") { req -> CourseData in
@@ -34,12 +41,5 @@ public class CourseController{
         }
     }
 
-    public func getCourses(_ app: Application) throws {
-        app.get("courses") {req -> Page<Course> in
-            let courseData = try await CourseData.query(on: req.db).paginate(for: req)
-            let courses = courseData.map{Course(courseData: $0)}
-
-            return courses
-        }
-    }
+    
 } 

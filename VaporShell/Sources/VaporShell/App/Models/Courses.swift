@@ -7,7 +7,7 @@ final class Course: Codable {
     public var description: String?
     public var shortDescription: String?
     public var longDescription: String?
-    public var semester: String?
+    public var semester: Int
     public var locationName: String?
     public var lowCredit: Double?
     public var highCredit: Double?
@@ -18,13 +18,31 @@ final class Course: Codable {
     public var applicationCode: String?
     public var periodsAvailable: [[Int]]
 
+    public init(courseData: CourseData) throws {
+        self.id = courseData.id
+        self.description = courseData.description
+        self.shortDescription = courseData.shortDescription
+        self.longDescription = courseData.longDescription
+        self.semester = try Self.semesterAsInteger(semester: courseData.semester)
+        self.locationName = courseData.locationName
+        self.lowCredit = courseData.lowCredit
+        self.highCredit = courseData.highCredit
+        self.lowGrade = courseData.lowGrade
+        self.highGrade = courseData.highGrade
+        self.application = courseData.application
+        self.courseLevel = Course.getCourseLevel(courseData: courseData)
+        self.applicationCode = courseData.applicationCode
+        self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
+    }
+
     private static func semesterAsInteger(semester: String) throws -> Int{
         guard semester.count == 2,
               semester.first == "S" else {
             throw Abort(.badRequest, reason: "Invalid Semester input, S must be the first character.")
         }
 
-        guard let semesterInteger = Int(String(semester.last!)) else {
+        guard let semesterInteger = Int(String(semester.last!)),
+              (1 ... 2).contains(semesterInteger) else {
             throw Abort(.badRequest, reason: "Invalid semester input, second char must be Int")
         }
 
@@ -84,21 +102,6 @@ final class Course: Codable {
         return nil
     }
     
-    init(courseData: CourseData) {
-        id = courseData.id
-        description = courseData.description
-        shortDescription = courseData.shortDescription
-        longDescription = courseData.longDescription
-        semester = courseData.semester
-        locationName = courseData.locationName
-        lowCredit = courseData.lowCredit
-        highCredit = courseData.highCredit
-        lowGrade = courseData.lowGrade
-        highGrade = courseData.highGrade
-        application = courseData.application
-        courseLevel = Course.getCourseLevel(courseData: courseData)
-        applicationCode = courseData.applicationCode
-        periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
-    }
+    
 
 }    
