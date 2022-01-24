@@ -54,7 +54,9 @@ final class Course: Codable {
         return semesterInteger
     }
 
-    // Assign bits to periods/combinations of periods.
+    // Bit 0-9 related directly to period
+    // Subtract from 11 and 10 in order to account for Double Block Vertical
+    // Bit 21-23 directly correlates to Double-Block Horizontal 
     private static func bitToPeriods(bit: Int) -> [Int] {
         if (bit <= 10) {return [bit]}
 
