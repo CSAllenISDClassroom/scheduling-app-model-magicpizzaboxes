@@ -37,7 +37,9 @@ final class Course: Codable {
         self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
     }
 
-    //check if there are two characters in the semester and if there is an S in front. if so, remove the S and turn the number into an Int
+    //check if there are two characters in the semester
+    // then check if there is an S in front.
+    // If so, remove the S and turn the number into an Int
     private static func semesterAsInteger(semester: String) throws -> Int{
         guard semester.count == 2,
               semester.first == "S" else {
