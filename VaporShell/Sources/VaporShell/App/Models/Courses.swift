@@ -101,7 +101,5 @@ final class Course: Codable {
 
         return nil
     }
-    
-    
+} 
 
-}    
