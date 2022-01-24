@@ -93,7 +93,9 @@ final class Course: Codable {
     }
 
     private static func getCourseLevel(courseData: CourseData) -> String? {
-        
+        // Checking the class level
+        // Check if the course is on level by checking if its status number is 1, if it is not, repeat with the next level
+        // return nil if there are no course level available
         if courseData.onLevel == 1 {
             return "On Level"
         } else if courseData.preAP == 1 {
