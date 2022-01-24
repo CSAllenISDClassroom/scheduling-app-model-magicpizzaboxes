@@ -27,17 +27,17 @@ public class CourseController{
     
     public func getCourseById(_ app: Application) throws {
         app.get("courses", ":id") { req -> CourseData in
-        guard let id = req.parameters.get("id", as: String.self) else {
-            throw Abort(.badRequest)
-        }
-        
-        guard let schedClass = try await CourseData.query(on: req.db)
-                .filter(\.$id == id)
-                .first() else {
-            throw Abort(.notFound)
-        }
+            guard let id = req.parameters.get("id", as: String.self) else {
+                throw Abort(.badRequest)
+            }
+            
+            guard let schedClass = try await CourseData.query(on: req.db)
+                    .filter(\.$id == id)
+                    .first() else {
+                throw Abort(.notFound)
+            }
 
-        return schedClass
+            return schedClass
         }
     }
 

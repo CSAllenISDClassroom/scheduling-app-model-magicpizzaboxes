@@ -86,17 +86,18 @@ final class Course: Codable {
         return periods
     }
 
-    private static func getCourseLevel(courseData: CourseData) -> String? {        
+    private static func getCourseLevel(courseData: CourseData) -> String? {
+        
         if courseData.onLevel == 1 {
-            return "isOnLevel"
+            return "On Level"
         } else if courseData.preAP == 1 {
-            return "isPreAP"
+            return "Advanced"
         } else if courseData.dualCredit == 1 {
-            return "isDualCredit"
+            return "Dual Credit"
         } else if courseData.AP == 1 {
-            return "isAP"
+            return "AP"
         } else if courseData.IB == 1 {
-            return "isIB"
+            return "IB"
         }
 
         return nil
