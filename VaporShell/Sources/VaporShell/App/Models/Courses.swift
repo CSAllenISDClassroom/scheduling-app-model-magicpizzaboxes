@@ -11,7 +11,7 @@ final class Course: Codable {
     public var description: String?
     public var dualCreditSchedule: String?
     public var location: String?
-    public var periodsAvailable: Int?
+    public var periodsAvailable: [[Int]]
 
     //assign the variables to be connected to course data and initialized.
     public init(courseData: CourseData) throws {
@@ -22,7 +22,9 @@ final class Course: Codable {
         self.description = courseData.description
         self.dualCreditSchedule = courseData.dualCreditSchedule
         self.location = courseData.location        
-        self.periodsAvailable = courseData.periodsAvailable //Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
+        self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.periodsAvailable)//courseData.periodsAvailable
+
+        //Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
     }
 
     //check if there are two characters in the semester
@@ -62,7 +64,7 @@ final class Course: Codable {
         }
     }
     
-    private static func getPeriodsFromBitMap(bitMap: UInt?) -> [[Int]] {
+    private static func getPeriodsFromBitMap(bitMap: Int?) -> [[Int]] {
         guard let startingBitMap = bitMap else {
             return []
         }
