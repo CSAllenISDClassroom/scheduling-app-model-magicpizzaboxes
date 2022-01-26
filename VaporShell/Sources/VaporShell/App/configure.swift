@@ -30,9 +30,9 @@ public func configure(_ app: Application) throws {
     app.databases.use(.mysql(
                         hostname: "db",
                         port: MySQLConfiguration.ianaPortNumber,
-                        username: "AHSSampleSchedule",
-                        password: "xQIDP-59231!",
-                        database: "AHSSampleSchedule",
+                        username: "AHSSchedule",
+                        password: ",dpf4>/B{v56x6/=",
+                        database: "AHSSchedule",
                         tlsConfiguration: tls
                       ), as: .mysql)
 

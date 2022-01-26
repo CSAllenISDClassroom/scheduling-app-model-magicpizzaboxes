@@ -21,65 +21,33 @@ import FluentMySQLDriver
 // // Content conformance will ensure that the object can be encoded and decoded from HTTP messages.
 final class CourseData: Model, Content {
     // Name of the table or collection.
-    static let schema = "CourseSectionsView"
+    static let schema = "Courses"
 
     // Unique identifier for this Employee.
-    @ID(custom: "code", generatedBy: .database)
+    @ID(custom: "courseCode", generatedBy: .database)
     var id: String?
 
-    // Additional fields for this Employee.
+    @Field(key: "semesterLength")
+    var semesterLength: String?
+
+    @Field(key: "semester")
+    var semester: Int?
+
+    @Field(key: "shortDescription")
+    var shortDescription: String?
+    
     @Field(key: "description")
     var description: String?
 
-    @Field(key: "shortDescription")
-    var shortDescription: String? 
+    @Field(key: "dualCreditDailySchedule")
+    var dualCreditSchedule: String?
 
-    @Field(key: "longDescription")
-    var longDescription: String?
-    
-    @Field(key: "semester")
-    var semester : String
-    
-    @Field(key: "locationName")
-    var locationName: String?
-    
-    @Field(key: "creditsLow")
-    var lowCredit: Double?
+    @Field(key: "location")
+    var location: String?
 
-    @Field(key: "creditsHigh")
-    var highCredit: Double?
+    @Field(key: "periodBitmap")
+    var periodsAvailable: Int?
 
-    @Field(key: "gradesLow")
-    var lowGrade: Int?
-
-    @Field(key: "gradesHigh")
-    var highGrade: Int?
-
-    @Field(key: "isApplication")
-    var application: Int?
-
-    @Field(key: "isOnLevel")
-    var onLevel: Int
-
-    @Field(key: "isPreAP")
-    var preAP: Int
-
-    @Field(key: "isAP")
-    var AP: Int
-    
-    @Field(key: "isIB")
-    var IB: Int
-    
-    @Field(key: "isDualCredit")
-    var dualCredit: Int
-
-    @Field(key: "applicationCode")
-    var applicationCode: String?
-
-    @Field(key: "availabilityBitmap")
-    var availabilityBitmap: UInt?
-
-    // Creates a new, empty Employee.
     init() {
     }
 }
