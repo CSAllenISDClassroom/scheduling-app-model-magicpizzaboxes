@@ -1,4 +1,4 @@
-import Vaport
+import Vapor
 import Fluent
 
 class Course: Content {
