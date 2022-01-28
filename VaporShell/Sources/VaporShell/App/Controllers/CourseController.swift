@@ -16,30 +16,30 @@ public class CourseController{
     ///
     /// Returns ``Employee``
 
-    
-    
-    public func getCourseById(_ app: Application) throws {
-        app.get("courses", ":id") { req -> CourseData in
-        guard let id = req.parameters.get("id", as: String.self) else {
-            throw Abort(.badRequest)
-        }
-        
-        guard let schedClass = try await CourseData.query(on: req.db)
-                .filter(\.$id == id)
-                .first() else {
-            throw Abort(.notFound)
-        }
-
-        return schedClass
-        }
-    }
-
     public func getCourses(_ app: Application) throws {
-        app.get("courses") {req -> Page<Course> in
+        app.get("courses") { req -> Page<Course> in
             let courseData = try await CourseData.query(on: req.db).paginate(for: req)
-            let courses = courseData.map{Course(courseData: $0)}
+            let courses = try courseData.map{ try Course(courseData: $0)}
 
             return courses
         }
     }
+    
+    public func getCourseById(_ app: Application) throws {
+        app.get("courses", ":id") { req -> CourseData in
+            guard let id = req.parameters.get("id", as: String.self) else {
+                throw Abort(.badRequest)
+            }
+            
+            guard let schedClass = try await CourseData.query(on: req.db)
+                    .filter(\.$id == id)
+                    .first() else {
+                throw Abort(.notFound)
+            }
+
+            return schedClass
+        }
+    }
+
+    
 } 

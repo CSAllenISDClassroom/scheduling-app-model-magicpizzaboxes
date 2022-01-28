@@ -2,35 +2,51 @@ import Vapor
 import Fluent
 
 final class Course: Codable {
-
+    
+    //establish variables to their type
     public var id: String?
-    public var description: String?
+    public var semesterLength: String?
+    public var semester: Int?
     public var shortDescription: String?
-    public var longDescription: String?
-    public var semester: String?
-    public var locationName: String?
-    public var lowCredit: Double?
-    public var highCredit: Double?
-    public var lowGrade: Int?
-    public var highGrade: Int?
-    public var application: Int?
-    public var courseLevel: String?
-    public var applicationCode: String?
+    public var description: String?
+    public var dualCreditSchedule: String?
+    public var location: String?
     public var periodsAvailable: [[Int]]
 
+    //assign the variables to be connected to course data and initialized.
+    public init(courseData: CourseData) throws {
+        self.id = courseData.id
+        self.semesterLength = courseData.semesterLength
+        self.semester = courseData.semester
+        self.shortDescription = courseData.shortDescription
+        self.description = courseData.description
+        self.dualCreditSchedule = courseData.dualCreditSchedule
+        self.location = courseData.location        
+        self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.periodsAvailable)//courseData.periodsAvailable
+
+        //Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
+    }
+
+    //check if there are two characters in the semester
+    // then check if there is an S in front.
+    // If so, remove the S and turn the number into an Int
     private static func semesterAsInteger(semester: String) throws -> Int{
         guard semester.count == 2,
               semester.first == "S" else {
             throw Abort(.badRequest, reason: "Invalid Semester input, S must be the first character.")
         }
 
-        guard let semesterInteger = Int(String(semester.last!)) else {
+        guard let semesterInteger = Int(String(semester.last!)),
+              (1 ... 2).contains(semesterInteger) else {
             throw Abort(.badRequest, reason: "Invalid semester input, second char must be Int")
         }
 
         return semesterInteger
     }
 
+    // Bit 0-9 related directly to period
+    // Subtract from 11 and 10 in order to account for Double Block Vertical
+    // Bit 21-23 directly correlates to Double-Block Horizontal 
     private static func bitToPeriods(bit: Int) -> [Int] {
         if (bit <= 10) {return [bit]}
 
@@ -48,7 +64,7 @@ final class Course: Codable {
         }
     }
     
-    private static func getPeriodsFromBitMap(bitMap: UInt?) -> [[Int]] {
+    private static func getPeriodsFromBitMap(bitMap: Int?) -> [[Int]] {
         guard let startingBitMap = bitMap else {
             return []
         }
@@ -68,36 +84,23 @@ final class Course: Codable {
         return periods
     }
 
-    private static func getCourseLevel(courseData: CourseData) -> String? {        
-        if courseData.onLevel == 1 {
-            return "isOnLevel"
-        } else if courseData.preAP == 1 {
-            return "isPreAP"
-        } else if courseData.dualCredit == 1 {
-            return "isDualCredit"
-        } else if courseData.AP == 1 {
-            return "isAP"
-        } else if courseData.IB == 1 {
-            return "isIB"
-        }
+    // private static func getCourseLevel(courseData: CourseData) -> String? {
+    //     // Checking the class level
+    //     // Check if the course is on level by checking if its status number is 1, if it is not, repeat with the next level
+    //     // return nil if there are no course level available
+    //     if courseData.onLevel == 1 {
+    //         return "On Level"
+    //     } else if courseData.preAP == 1 {
+    //         return "Advanced"
+    //     } else if courseData.dualCredit == 1 {
+    //         return "Dual Credit"
+    //     } else if courseData.AP == 1 {
+    //         return "AP"
+    //     } else if courseData.IB == 1 {
+    //         return "IB"
+    //     }
 
-        return nil
-    }
-    
-    init(courseData: CourseData) {
-        id = courseData.id
-        description = courseData.description
-        shortDescription = courseData.shortDescription
-        longDescription = courseData.longDescription
-        semester = courseData.semester
-        locationName = courseData.locationName
-        lowCredit = courseData.lowCredit
-        highCredit = courseData.highCredit
-        lowGrade = courseData.lowGrade
-        highGrade = courseData.highGrade
-        application = courseData.application
-        courseLevel = Course.getCourseLevel(courseData: courseData)
-        applicationCode = courseData.applicationCode
-        periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
-    }
+    //     return nil
+    // }
 } 
+
