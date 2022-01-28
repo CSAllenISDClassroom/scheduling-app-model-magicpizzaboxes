@@ -42,13 +42,13 @@ public class CourseController{
     }
 
     public func getCoursesBySubject(_ app: Application) throws {
-        app.get("courses/:subject") { req -> Page<Course> in
+        app.get("courses", "subject", ":subject") { req -> Page<Course> in
             let mathKeys = ["math", "algebra", "math", "geometry", "calc"]
             let scienceKeys = ["science"]
             let englishKeys = ["english"]
             let socialStudiesKeys = ["history"]
             let subject : Subject
-            guard let inputSubject = req.parameters.get("id") else {
+            guard let inputSubject = req.parameters.get("subject") else {
                 throw Abort(.badRequest)
             }
             switch inputSubject {
