@@ -41,5 +41,38 @@ public class CourseController{
         }
     }
 
+    public func getCoursesBySubject(_ app: Application) throws {
+        app.get("courses/:subject") { req -> Page<Course> in
+            let mathKeys = ["math", "algebra", "math", "geometry", "calc"]
+            let scienceKeys = ["science"]
+            let englishKeys = ["english"]
+            let socialStudiesKeys = ["history"]
+            let subject : Subject
+            guard let inputSubject = req.parameters.get("id") else {
+                throw Abort(.badRequest)
+            }
+            switch inputSubject {
+                case "math": subject = Subject.math
+                case "science": subject = Subject.science
+                case "socialStudies": subject = Subject.socialStudies
+                case "english": subject = Subject.english
+                default: throw Abort(.badRequest)
+            }
+            let keys : [String]
+            switch subject {
+                case Subject.math: keys = mathKeys
+                case Subject.science: keys = scienceKeys
+                case Subject.socialStudies: keys = socialStudiesKeys
+                case Subject.english: keys = englishKeys
+                default: throw Abort(.badRequest)
+            }
+            let courseData = try await CourseData.query(on: req.db)
+                .filter(\.$description ~~ keys)
+                .paginate(for: req)
+            let courses = try courseData.map{ try Course(courseData: $0)}
+
+            return courses
+        }
+    }
     
-} 
+}
