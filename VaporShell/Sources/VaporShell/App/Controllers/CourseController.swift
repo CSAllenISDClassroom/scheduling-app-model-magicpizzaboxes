@@ -44,9 +44,9 @@ public class CourseController{
     public func getCoursesBySubject(_ app: Application) throws {
         app.get("courses", "subject", ":subject") { req -> Page<Course> in
             let mathKeys = ["math", "algebra", "math", "geometry", "calc"]
-            let scienceKeys = ["science"]
-            let englishKeys = ["english"]
-            let socialStudiesKeys = ["history"]
+            let scienceKeys = ["science", "chem", "bio", "physic"]
+            let englishKeys = ["english", "literature"]
+            let socialStudiesKeys = ["history", "gov", "econ", "geograph"]
             let subject : Subject
             guard let inputSubject = req.parameters.get("subject") else {
                 throw Abort(.badRequest)
@@ -64,11 +64,12 @@ public class CourseController{
                 case Subject.science: keys = scienceKeys
                 case Subject.socialStudies: keys = socialStudiesKeys
                 case Subject.english: keys = englishKeys
-                default: throw Abort(.badRequest)
             }
-            let courseData = try await CourseData.query(on: req.db)
-                .filter(\.$description ~~ keys)
-                .paginate(for: req)
+            let courseData = try await CourseData.query(on: req.db).group(.or) { group in
+                for key in keys {
+                    group.filter(\.$description ~~ key)
+                }
+            }.paginate(for: req)
             let courses = try courseData.map{ try Course(courseData: $0)}
 
             return courses
