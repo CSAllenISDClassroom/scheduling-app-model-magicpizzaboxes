@@ -23,8 +23,21 @@ public class CourseController{
 
             return courses
         }
+
+         app.get("courses", ":location" ) { req -> Page<Course> in
+            guard let location = req.parameters.get("location", as: String.self) else {
+                throw Abort (.badRequest)
+            }
+
+            let classLocation = try await CourseData.query(on: req.db)
+              .filter(\.$location == location)
+              .paginate(for: req)
+            let courses = try classLocation.map{ try Course(courseData: $0)}
+            return courses
+             
+            }        
     }
-    
+      
     public func getCourseById(_ app: Application) throws {
         app.get("courses", ":id") { req -> CourseData in
             guard let id = req.parameters.get("id", as: String.self) else {
@@ -40,6 +53,4 @@ public class CourseController{
             return schedClass
         }
     }
-
-    
 } 
