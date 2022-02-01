@@ -39,14 +39,11 @@ public class CourseController{
             //filterBySemester(courseData: &courseData, semester: semester)
             //filterByLocation(courseData: &courseData, location: location)
             //filterByLevel(courseData: &courseData, level: level)
-            
-
-            let courses = try courseData.map{ try Course(courseData: $0)}
 
             return courses
         }
 
-         app.get("courses", ":location" ) { req -> Page<Course> in
+         /*app.get("courses", ":location" ) { req -> Page<Course> in
             guard let location = req.parameters.get("location", as: String.self) else {
                 throw Abort (.badRequest)
             }
@@ -57,7 +54,7 @@ public class CourseController{
             let courses = try classLocation.map{ try Course(courseData: $0)}
             return courses
              
-            }        
+            }*/        
     }
 
 /*    private func filterBySemester(courseData: inout Page<CourseData>, semester: Int?) -> Page<CourseData>{
@@ -74,8 +71,8 @@ public class CourseController{
     
 
 
-    public func getCourseById(_ app: Application) throws {
-        public func getCategories(_ app: Application) throws {
+    
+    public func getCategories(_ app: Application) throws {
             app.get("categories") { req -> Page<CategoryData> in
                 let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
 
