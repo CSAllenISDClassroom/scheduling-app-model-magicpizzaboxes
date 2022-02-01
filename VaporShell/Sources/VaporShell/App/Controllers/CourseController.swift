@@ -18,8 +18,14 @@ public class CourseController{
     public func getCourses(_ app: Application) throws {
         app.get("courses") { req -> Page<Course> in
             let courseData = try await CourseData.query(on: req.db).paginate(for: req)
+            if let description = try? req.query.get(String.self, at: "description") {
+                 
+                 return courses.filter(\.$description ~~ description) 
+            }else {
+                return try courseData.map{ try Course(courseData: $0)}
+           
+            }
             let courses = try courseData.map{ try Course(courseData: $0)}
-
             return courses
         }
     }
