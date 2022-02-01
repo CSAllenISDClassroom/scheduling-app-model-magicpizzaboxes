@@ -15,7 +15,6 @@ public class CourseController{
     ///   * 404 Not Found
     ///
     /// Returns ``Employee``
-
     public func getCourses(_ app: Application) throws {
         app.get("courses") { req -> Page<Course> in
             let courseData = try await CourseData.query(on: req.db).paginate(for: req)
@@ -24,8 +23,8 @@ public class CourseController{
             return courses
         }
     }
-    
-    public func getCourseById(_ app: Application) throws {
+
+        public func getCourseById(_ app: Application) throws {
         app.get("courses", ":id") { req -> CourseData in
             guard let id = req.parameters.get("id", as: String.self) else {
                 throw Abort(.badRequest)

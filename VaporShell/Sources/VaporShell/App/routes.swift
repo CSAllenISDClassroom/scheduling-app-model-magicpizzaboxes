@@ -28,7 +28,7 @@ func routes(_ app: Application) throws {
     app.get { req in
         return "It works!"
     }
-
+    
     // UNCOMMENT-DATABASE to configure database example
     // // Find an employee with the specified ID
     try courseController.getCourseById(app)
