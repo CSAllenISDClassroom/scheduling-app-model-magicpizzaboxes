@@ -45,6 +45,17 @@ final class CourseData: Model, Content {
     @Field(key: "periodBitmap")
     var periodsAvailable: Int?
 
+    @Field(key: "level")
+    var level: String?
+
+    @Field(key: "categories")
+    var categories: String?
+
+    @Field(key: "subcategories")
+    var subcategories: String?
+
+    
+
     init() {
     }
 }

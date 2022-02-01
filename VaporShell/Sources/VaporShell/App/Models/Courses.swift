@@ -11,6 +11,9 @@ final class Course: Codable {
     public var dualCreditSchedule: String?
     public var location: String?
     public var periodsAvailable: [[Int]]
+    public var level: String?
+    public var categories: String?
+    public var subcategories: String?
 
     //assign the variables to be connected to course data and initialized.
     public init(courseData: CourseData) throws {
@@ -21,6 +24,9 @@ final class Course: Codable {
         self.dualCreditSchedule = courseData.dualCreditSchedule
         self.location = courseData.location        
         self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.periodsAvailable)//courseData.periodsAvailable
+        self.level = courseData.level
+        self.categories = courseData.categories
+        self.subcategories = courseData.subcategories
 
         //Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
     }
