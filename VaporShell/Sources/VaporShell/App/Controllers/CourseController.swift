@@ -18,15 +18,41 @@ public class CourseController{
 
     public func getCourses(_ app: Application) throws {
         app.get("courses") { req -> Page<Course> in
-            guard let periods = req.query[Bool.self, at: "period"] else {
-                throw Abort(.badRequest)
+            var semester : Int? = nil
+            var location : String? = nil
+            var level : String? = nil
+            if let qSemester = try? req.query.get(Int.self, at: "semester") {
+                semester = qSemester
             }
-            print(periods)
-            let courseData = try await CourseData.query(on: req.db).paginate(for: req)
+            if let qLocation = try? req.query.get(String.self, at: "location") {
+                location = qLocation
+            }
+            if let qLevel = try? req.query.get(String.self, at: "level") {
+                level = qLevel
+            } 
+
+            var courseData = try await CourseData.query(on: req.db).paginate(for: req)
             let courses = try courseData.map{ try Course(courseData: $0)}
 
             return courses
         }
+
+         app.get("courses", ":location" ) { req -> Page<Course> in
+            guard let location = req.parameters.get("location", as: String.self) else {
+                throw Abort (.badRequest)
+            }
+
+            let classLocation = try await CourseData.query(on: req.db)
+              .filter(\.$location == location)
+              .paginate(for: req)
+            let courses = try classLocation.map{ try Course(courseData: $0)}
+            return courses
+             
+            }        
+    }
+
+    private func filterByLevel(courseData: CourseData, level: String?) -> CourseData{
+        return level == nil ? courseData : courseData.filter{$0.level == level}
     }
     
     public func getCourseById(_ app: Application) throws {
@@ -44,6 +70,7 @@ public class CourseController{
             return schedClass
         }
     }
+
     public func getCoursesBySubject(_ app: Application) throws {
         app.get("courses", "subject", ":subject") { req -> Page<Course> in
             let mathKeys = ["math", "algebra", "math", "geometry", "calc"]
