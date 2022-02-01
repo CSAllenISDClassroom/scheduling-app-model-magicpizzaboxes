@@ -28,12 +28,14 @@ func routes(_ app: Application) throws {
     app.get { req in
         return "It works!"
     }
-
+    
     // UNCOMMENT-DATABASE to configure database example
     // // Find an employee with the specified ID
     try courseController.getCourseById(app)
     try courseController.getCourses(app)
     try courseController.getCoursesBySubject(app)
+    try courseController.getCategories(app)
+    try courseController.getSubcategories(app)
 // List all employees using paging
     /*    app.get("courses") { req -> Page<CourseData>  in
           let courses = try await CourseData.query(on: req.db)

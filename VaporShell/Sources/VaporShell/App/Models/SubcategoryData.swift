@@ -19,42 +19,19 @@ import FluentMySQLDriver
 
 // UNCOMMENT-DATABASE to configure database example
 // // Content conformance will ensure that the object can be encoded and decoded from HTTP messages.
-final class CourseData: Model, Content {
+final class SubcategoryData: Model, Content {
     // Name of the table or collection.
-    static let schema = "Courses"
+    static let schema = "Subcategories"
 
     // Unique identifier for this Employee.
-    @ID(custom: "courseCode", generatedBy: .database)
+    @ID(custom: "id", generatedBy: .database)
     var id: String?
 
-    @Field(key: "semesterLength")
-    var semesterLength: String?
+    @Field(key: "categoryId")
+    var categoryId: Int?
 
-    @Field(key: "semester")
-    var semester: Int?
-    
-    @Field(key: "description")
-    var description: String?
-
-    @Field(key: "dualCreditDailySchedule")
-    var dualCreditSchedule: String?
-
-    @Field(key: "location")
-    var location: String?
-
-    @Field(key: "periodBitmap")
-    var periodsAvailable: Int?
-
-    @Field(key: "level")
-    var level: String?
-
-    @Field(key: "categories")
-    var categories: String?
-
-    @Field(key: "subcategories")
-    var subcategories: String?
-
-    
+    @Field(key: "name")
+    var name: String?
 
     init() {
     }
