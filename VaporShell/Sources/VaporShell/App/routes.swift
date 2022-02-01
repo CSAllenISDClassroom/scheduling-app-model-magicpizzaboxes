@@ -34,6 +34,8 @@ func routes(_ app: Application) throws {
     try courseController.getCourseById(app)
     try courseController.getCourses(app)
     try courseController.getCoursesBySubject(app)
+    try courseController.getCategories(app)
+    try courseController.getSubcategories(app)
 // List all employees using paging
     /*    app.get("courses") { req -> Page<CourseData>  in
           let courses = try await CourseData.query(on: req.db)

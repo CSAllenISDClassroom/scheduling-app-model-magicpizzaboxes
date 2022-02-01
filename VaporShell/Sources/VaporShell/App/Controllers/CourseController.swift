@@ -53,7 +53,27 @@ public class CourseController{
         return level == nil ? courseData : courseData.filter{$0.level == level}
     }
 
+<<<<<<< HEAD
         public func getCourseById(_ app: Application) throws {
+=======
+    public func getCategories(_ app: Application) throws {
+        app.get("categories") { req -> Page<CategoryData> in
+            let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
+
+            return categoryData
+        }
+    }
+
+    public func getSubcategories(_ app: Application) throws {
+        app.get("subcategories") { req -> Page<SubcategoryData> in
+            let subcategoryData = try await SubcategoryData.query(on: req.db).paginate(for: req)
+
+            return subcategoryData
+        }
+    }
+
+    public func getCourseById(_ app: Application) throws {
+>>>>>>> 57eefd9a15ab2f7effb3035086d5c4df7697dde3
         app.get("courses", ":id") { req -> CourseData in
             guard let id = req.parameters.get("id", as: String.self) else {
                 throw Abort(.badRequest)
