@@ -31,7 +31,7 @@ public class CourseController{
             } 
 
             var courseData = try await CourseData.query(on: req.db).paginate(for: req)
-<<<<<<< HEAD
+
             var courses = try courseData.map{ try Course(courseData: $0)}
             print(type(of: courseData))
             print(type(of: courses))
@@ -40,9 +40,9 @@ public class CourseController{
             //filterByLocation(courseData: &courseData, location: location)
             //filterByLevel(courseData: &courseData, level: level)
             
-=======
+
             let courses = try courseData.map{ try Course(courseData: $0)}
->>>>>>> 658be4c8edfbb27455a4ced33c7011b1d3408c0d
+
             return courses
         }
 
@@ -64,7 +64,6 @@ public class CourseController{
         return semester == nil ? courseData : courseData.filter{$0.semester == semester}
     }
 
-<<<<<<< HEAD
     private func filterByLocation(courseData: inout Page<CourseData>, location: String?) -> Page<CourseData>{
         return location == nil ? courseData : courseData.filter{$0.location == location}
     }
@@ -73,15 +72,14 @@ public class CourseController{
         return level == nil ? courseData : courseData.filter{$0.level == level}
     }*/
     
-=======
-<<<<<<< HEAD
-        public func getCourseById(_ app: Application) throws {
-=======
-    public func getCategories(_ app: Application) throws {
-        app.get("categories") { req -> Page<CategoryData> in
-            let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
 
-            return categoryData
+
+    public func getCourseById(_ app: Application) throws {
+        public func getCategories(_ app: Application) throws {
+            app.get("categories") { req -> Page<CategoryData> in
+                let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
+
+                return categoryData
         }
     }
 
@@ -93,9 +91,8 @@ public class CourseController{
         }
     }
 
->>>>>>> 658be4c8edfbb27455a4ced33c7011b1d3408c0d
+
     public func getCourseById(_ app: Application) throws {
->>>>>>> 57eefd9a15ab2f7effb3035086d5c4df7697dde3
         app.get("courses", ":id") { req -> CourseData in
             guard let id = req.parameters.get("id", as: String.self) else {
                 throw Abort(.badRequest)
