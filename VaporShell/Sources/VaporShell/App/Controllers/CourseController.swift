@@ -17,17 +17,40 @@ public class CourseController{
     /// Returns ``Employee``
     public func getCourses(_ app: Application) throws {
         app.get("courses") { req -> Page<Course> in
-            let courseData = try await CourseData.query(on: req.db).paginate(for: req)
-            if let description = try? req.query.get(String.self, at: "description") {
-                 
-                 return courses.filter(\.$description ~~ description) 
-            }else {
-                return try courseData.map{ try Course(courseData: $0)}
-           
+            var semester : Int? = nil
+            var location : String? = nil
+            var level : String? = nil
+            if let qSemester = try? req.query.get(Int.self, at: "semester") {
+                semester = qSemester
             }
+            if let qLocation = try? req.query.get(String.self, at: "location") {
+                location = qLocation
+            }
+            if let qLevel = try? req.query.get(String.self, at: "level") {
+                level = qLevel
+            } 
+
+            var courseData = try await CourseData.query(on: req.db).paginate(for: req)
             let courses = try courseData.map{ try Course(courseData: $0)}
             return courses
         }
+
+         app.get("courses", ":location" ) { req -> Page<Course> in
+            guard let location = req.parameters.get("location", as: String.self) else {
+                throw Abort (.badRequest)
+            }
+
+            let classLocation = try await CourseData.query(on: req.db)
+              .filter(\.$location == location)
+              .paginate(for: req)
+            let courses = try classLocation.map{ try Course(courseData: $0)}
+            return courses
+             
+            }        
+    }
+
+    private func filterByLevel(courseData: CourseData, level: String?) -> CourseData{
+        return level == nil ? courseData : courseData.filter{$0.level == level}
     }
 
         public func getCourseById(_ app: Application) throws {
@@ -46,5 +69,38 @@ public class CourseController{
         }
     }
 
-    
-} 
+    public func getCoursesBySubject(_ app: Application) throws {
+        app.get("courses", "subject", ":subject") { req -> Page<Course> in
+            let mathKeys = ["math", "algebra", "math", "geometry", "calc"]
+            let scienceKeys = ["science", "chem", "bio", "physic"]
+            let englishKeys = ["english", "literature"]
+            let socialStudiesKeys = ["history", "gov", "econ", "geograph"]
+            let subject : Subject
+            guard let inputSubject = req.parameters.get("subject") else {
+                throw Abort(.badRequest)
+            }
+            switch inputSubject {
+                case "math": subject = Subject.math
+                case "science": subject = Subject.science
+                case "socialStudies": subject = Subject.socialStudies
+                case "english": subject = Subject.english
+                default: throw Abort(.badRequest)
+            }
+            let keys : [String]
+            switch subject {
+                case Subject.math: keys = mathKeys
+                case Subject.science: keys = scienceKeys
+                case Subject.socialStudies: keys = socialStudiesKeys
+                case Subject.english: keys = englishKeys
+            }
+            let courseData = try await CourseData.query(on: req.db).group(.or) { group in
+                for key in keys {
+                    group.filter(\.$description ~~ key)
+                }
+            }.paginate(for: req)
+            let courses = try courseData.map{ try Course(courseData: $0)}
+
+            return courses
+        }
+    }    
+}

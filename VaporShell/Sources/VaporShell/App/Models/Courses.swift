@@ -7,22 +7,26 @@ final class Course: Codable {
     public var id: String?
     public var semesterLength: String?
     public var semester: Int?
-    public var shortDescription: String?
     public var description: String?
     public var dualCreditSchedule: String?
     public var location: String?
     public var periodsAvailable: [[Int]]
+    public var level: String?
+    public var categories: String?
+    public var subcategories: String?
 
     //assign the variables to be connected to course data and initialized.
     public init(courseData: CourseData) throws {
         self.id = courseData.id
         self.semesterLength = courseData.semesterLength
         self.semester = courseData.semester
-        self.shortDescription = courseData.shortDescription
         self.description = courseData.description
         self.dualCreditSchedule = courseData.dualCreditSchedule
         self.location = courseData.location        
         self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.periodsAvailable)//courseData.periodsAvailable
+        self.level = courseData.level
+        self.categories = courseData.categories
+        self.subcategories = courseData.subcategories
 
         //Course.getPeriodsFromBitMap(bitMap: courseData.availabilityBitmap)
     }
