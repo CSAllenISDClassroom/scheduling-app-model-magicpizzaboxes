@@ -18,6 +18,10 @@ public class CourseController{
 
     public func getCourses(_ app: Application) throws {
         app.get("courses") { req -> Page<Course> in
+            guard let periods = req.query[Bool.self, at: "period"] else {
+                throw Abort(.badRequest)
+            }
+            print(periods)
             let courseData = try await CourseData.query(on: req.db).paginate(for: req)
             let courses = try courseData.map{ try Course(courseData: $0)}
 
@@ -40,6 +44,5 @@ public class CourseController{
             return schedClass
         }
     }
-
     
 } 
