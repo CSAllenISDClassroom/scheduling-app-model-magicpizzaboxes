@@ -30,14 +30,29 @@ public class CourseController{
             if let qLevel = try? req.query.get(String.self, at: "level") {
                 level = qLevel
             } 
-            print (semester)
-            print(location)
-            print(level)
-            let courseData = try await CourseData.query(on: req.db).paginate(for: req)
+
+            var courseData = try await CourseData.query(on: req.db).paginate(for: req)
             let courses = try courseData.map{ try Course(courseData: $0)}
 
             return courses
         }
+
+         app.get("courses", ":location" ) { req -> Page<Course> in
+            guard let location = req.parameters.get("location", as: String.self) else {
+                throw Abort (.badRequest)
+            }
+
+            let classLocation = try await CourseData.query(on: req.db)
+              .filter(\.$location == location)
+              .paginate(for: req)
+            let courses = try classLocation.map{ try Course(courseData: $0)}
+            return courses
+             
+            }        
+    }
+
+    private func filterByLevel(courseData: CourseData, level: String?) -> CourseData{
+        return level == nil ? courseData : courseData.filter{$0.level == level}
     }
 
     public func getCategories(_ app: Application) throws {
@@ -71,6 +86,7 @@ public class CourseController{
             return schedClass
         }
     }
+
     public func getCoursesBySubject(_ app: Application) throws {
         app.get("courses", "subject", ":subject") { req -> Page<Course> in
             let mathKeys = ["math", "algebra", "math", "geometry", "calc"]
