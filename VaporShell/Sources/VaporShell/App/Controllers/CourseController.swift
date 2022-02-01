@@ -24,7 +24,16 @@ public class CourseController{
             return courses
         }
     }
-    
+
+    public func getCategories(_ app: Application) throws {
+        app.get("categories") { req -> Page<Category> in
+            let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
+            let categories = try categoryData.map{ try Category(categoryData: $0)}
+
+            return categories
+        }
+    }
+        
     public func getCourseById(_ app: Application) throws {
         app.get("courses", ":id") { req -> CourseData in
             guard let id = req.parameters.get("id", as: String.self) else {
