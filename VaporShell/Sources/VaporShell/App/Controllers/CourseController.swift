@@ -39,7 +39,23 @@ public class CourseController{
             return courses
         }
     }
-    
+
+    public func getCategories(_ app: Application) throws {
+        app.get("categories") { req -> Page<CategoryData> in
+            let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
+
+            return categoryData
+        }
+    }
+
+    public func getSubcategories(_ app: Application) throws {
+        app.get("subcategories") { req -> Page<SubcategoryData> in
+            let subcategoryData = try await SubcategoryData.query(on: req.db).paginate(for: req)
+
+            return subcategoryData
+        }
+    }
+
     public func getCourseById(_ app: Application) throws {
         app.get("courses", ":id") { req -> CourseData in
             guard let id = req.parameters.get("id", as: String.self) else {
