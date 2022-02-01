@@ -32,9 +32,6 @@ final class CourseData: Model, Content {
 
     @Field(key: "semester")
     var semester: Int?
-
-    @Field(key: "shortDescription")
-    var shortDescription: String?
     
     @Field(key: "description")
     var description: String?
