@@ -28,8 +28,8 @@ final class SubcategoryData: Model, Content {
     var id: String?
 
     @Field(key: "categoryId")
-    var categoryId: String?
-   
+    var categoryId: Int?
+
     @Field(key: "name")
     var name: String?
 

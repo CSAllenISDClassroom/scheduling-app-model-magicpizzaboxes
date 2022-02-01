@@ -32,9 +32,6 @@ final class CourseData: Model, Content {
 
     @Field(key: "semester")
     var semester: Int?
-
-    @Field(key: "shortDescription")
-    var shortDescription: String?
     
     @Field(key: "description")
     var description: String?
@@ -47,6 +44,17 @@ final class CourseData: Model, Content {
 
     @Field(key: "periodBitmap")
     var periodsAvailable: Int?
+
+    @Field(key: "level")
+    var level: String?
+
+    @Field(key: "categories")
+    var categories: String?
+
+    @Field(key: "subcategories")
+    var subcategories: String?
+
+    
 
     init() {
     }
