@@ -32,15 +32,29 @@ public class CourseController{
             } 
 
             var courseData = try await CourseData.query(on: req.db).paginate(for: req)
-            let courses = try courseData.map{ try Course(courseData: $0)}
-
+            var courses = try courseData.map{ try Course(courseData: $0)}
+            print(type(of: courseData))
+            print(type(of: courses))
+            print("yo")
+            //filterBySemester(courseData: &courseData, semester: semester)
+            //filterByLocation(courseData: &courseData, location: location)
+            //filterByLevel(courseData: &courseData, level: level)
+            
             return courses
         }
     }
 
-    private func filterByLevel(courseData: CourseData, level: String?) -> CourseData{
-        return level == nil ? courseData : courseData.filter{$0.level == level}
+/*    private func filterBySemester(courseData: inout Page<CourseData>, semester: Int?) -> Page<CourseData>{
+        return semester == nil ? courseData : courseData.filter{$0.semester == semester}
     }
+
+    private func filterByLocation(courseData: inout Page<CourseData>, location: String?) -> Page<CourseData>{
+        return location == nil ? courseData : courseData.filter{$0.location == location}
+    }
+    
+    private func filterByLevel(courseData: inout Page<CourseData>, level: String?) -> Page<CourseData>{
+        return level == nil ? courseData : courseData.filter{$0.level == level}
+    }*/
     
     public func getCourseById(_ app: Application) throws {
         app.get("courses", ":id") { req -> CourseData in
