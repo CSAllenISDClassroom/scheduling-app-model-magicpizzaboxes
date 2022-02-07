@@ -30,16 +30,16 @@ public class CourseController{
                 level = qLevel
             } 
 
-            var courseData = try await CourseData.query(on: req.db).paginate(for: req)
+            let courseData = CourseData.query(on: req.db)
 
-            var courses = try courseData.map{ try Course(courseData: $0)}
-            print(type(of: courseData))
-            print(type(of: courses))
-            print("yo")
-            //filterBySemester(courseData: &courseData, semester: semester)
-            //filterByLocation(courseData: &courseData, location: location)
-            //filterByLevel(courseData: &courseData, level: level)
+            let filteredBySemester = semester == nil ? courseData : courseData.filter(\.$semester == semester) 
+            let filteredBySemesterAndLocation = location == nil ? filteredBySemester : filteredBySemester.filter(\.$location == location)
+            let filteredCourses = try await (level == nil ? filteredBySemesterAndLocation : filteredBySemesterAndLocation.filter(\.$level == level)).paginate(for: req) 
+              
 
+            let courses = try filteredCourses.map{ try Course(courseData: $0)}
+            
+            
             return courses
         }
 
@@ -57,7 +57,7 @@ public class CourseController{
             }*/        
     }
 
-/*    private func filterBySemester(courseData: inout Page<CourseData>, semester: Int?) -> Page<CourseData>{
+   /* private func filterBySemester(courseData: inout Page<CourseData>, semester: Int?) -> Page<CourseData>{
         return semester == nil ? courseData : courseData.filter{$0.semester == semester}
     }
 
