@@ -20,6 +20,8 @@ import Fluent
 import FluentMySQLDriver
 
 let courseController = CourseController()
+let categoryController = CategoryController()
+let subcategoryController = SubcategoryController()
 
 func routes(_ app: Application) throws {
 
@@ -33,9 +35,9 @@ func routes(_ app: Application) throws {
     // // Find an employee with the specified ID
     try courseController.getCourseById(app)
     try courseController.getCourses(app)
-    try courseController.getCoursesBySubject(app)
-    try courseController.getCategories(app)
-    try courseController.getSubcategories(app)
+    try categoryController.getCategories(app)
+    try subcategoryController.getSubcategories(app)
+    // List all employees using paging
 // List all employees using paging
     /*    app.get("courses") { req -> Page<CourseData>  in
           let courses = try await CourseData.query(on: req.db)

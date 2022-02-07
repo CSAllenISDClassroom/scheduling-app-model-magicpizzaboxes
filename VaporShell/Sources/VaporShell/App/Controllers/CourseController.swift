@@ -2,7 +2,7 @@ import Vapor
 import Fluent
 import FluentMySQLDriver
 
-public class CourseController{
+public class CourseController {
 
     /// Retrieves the employee record specified by the ID
     ///
@@ -42,44 +42,43 @@ public class CourseController{
             
             return courses
         }
-
-         /*app.get("courses", ":location" ) { req -> Page<Course> in
-            guard let location = req.parameters.get("location", as: String.self) else {
-                throw Abort (.badRequest)
-            }
-
-            let classLocation = try await CourseData.query(on: req.db)
-              .filter(\.$location == location)
-              .paginate(for: req)
-            let courses = try classLocation.map{ try Course(courseData: $0)}
-            return courses
-             
-            }*/        
     }
 
-   /* private func filterBySemester(courseData: inout Page<CourseData>, semester: Int?) -> Page<CourseData>{
-        return semester == nil ? courseData : courseData.filter{$0.semester == semester}
-    }
+     
 
-    private func filterByLocation(courseData: inout Page<CourseData>, location: String?) -> Page<CourseData>{
-        return location == nil ? courseData : courseData.filter{$0.location == location}
-    }
-    
-    private func filterByLevel(courseData: inout Page<CourseData>, level: String?) -> Page<CourseData>{
-        return level == nil ? courseData : courseData.filter{$0.level == level}
-    }*/
+    /*    private func filterBySemester(courseData: inout Page<CourseData>, semester: Int?) -> Page<CourseData>{
+          return semester == nil ? courseData : courseData.filter{$0.semester == semester}
+          }
+
+
+          public func getCategories(_ app: Application) throws {
+          app.get("categories") { req -> Page<Category> in
+          let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
+          let categories = try categoryData.map{ try Category(categoryData: $0)}
+
+          return categories
+          }
+
+          private func filterByLocation(courseData: inout Page<CourseData>, location: String?) -> Page<CourseData>{
+          return location == nil ? courseData : courseData.filter{$0.location == location}
+          }
+          
+          private func filterByLevel(courseData: inout Page<CourseData>, level: String?) -> Page<CourseData>{
+          return level == nil ? courseData : courseData.filter{$0.level == level}
+          }*/
     
 
 
     
+
     public func getCategories(_ app: Application) throws {
-            app.get("categories") { req -> Page<CategoryData> in
-                let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
+        app.get("categories") { req -> Page<CategoryData> in
+            let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
 
-                return categoryData
+            return categoryData
         }
     }
-
+    
     public func getSubcategories(_ app: Application) throws {
         app.get("subcategories") { req -> Page<SubcategoryData> in
             let subcategoryData = try await SubcategoryData.query(on: req.db).paginate(for: req)
@@ -89,7 +88,23 @@ public class CourseController{
     }
 
 
+
+
+
     public func getCourseById(_ app: Application) throws {
+        // app.get("courses", ":id") { req -> CourseData in
+        //     guard let id = req.parameters.get("id", as: String.self) else {
+        //         throw Abort(.badRequest)
+        //     }
+        
+        //     guard let schedClass = try await CourseData.query(on: req.db)
+        //             .filter(\.$id == id)
+        //             .first() else {
+        //         throw Abort(.notFound)
+        //     }
+        // }
+
+
         app.get("courses", ":id") { req -> CourseData in
             guard let id = req.parameters.get("id", as: String.self) else {
                 throw Abort(.badRequest)
@@ -103,7 +118,8 @@ public class CourseController{
 
             return schedClass
         }
-    }
+        
+    }    
 
     public func getCoursesBySubject(_ app: Application) throws {
         app.get("courses", "subject", ":subject") { req -> Page<Course> in
@@ -116,18 +132,18 @@ public class CourseController{
                 throw Abort(.badRequest)
             }
             switch inputSubject {
-                case "math": subject = Subject.math
-                case "science": subject = Subject.science
-                case "socialStudies": subject = Subject.socialStudies
-                case "english": subject = Subject.english
-                default: throw Abort(.badRequest)
+            case "math": subject = Subject.math
+            case "science": subject = Subject.science
+            case "socialStudies": subject = Subject.socialStudies
+            case "english": subject = Subject.english
+            default: throw Abort(.badRequest)
             }
             let keys : [String]
             switch subject {
-                case Subject.math: keys = mathKeys
-                case Subject.science: keys = scienceKeys
-                case Subject.socialStudies: keys = socialStudiesKeys
-                case Subject.english: keys = englishKeys
+            case Subject.math: keys = mathKeys
+            case Subject.science: keys = scienceKeys
+            case Subject.socialStudies: keys = socialStudiesKeys
+            case Subject.english: keys = englishKeys
             }
             let courseData = try await CourseData.query(on: req.db).group(.or) { group in
                 for key in keys {
