@@ -44,27 +44,27 @@ public class CourseController {
         }
 
 
-        app.get("courses", ":location" ) { req -> Page<Course> in
+        //        app.get("courses", ":location" ) { req -> Page<Course> in
 
-         /*app.get("courses", ":location" ) { req -> Page<Course> in
+        /*app.get("courses", ":location" ) { req -> Page<Course> in
 
-            guard let location = req.parameters.get("location", as: String.self) else {
-                throw Abort (.badRequest)
-            }
+          guard let location = req.parameters.get("location", as: String.self) else {
+          throw Abort (.badRequest)
+          }
 
-            let classLocation = try await CourseData.query(on: req.db)
-              .filter(\.$location == location)
-              .paginate(for: req)
-            let courses = try classLocation.map{ try Course(courseData: $0)}
-            return courses
+          let classLocation = try await CourseData.query(on: req.db)
+          .filter(\.$location == location)
+          .paginate(for: req)
+          let courses = try classLocation.map{ try Course(courseData: $0)}
+          return courses
 
-            
-        }        
+          
+          }        
 
-             
-            }*/        
+          
+          }*/        
 
-        }
+        //        }
     }
 
     /*    private func filterBySemester(courseData: inout Page<CourseData>, semester: Int?) -> Page<CourseData>{
@@ -113,6 +113,19 @@ public class CourseController {
 
 
     public func getCourseById(_ app: Application) throws {
+        // app.get("courses", ":id") { req -> CourseData in
+        //     guard let id = req.parameters.get("id", as: String.self) else {
+        //         throw Abort(.badRequest)
+        //     }
+        
+        //     guard let schedClass = try await CourseData.query(on: req.db)
+        //             .filter(\.$id == id)
+        //             .first() else {
+        //         throw Abort(.notFound)
+        //     }
+        // }
+
+
         app.get("courses", ":id") { req -> CourseData in
             guard let id = req.parameters.get("id", as: String.self) else {
                 throw Abort(.badRequest)
@@ -124,21 +137,9 @@ public class CourseController {
                 throw Abort(.notFound)
             }
 
-
-            app.get("courses", ":id") { req -> CourseData in
-                guard let id = req.parameters.get("id", as: String.self) else {
-                    throw Abort(.badRequest)
-                }
-                
-                guard let schedClass = try await CourseData.query(on: req.db)
-                        .filter(\.$id == id)
-                        .first() else {
-                    throw Abort(.notFound)
-                }
-
-                return schedClass
-            }
+            return schedClass
         }
+        
     }    
 
     public func getCoursesBySubject(_ app: Application) throws {
