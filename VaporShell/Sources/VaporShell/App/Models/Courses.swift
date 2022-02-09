@@ -24,7 +24,7 @@ final class Course: Codable {
         self.description = courseData.description
         self.dualCreditSchedule = courseData.dualCreditSchedule
         self.location = courseData.location        
-        self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.periodsAvailable)//courseData.periodsAvailable
+        self.periodsAvailable = Course.getPeriodsFromBitMap(bitMap: courseData.periodsAvailable)
         self.level = courseData.level
         self.categories = courseData.categories
         self.subcategories = courseData.subcategories
@@ -68,7 +68,7 @@ final class Course: Codable {
             return [Int]()
         }
     }
-    private static func getPeriodsFromBitMap(bitMap: Int?) -> [[Int]] {
+    public static func getPeriodsFromBitMap(bitMap: Int?) -> [[Int]] {
         guard let startingBitMap = bitMap else {
             return []
         }
