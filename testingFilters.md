@@ -1,6 +1,6 @@
-#**Testing on Filters**
+# **Testing on Filters**
 
-##**Testing Location Filter** 
+## **Testing Location Filter** 
 - First test was all classes that were located in 'AHS' 
 Success: listed all classes located at AHS only.
 
@@ -17,7 +17,7 @@ Success: listed all classes located at STEAM only.
 Success: locations are not case sensitive
 
 
-##**Testing Semester Filters**
+## **Testing Semester Filters**
 - First Test filtered by classes in 1st semester
 Success: listed all classes available in semester 1 only
 
@@ -28,7 +28,7 @@ Success: listed all classes available in semester 2 only
 Success: inputting semesters other than 1 and 2 results in an error.
 
 
-##**Testing level Filter**
+## **Testing level Filter**
 - First test filtered is for all classes that were 'on level' 
 Success: Listed all classes that are only on level 
 
@@ -47,7 +47,7 @@ Success: Listed all classes that are only dual credit
 - Final test tested wether there levels are not case sensitive 
 Success: Classes are not case sensitive 
 
-##**Testing multiple filters**
+## **Testing multiple filters**
 - First test conducted a combination of valid locations and semesters 
 Success: All classes given the paramters were given as a result 
 ex: location=AHS&semester=1
