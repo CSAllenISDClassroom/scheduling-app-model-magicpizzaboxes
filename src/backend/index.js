@@ -46,6 +46,7 @@ app.get('/schedule', (req, res) => {
   })
 })
 
+/// retrive classes
 app.get('/', (req, res) => {
   let itemsPerPage = Number(req.query.per)
   let pageNo = Number(req.query.page)

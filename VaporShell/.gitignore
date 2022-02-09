@@ -1,0 +1,17 @@
+Packages
+.build
+.DS_Store
+*.xcodeproj
+DerivedData/
+Package.resolved
+.swiftpm
+Tests/LinuxMain.swift
+.vscode
+*~
+\#*\#
+.dir-locals.el
+<<<<<<< HEAD
+configure.sh
+=======
+config.sh
+>>>>>>> 23d83857e1152ed2e425e2a35b08889c14065d96
