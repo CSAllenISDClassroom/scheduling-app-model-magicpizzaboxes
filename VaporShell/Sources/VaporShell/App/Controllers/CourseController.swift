@@ -22,33 +22,40 @@ public class CourseController {
         return stringArr.map{Int($0)!}
     }
 
+
+    private func isSubset (_ parentArray: [Int], _ childArray: [Int]) -> Bool {
+        let parentSet = Set(parentArray)
+        let childSet = Set(childArray)
+
+        return childSet.isSubset(of: parentSet)
+    }
     
-    private func periodsToBit (_ periods: String) -> Int {
-        let arr = stringToIntArray(periods)
-        //if array has 1 index, then there is 1 decimal place -> return arr[0] for period.
-        //ie. if arr[0] = 5, then period = fifth
-        if (arr.count == 1) {return arr[0]}
-
-        //double blocked classes
-        if (arr.count == 2 && arr[0] + 11 <= 20 && arr[1] + 10 <= 20) {return arr[0] + 11}
-
-        //special cases of double blocked classes that are not next to each other.
-        switch (arr) {
-        case [2, 5]:
-            return 21
-        case [3, 6]:
-            return 22
-        case [4, 7]:
-            return 23
-        default:
-            return Int()
+    private func getPotentialBits (_ periods: String) -> [Int] {
+        let periodsArr = stringToIntArray(periods)
+        var potentialBits = [Int]()
+        
+        if (periodsArr.count == 1) {
+            potentialBits.append(periodsArr[0])
         }
+
+        for x in 0..<10 {
+            let currentBlockArray = [x, x + 1]
+            
+            if (isSubset(currentBlockArray, periodsArr)) {potentialBits.append(x + 11)}
+        }
+
+        for x in 0..<3 {
+            let currentBlockArray = [x + 2, x + 5]
+
+            if (isSubset(currentBlockArray, periodsArr)) {potentialBits.append(x + 11)}
+        }
+        
+        return potentialBits
     }
 
-    //turns bitmap from database into an integer.
-    public func getBitMapFromPeriods(_ periods: String) -> Int {
-        let bit = periodsToBit(periods)
-        return Int(pow(Double(2), Double(bit)))
+    public func getPotentialBitMapFromPeriods(_ periods: String) -> [Int] {
+        let potentialBits = getPotentialBits(periods)
+        return potentialBits.map{Int(pow(Double(2), Double($0)))}
     }
 
     //query for getting parameters of classes individually.
@@ -68,6 +75,7 @@ public class CourseController {
               .filter(semester == nil ? \.$id != "" : \.$semester == semester!)
               .filter(location == nil ? \.$id != "" : \.$location == location!)
               .filter(level == nil ? \.$id != "" : \.$level == level!)
+              .filter(periods == nil ? \.$id != "" : \.$periodsAvailable ~~ self.getPotentialBitMapFromPeriods(periods!))
               .paginate(for: req)
             //map applies filter to all courseData
             let courses = try courseData.map{ try Course(courseData: $0)}
