@@ -15,18 +15,24 @@ public class CourseController {
     ///   * 404 Not Found
     ///
     /// Returns ``Employee``
+
+    //converts string to array of Ints
     private func stringToIntArray (_ string: String) -> [Int] {
         let stringArr = string.split(separator: ",")
         return stringArr.map{Int($0)!}
     }
 
+    
     private func periodsToBit (_ periods: String) -> Int {
         let arr = stringToIntArray(periods)
-        
+        //if array has 1 index, then there is 1 decimal place -> return arr[0] for period.
+        //ie. if arr[0] = 5, then period = fifth
         if (arr.count == 1) {return arr[0]}
 
+        //double blocked classes
         if (arr.count == 2 && arr[0] + 11 <= 20 && arr[1] + 10 <= 20) {return arr[0] + 11}
 
+        //special cases of double blocked classes that are not next to each other.
         switch (arr) {
         case [2, 5]:
             return 21
@@ -39,6 +45,7 @@ public class CourseController {
         }
     }
 
+    //turns bitmap from database into an integer.
     public func getBitMapFromPeriods(_ periods: String) -> Int {
         let bit = periodsToBit(periods)
         return Int(pow(Double(2), Double(bit)))
