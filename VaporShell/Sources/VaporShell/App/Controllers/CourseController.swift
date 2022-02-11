@@ -50,20 +50,26 @@ public class CourseController {
         let bit = periodsToBit(periods)
         return Int(pow(Double(2), Double(bit)))
     }
-    
+
+    //query for getting parameters of classes individually.
     public func getCourses(_ app: Application) throws {
         app.get("courses") { req -> Page<Course> in
-            
+
+            //try?: returns nil if not of same type.
+            //.self: chekcs if same type.
             let semester = try? req.query.get(Int.self, at: "semester")
             let location = try? req.query.get(String.self, at: "location")
             let level = try? req.query.get(String.self, at: "level")
             let periods = try? req.query.get(String.self, at: "periods")
-            
+
+            //if input filter is nil, then show all course.
+            // \.$semester is a keypath: if there is an input, then filter by input
             let courseData = try await CourseData.query(on: req.db)
               .filter(semester == nil ? \.$id != "" : \.$semester == semester!)
               .filter(location == nil ? \.$id != "" : \.$location == location!)
               .filter(level == nil ? \.$id != "" : \.$level == level!)
-              .paginate(for: req)            
+              .paginate(for: req)
+            //map applies filter to all courseData
             let courses = try courseData.map{ try Course(courseData: $0)}
             
             return courses
