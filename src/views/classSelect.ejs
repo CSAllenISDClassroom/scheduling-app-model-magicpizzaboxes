@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <title>Modsched 2022</title>
+</head>
+<body>
+  <h1>Classes:</h1>
+  <form action="/vapor/reese-hoffart/schedule">
+    <input type="submit">
+  <% classInfo.forEach((element) => {%>
+  <label for=<%= element.course%>><%= element.longDescription
+         %></label>
+    <input type="checkbox" name=<%= element.course %> id=<%=
+    element.course %>>
+    <br>
+  <% }) %>
+  </form>
+</body>
+</html>
