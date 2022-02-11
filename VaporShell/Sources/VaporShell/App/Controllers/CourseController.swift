@@ -20,28 +20,39 @@ public class CourseController {
         return stringArr.map{Int($0)!}
     }
 
-    private func periodsToBit (_ periods: String) -> Int {
-        let arr = stringToIntArray(periods)
+    private func isSubset (_ parentArray: [Int], _ childArray: [Int]) -> Bool {
+        let parentSet = Set(parentArray)
+        let childSet = Set(childArray)
+
+        return childSet.isSubset(of: parentSet)
+    }
+    
+    private func getPotentialBits (_ periods: String) -> [Int] {
+        let periodsArr = stringToIntArray(periods)
+        var potentialBits = [Int]()
         
-        if (arr.count == 1) {return arr[0]}
-
-        if (arr.count == 2 && arr[0] + 11 <= 20 && arr[1] + 10 <= 20) {return arr[0] + 11}
-
-        switch (arr) {
-        case [2, 5]:
-            return 21
-        case [3, 6]:
-            return 22
-        case [4, 7]:
-            return 23
-        default:
-            return Int()
+        if (periodsArr.count == 1) {
+            potentialBits.append(periodsArr[0])
         }
+
+        for x in 0..<10 {
+            let currentBlockArray = [x, x + 1]
+            
+            if (isSubset(currentBlockArray, periodsArr)) {potentialBits.append(x + 11)}
+        }
+
+        for x in 0..<3 {
+            let currentBlockArray = [x + 2, x + 5]
+
+            if (isSubset(currentBlockArray, periodsArr)) {potentialBits.append(x + 11)}
+        }
+        
+        return potentialBits
     }
 
-    public func getBitMapFromPeriods(_ periods: String) -> Int {
-        let bit = periodsToBit(periods)
-        return Int(pow(Double(2), Double(bit)))
+    public func getPotentialBitMapFromPeriods(_ periods: String) -> [Int] {
+        let potentialBits = getPotentialBits(periods)
+        return potentialBits.map{Int(pow(Double(2), Double($0)))}
     }
     
     public func getCourses(_ app: Application) throws {
@@ -56,7 +67,8 @@ public class CourseController {
               .filter(semester == nil ? \.$id != "" : \.$semester == semester!)
               .filter(location == nil ? \.$id != "" : \.$location == location!)
               .filter(level == nil ? \.$id != "" : \.$level == level!)
-              .paginate(for: req)            
+              .filter(periods == nil ? \.$id != "" : \.$periodsAvailable ~~ self.getPotentialBitMapFromPeriods(periods!))
+              .paginate(for: req)
             let courses = try courseData.map{ try Course(courseData: $0)}
             
             return courses
