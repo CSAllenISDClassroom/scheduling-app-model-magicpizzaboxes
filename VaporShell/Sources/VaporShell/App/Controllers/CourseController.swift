@@ -15,10 +15,13 @@ public class CourseController {
     ///   * 404 Not Found
     ///
     /// Returns ``Employee``
+
+    //converts string to array of Ints
     private func stringToIntArray (_ string: String) -> [Int] {
         let stringArr = string.split(separator: ",")
         return stringArr.map{Int($0)!}
     }
+
 
     private func isSubset (_ parentArray: [Int], _ childArray: [Int]) -> Bool {
         let parentSet = Set(parentArray)
