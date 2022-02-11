@@ -1,5 +1,3 @@
-
-
 import Vapor
 import Fluent
 import FluentMySQLDriver
@@ -48,33 +46,18 @@ public class CourseController {
     
     public func getCourses(_ app: Application) throws {
         app.get("courses") { req -> Page<Course> in
-            var semester : Int? = nil
-            var location : String? = nil
-            var level : String? = nil
-            var periods : String? = nil
-            if let qSemester = try? req.query.get(Int.self, at: "semester") {
-                semester = qSemester
-            }
-            if let qLocation = try? req.query.get(String.self, at: "location") {
-                location = qLocation
-            }
-            if let qLevel = try? req.query.get(String.self, at: "level") {
-                level = qLevel
-            } 
-            if let qPeriod = try? req.query.get(String.self, at: "periods") {
-                periods = qPeriod
-            }
             
-            let courseData = CourseData.query(on: req.db)
+            let semester = try? req.query.get(Int.self, at: "semester")
+            let location = try? req.query.get(String.self, at: "location")
+            let level = try? req.query.get(String.self, at: "level")
+            let periods = try? req.query.get(String.self, at: "periods")
             
-            let filteredBySemester = semester == nil ? courseData : courseData.filter(\.$semester == semester)
-            let filteredBySemesterAndLocation = location == nil ? filteredBySemester : filteredBySemester.filter(\.$location == location)
-            let filteredBySemesterLocationAndPeriods = periods == nil ? filteredBySemesterAndLocation : filteredBySemesterAndLocation.filter(\.$periodsAvailable == self.getBitMapFromPeriods(periods!))
-            let filteredCourses = try await (level == nil ? filteredBySemesterLocationAndPeriods : filteredBySemesterLocationAndPeriods.filter(\.$level == level)).paginate(for: req) 
-              
-
-            let courses = try filteredCourses.map{ try Course(courseData: $0)}
-            
+            let courseData = try await CourseData.query(on: req.db)
+              .filter(semester == nil ? \.$id != "" : \.$semester == semester!)
+              .filter(location == nil ? \.$id != "" : \.$location == location!)
+              .filter(level == nil ? \.$id != "" : \.$level == level!)
+              .paginate(for: req)            
+            let courses = try courseData.map{ try Course(courseData: $0)}
             
             return courses
         }
