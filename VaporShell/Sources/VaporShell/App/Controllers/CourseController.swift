@@ -17,47 +17,29 @@ public class CourseController {
     /// Returns ``Employee``
 
     //converts string to array of Ints
-    private func stringToIntArray (_ string: String) -> [Int] {
+    private func stringToIntArray (_ string: String) -> [[Int]] {
         let stringArr = string.split(separator: ",")
-        return stringArr.map{Int($0)!}
+        var finalArray = [[Int]]()
+
+        for string in stringArr {
+            let splitString = string.split(separator: "-")
+            
+            
+            finalArray.append(splitString.map{Int($0)!})
+        }
+        
+        return finalArray
     }
 
 
-    private func isSubset (_ parentArray: [Int], _ childArray: [Int]) -> Bool {
+    private func isSubset (_ parentArray: [[Int]], _ childArray: [[Int]]) -> Bool {
         let parentSet = Set(parentArray)
         let childSet = Set(childArray)
 
         return childSet.isSubset(of: parentSet)
     }
     
-    private func getPotentialBits (_ periods: String) -> [Int] {
-        let periodsArr = stringToIntArray(periods)
-        var potentialBits = [Int]()
-        
-        if (periodsArr.count == 1) {
-            potentialBits.append(periodsArr[0])
-        }
-
-        for x in 0..<10 {
-            let currentBlockArray = [x, x + 1]
-            
-            if (isSubset(currentBlockArray, periodsArr)) {potentialBits.append(x + 11)}
-        }
-
-        for x in 0..<3 {
-            let currentBlockArray = [x + 2, x + 5]
-
-            if (isSubset(currentBlockArray, periodsArr)) {potentialBits.append(x + 11)}
-        }
-        
-        return potentialBits
-    }
-
-    public func getPotentialBitMapFromPeriods(_ periods: String) -> [Int] {
-        let potentialBits = getPotentialBits(periods)
-        return potentialBits.map{Int(pow(Double(2), Double($0)))}
-    }
-
+  
     //query for getting parameters of classes individually.
     public func getCourses(_ app: Application) throws {
         app.get("courses") { req -> Page<Course> in
@@ -71,16 +53,21 @@ public class CourseController {
 
             //if input filter is nil, then show all course.
             // \.$semester is a keypath: if there is an input, then filter by input
-            let courseData = try await CourseData.query(on: req.db)
+            let courseData = CourseData.query(on: req.db)
               .filter(semester == nil ? \.$id != "" : \.$semester == semester!)
               .filter(location == nil ? \.$id != "" : \.$location == location!)
               .filter(level == nil ? \.$id != "" : \.$level == level!)
-              .filter(periods == nil ? \.$id != "" : \.$periodsAvailable ~~ self.getPotentialBitMapFromPeriods(periods!))
-              .paginate(for: req)
+              
             //map applies filter to all courseData
-            let courses = try courseData.map{ try Course(courseData: $0)}
+            let courses = try await courseData.all().map{ try Course(courseData: $0)}
             
-            return courses
+            let finalCourseIDs = courses.filter{
+                if (periods == nil) {return true}
+                
+                return self.isSubset($0.periodsAvailable, self.stringToIntArray(periods!))//self.stringToIntArray(periods!), $0.periodsAvailable)
+            }.map{$0.id!}
+            
+            return try await courseData.filter(\.$id ~~ finalCourseIDs).paginate(for: req).map{try Course(courseData: $0)}
         }
     }
 
