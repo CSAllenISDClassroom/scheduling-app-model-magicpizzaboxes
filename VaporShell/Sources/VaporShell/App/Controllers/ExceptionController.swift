@@ -15,4 +15,16 @@ public class ExceptionController {
         }
     }
 
+    public func getException_noDescription(_ app:Application) throws {
+        app.get("exceptions", "noDescription") {req -> Page<Course> in
+            let courseData = try await CourseData.query(on: req.db)
+                .filter(\.$description == nil)
+                .paginate(for: req)
+            let courses = try courseData.map{ try Course(courseData: $0) }
+
+            return courses
+        }
+    }
+
+    
 }
