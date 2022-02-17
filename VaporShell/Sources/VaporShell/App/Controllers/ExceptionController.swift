@@ -13,6 +13,24 @@ public class ExceptionController {
 
             return courses
         }
+
+        app.get("exceptions", "noCategories") {req -> Page<Course> in
+            let courseData = try await CourseData.query(on: req.db)
+              .filter(\.$categories == nil)
+              .paginate(for: req)
+            let courses = try courseData.map{ try Course(courseData: $0) }
+
+            return courses
+        }
+
+        app.get("exceptions", "noSubcategories") {req -> Page<Course> in
+            let courseData = try await CourseData.query(on: req.db)
+              .filter(\.$subcategories == nil)
+              .paginate(for: req)
+            let courses = try courseData.map{ try Course(courseData: $0) }
+
+            return courses
+        }
     }
 
 }
