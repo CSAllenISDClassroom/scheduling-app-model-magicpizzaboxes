@@ -22,6 +22,7 @@ import FluentMySQLDriver
 let courseController = CourseController()
 let categoryController = CategoryController()
 let subcategoryController = SubcategoryController()
+let exceptionController = ExceptionController()
 
 func routes(_ app: Application) throws {
 
@@ -37,6 +38,7 @@ func routes(_ app: Application) throws {
     try courseController.getCourses(app)
     try categoryController.getCategories(app)
     try subcategoryController.getSubcategories(app)
+    try exceptionController.getException_noLevel(app)
     // List all employees using paging
 // List all employees using paging
     /*    app.get("courses") { req -> Page<CourseData>  in
