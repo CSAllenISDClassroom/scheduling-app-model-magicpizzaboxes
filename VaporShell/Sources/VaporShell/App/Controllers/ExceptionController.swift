@@ -49,6 +49,15 @@ public class ExceptionController {
 
             return courses
         }
+
+        app.get("exceptions", "noPeriods") {req -> Page<Course> in
+            let courseData = try await CourseData.query(on: req.db)
+              .filter(\.$periodsAvailable == nil)
+              .paginate(for: req)
+            let courses = try courseData.map{ try Course(courseData: $0) }
+
+            return courses
+        }
     }
 
 
