@@ -39,6 +39,7 @@ func routes(_ app: Application) throws {
     try categoryController.getCategories(app)
     try subcategoryController.getSubcategories(app)
     try exceptionController.getException_noLevel(app)
+    try exceptionController.getException_noDescription(app)    
     // List all employees using paging
 // List all employees using paging
     /*    app.get("courses") { req -> Page<CourseData>  in
