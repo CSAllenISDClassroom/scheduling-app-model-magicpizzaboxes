@@ -15,61 +15,61 @@ public class CourseController {
     ///   * 404 Not Found
     ///
     /// Returns ``Employee``
-    public func getCourses(_ app: Application) throws {
-        app.get("courses") { req -> Page<Course> in
-            var semester : Int? = nil
-            var location : String? = nil
-            var level : String? = nil
-            if let qSemester = try? req.query.get(Int.self, at: "semester") {
-                semester = qSemester
-            }
-            if let qLocation = try? req.query.get(String.self, at: "location") {
-                location = qLocation
-            }
-            if let qLevel = try? req.query.get(String.self, at: "level") {
-                level = qLevel
-            } 
 
-            let courseData = CourseData.query(on: req.db)
+    //converts string to array of Ints
+    private func stringToIntArray (_ string: String) -> [[Int]] {
+        let stringArr = string.split(separator: ",")
+        var finalArray = [[Int]]()
 
-            let filteredBySemester = semester == nil ? courseData : courseData.filter(\.$semester == semester) 
-            let filteredBySemesterAndLocation = location == nil ? filteredBySemester : filteredBySemester.filter(\.$location == location)
-            let filteredCourses = try await (level == nil ? filteredBySemesterAndLocation : filteredBySemesterAndLocation.filter(\.$level == level)).paginate(for: req) 
-              
-
-            let courses = try filteredCourses.map{ try Course(courseData: $0)}
+        for string in stringArr {
+            let splitString = string.split(separator: "-")
             
             
-            return courses
+            finalArray.append(splitString.map{Int($0)!})
         }
+        
+        return finalArray
     }
 
-     
 
-    /*    private func filterBySemester(courseData: inout Page<CourseData>, semester: Int?) -> Page<CourseData>{
-          return semester == nil ? courseData : courseData.filter{$0.semester == semester}
-          }
+    private func isSubset (_ parentArray: [[Int]], _ childArray: [[Int]]) -> Bool {
+        let parentSet = Set(parentArray)
+        let childSet = Set(childArray)
 
-
-          public func getCategories(_ app: Application) throws {
-          app.get("categories") { req -> Page<Category> in
-          let categoryData = try await CategoryData.query(on: req.db).paginate(for: req)
-          let categories = try categoryData.map{ try Category(categoryData: $0)}
-
-          return categories
-          }
-
-          private func filterByLocation(courseData: inout Page<CourseData>, location: String?) -> Page<CourseData>{
-          return location == nil ? courseData : courseData.filter{$0.location == location}
-          }
-          
-          private func filterByLevel(courseData: inout Page<CourseData>, level: String?) -> Page<CourseData>{
-          return level == nil ? courseData : courseData.filter{$0.level == level}
-          }*/
+        return childSet.isSubset(of: parentSet)
+    }
     
+  
+    //query for getting parameters of classes individually.
+    public func getCourses(_ app: Application) throws {
+        app.get("courses") { req -> Page<Course> in
 
+            //try?: returns nil if not of same type.
+            //.self: chekcs if same type.
+            let semester = try? req.query.get(Int.self, at: "semester")
+            let location = try? req.query.get(String.self, at: "location")
+            let level = try? req.query.get(String.self, at: "level")
+            let periods = try? req.query.get(String.self, at: "periods")
 
-    
+            //if input filter is nil, then show all course.
+            // \.$semester is a keypath: if there is an input, then filter by input
+            let courseData = CourseData.query(on: req.db)
+              .filter(semester == nil ? \.$id != "" : \.$semester == semester!)
+              .filter(location == nil ? \.$id != "" : \.$location == location!)
+              .filter(level == nil ? \.$id != "" : \.$level == level!)
+              
+            //map applies filter to all courseData
+            let courses = try await courseData.all().map{ try Course(courseData: $0)}
+            
+            let finalCourseIDs = courses.filter{
+                if (periods == nil) {return true}
+                
+                return self.isSubset($0.periodsAvailable, self.stringToIntArray(periods!))//self.stringToIntArray(periods!), $0.periodsAvailable)
+            }.map{$0.id!}
+            
+            return try await courseData.filter(\.$id ~~ finalCourseIDs).paginate(for: req).map{try Course(courseData: $0)}
+        }
+    }
 
     public func getCategories(_ app: Application) throws {
         app.get("categories") { req -> Page<CategoryData> in
@@ -86,11 +86,7 @@ public class CourseController {
             return subcategoryData
         }
     }
-
-
-
-
-
+    
     public func getCourseById(_ app: Application) throws {
         // app.get("courses", ":id") { req -> CourseData in
         //     guard let id = req.parameters.get("id", as: String.self) else {
